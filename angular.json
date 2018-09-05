@@ -23,7 +23,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              {
+                "input": "./node_modules/bootstrap/dist/css/bootstrap.css"
+              }
             ],
             "scripts": []
           },
@@ -115,6 +118,256 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "Client": {
+      "root": "projects/Client/",
+      "sourceRoot": "projects/Client/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/Client",
+            "index": "projects/Client/src/index.html",
+            "main": "projects/Client/src/main.ts",
+            "polyfills": "projects/Client/src/polyfills.ts",
+            "tsConfig": "projects/Client/tsconfig.app.json",
+            "assets": [
+              "projects/Client/src/favicon.ico",
+              "projects/Client/src/assets"
+            ],
+            "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
+              "projects/Client/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/Client/src/environments/environment.ts",
+                  "with": "projects/Client/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "Client:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "Client:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "Client:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/Client/src/test.ts",
+            "polyfills": "projects/Client/src/polyfills.ts",
+            "tsConfig": "projects/Client/tsconfig.spec.json",
+            "karmaConfig": "projects/Client/karma.conf.js",
+            "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
+              "projects/Client/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/Client/src/favicon.ico",
+              "projects/Client/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/Client/tsconfig.app.json",
+              "projects/Client/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "Client-e2e": {
+      "root": "projects/Client-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/Client-e2e/protractor.conf.js",
+            "devServerTarget": "Client:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "Client:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/Client-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "Broker": {
+      "root": "projects/Broker/",
+      "sourceRoot": "projects/Broker/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/Broker",
+            "index": "projects/Broker/src/index.html",
+            "main": "projects/Broker/src/main.ts",
+            "polyfills": "projects/Broker/src/polyfills.ts",
+            "tsConfig": "projects/Broker/tsconfig.app.json",
+            "assets": [
+              "projects/Broker/src/favicon.ico",
+              "projects/Broker/src/assets"
+            ],
+            "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
+              "projects/Broker/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/Broker/src/environments/environment.ts",
+                  "with": "projects/Broker/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "Broker:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "Broker:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "Broker:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/Broker/src/test.ts",
+            "polyfills": "projects/Broker/src/polyfills.ts",
+            "tsConfig": "projects/Broker/tsconfig.spec.json",
+            "karmaConfig": "projects/Broker/karma.conf.js",
+            "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
+              "projects/Broker/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/Broker/src/favicon.ico",
+              "projects/Broker/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/Broker/tsconfig.app.json",
+              "projects/Broker/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "Broker-e2e": {
+      "root": "projects/Broker-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/Broker-e2e/protractor.conf.js",
+            "devServerTarget": "Broker:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "Broker:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/Broker-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]

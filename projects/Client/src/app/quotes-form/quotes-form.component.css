@@ -1,0 +1,45 @@
+.background-left-dynamic {
+  background-position: 45% 63%;
+  background-size: cover;
+  display: inline-block;
+  width: 43%;
+  height: 400px;
+}
+
+.background-right-dynamic {
+  display: inline-block;
+  position: absolute;
+  width: 49%;
+  margin-left: 10px;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container>* {
+  width: 100%;
+}
+
+mat-step .mat-stepper-horizontal-line {
+  border-top-width: 1px;
+  border-top-style: solid !important;
+  flex: auto;
+  height: 0;
+  margin: 0 !important;
+  min-width: 60px !important;
+}
+
+.mat-step-header {
+  overflow: hidden;
+  outline: 0;
+  cursor: none !important;
+  position: relative;
+  box-sizing: content-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.form-input-right {
+  width: 70%;
+}
