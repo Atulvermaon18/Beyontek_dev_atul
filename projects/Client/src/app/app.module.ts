@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TranslateService } from './translate.service';
 import { TranslatePipe } from './translate.pipe';
 import { ImgHolderComponent } from './img-holder/img-holder.component';
+import { ClientGetQuotesComponent } from './client-get-quotes/client-get-quotes.component';
 
 export function setupTranslateFactory(
   service: TranslateService): Function {
@@ -40,7 +41,8 @@ export function setupTranslateFactory(
     QuotesFormComponent,
     BuyInsuranceModalComponent,
     TranslatePipe,
-    ImgHolderComponent
+    ImgHolderComponent,
+    ClientGetQuotesComponent
   ],
   imports: [
     BrowserModule,

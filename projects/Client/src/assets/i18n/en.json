@@ -3,5 +3,12 @@
   "AGE": "Age",
   "GENDER": "Gender",
   "NATIONALITY": "Nationality",
-  "MOBILE": "Mobile"
+  "MOBILE": "Mobile",
+  "EMIRATESID": "Aadhar Id",
+  "PHOTOID": "Photo Id",
+  "PROOFOFINCOME": "Proof of Income",
+  "VISACOPY": "Visa Copy",
+  "REGCOPY": "Reg Copy"
+
+
 }

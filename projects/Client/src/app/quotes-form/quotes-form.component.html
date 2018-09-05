@@ -2,30 +2,31 @@
   <mat-card class="background-left-dynamic">
     <app-img-holder></app-img-holder>
   </mat-card>
-  <mat-card class="background-right-dynamic">
-    {{'TITLE' | translate }}
-    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-card class="background-right-dynamic" *ngIf="!quoteSelected">
+    <app-client-get-quotes (notifySelection)="handleNotify($event)"></app-client-get-quotes>
+  </mat-card>
+  <mat-card class="background-right-dynamic" *ngIf="quoteSelected">
+    <mat-horizontal-stepper [linear]="true" #stepper>
       <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
-          <!-- <ng-template matStepLabel>Personal Details</ng-template> -->
           <mat-form-field class="form-input-right">
-            <input matInput placeholder="Emirates ID" [(ngModel)]="fname" formControlName="firstCtrl" required>
-          </mat-form-field><br>
-          <mat-form-field class="form-input-right">
-            <input matInput placeholder="{{'NAME' | translate}}" [(ngModel)]="name" formControlName="firstCtrl"
+            <input matInput placeholder="{{'EMIRATESID' | translate}}" [(ngModel)]="emiratesID" formControlName="idCtrl"
               required>
           </mat-form-field><br>
           <mat-form-field class="form-input-right">
-            <input matInput placeholder="{{'AGE'  | translate}}" [(ngModel)]="age" formControlName="firstCtrl" required>
+            <input matInput placeholder="{{'NAME' | translate}}" [(ngModel)]="name" formControlName="nameCtrl" required>
           </mat-form-field><br>
           <mat-form-field class="form-input-right">
-            <input matInput placeholder="{{'GENDER'  | translate}}" formControlName="firstCtrl" required>
+            <input matInput placeholder="{{'AGE'  | translate}}" [(ngModel)]="age" formControlName="ageCtrl" required>
           </mat-form-field><br>
           <mat-form-field class="form-input-right">
-            <input matInput placeholder="{{'NATIONALITY'  | translate}}" formControlName="firstCtrl" required>
+            <input matInput placeholder="{{'GENDER'  | translate}}" formControlName="genderCtrl" required>
           </mat-form-field><br>
           <mat-form-field class="form-input-right">
-            <input matInput placeholder="{{'MOBILE'  | translate}}" formControlName="firstCtrl" required>
+            <input matInput placeholder="{{'NATIONALITY'  | translate}}" formControlName="nationalityCtrl" required>
+          </mat-form-field><br>
+          <mat-form-field class="form-input-right">
+            <input matInput placeholder="{{'MOBILE'  | translate}}" formControlName="mobileCtrl" required>
           </mat-form-field><br>
           <div>
             <button mat-button matStepperNext>Next</button>
@@ -35,9 +36,11 @@
       </mat-step>
       <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
-          <!-- <ng-template matStepLabel>Fill out your address</ng-template> -->
           <mat-form-field>
-            <input matInput placeholder="Address" formControlName="secondCtrl" required>
+            <input matInput placeholder="Reg No." formControlName="regCtrl" required>
+          </mat-form-field><br>
+          <mat-form-field>
+            <input matInput placeholder="Chassis No." formControlName="chassisCtrl" required>
           </mat-form-field>
           <div>
             <button mat-button matStepperPrevious>Back</button>
@@ -45,28 +48,49 @@
           </div>
         </form>
       </mat-step>
+      <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <mat-form-field class="form-input-right">
+            <input matInput placeholder="{{'EMIRATESID' | translate}}" [(ngModel)]="emiratesID" formControlName="idCtrl"
+              required>
+          </mat-form-field><br>
+          <mat-form-field class="form-input-right">
+            <input matInput placeholder="{{'PHOTOID' | translate}}" [(ngModel)]="photoid" formControlName="photoidCtrl"
+              required>
+          </mat-form-field><br>
+          <mat-form-field class="form-input-right">
+            <input matInput placeholder="{{'PROOFOFINCOME'  | translate}}" [(ngModel)]="incomeproof" formControlName="incomeproofCtrl"
+              required>
+          </mat-form-field><br>
+          <mat-form-field class="form-input-right">
+            <input matInput placeholder="{{'VISACOPY'  | translate}}" formControlName="visa" required formControlName="visaCtrl">
+          </mat-form-field><br>
+          <mat-form-field class="form-input-right">
+            <input matInput placeholder="{{'REGCOPY'  | translate}}" formControlName="reg" required formControlName="regCtrl">
+          </mat-form-field><br>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+
+      </mat-step>
       <mat-step>
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
+          <button mat-button matStepperNext>Next</button>
         </div>
       </mat-step>
       <mat-step>
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
+          <button mat-button matStepperNext>Next</button>
         </div>
       </mat-step>
       <mat-step>
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
-        </div>
-      </mat-step>
-      <mat-step>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
+          <button mat-button (click)="stepper.reset()">Done</button>
         </div>
       </mat-step>
     </mat-horizontal-stepper>

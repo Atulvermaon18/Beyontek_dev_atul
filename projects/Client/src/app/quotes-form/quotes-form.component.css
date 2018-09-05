@@ -9,8 +9,7 @@
 .background-right-dynamic {
   display: inline-block;
   position: absolute;
-  width: 49%;
-  margin-left: 10px;
+  width: 50%;
 }
 
 .example-container {
@@ -22,19 +21,21 @@
   width: 100%;
 }
 
-mat-step .mat-stepper-horizontal-line {
+::ng-deep .mat-stepper-horizontal-line {
   border-top-width: 1px;
   border-top-style: solid !important;
   flex: auto;
   height: 0;
-  margin: 0 !important;
-  min-width: 60px !important;
+  margin: 0px 23px !important;
+  min-width: 50px !important;
 }
 
-.mat-step-header {
+::ng-deep .mat-step-header {
   overflow: hidden;
   outline: 0;
-  cursor: none !important;
+  padding: 0px !important;
+  width: 30px !important;
+  cursor: auto !important;
   position: relative;
   box-sizing: content-box;
   -webkit-tap-highlight-color: transparent;

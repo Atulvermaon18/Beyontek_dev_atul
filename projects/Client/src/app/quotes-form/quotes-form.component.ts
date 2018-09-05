@@ -16,21 +16,43 @@ export class QuotesFormComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
+  quoteSelected = false;
 
   constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
+      idCtrl: ['', Validators.required],
+      nameCtrl: ['', Validators.required],
+      ageCtrl: ['', Validators.required],
+      genderCtrl: ['', Validators.required],
+      nationalityCtrl: ['', Validators.required],
+      mobileCtrl: ['', Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
+      regCtrl: ['', Validators.required],
+      chassisCtrl: ['', Validators.required]
     });
+    this.thirdFormGroup = this._formBuilder.group({
+      idCtrl: ['', Validators.required],
+      photoidCtrl: ['', Validators.required],
+      incomeproofCtrl: ['', Validators.required],
+      visaCtrl: ['', Validators.required],
+      regCtrl: ['', Validators.required],
+    });
+
   }
 
 
   handleEvnt() {
-    this.notify.emit('Click from Child component')
+    this.notify.emit('Click from Child component');
+
   }
+
+  handleNotify(message: boolean): void {
+    this.quoteSelected = true;
+  }
+
 
 }
