@@ -1,0 +1,9 @@
+.quotes-card {
+  max-width: 200px;
+  display: inline-block;
+  margin: 0px 10px
+}
+
+.align-center {
+  text-align: center;
+}
