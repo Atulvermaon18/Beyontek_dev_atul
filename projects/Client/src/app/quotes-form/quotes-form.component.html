@@ -8,6 +8,7 @@
   <mat-card class="background-right-dynamic" *ngIf="quoteSelected">
     <mat-horizontal-stepper [linear]="true" #stepper>
       <mat-step [stepControl]="firstFormGroup">
+        <h4>Personal Details</h4>
         <form [formGroup]="firstFormGroup">
           <mat-form-field class="form-input-right">
             <input matInput placeholder="{{'EMIRATESID' | translate}}" [(ngModel)]="emiratesID" formControlName="idCtrl"
@@ -36,6 +37,7 @@
       </mat-step>
       <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
+          <h4>Vehicle Details</h4>
           <mat-form-field>
             <input matInput placeholder="Reg No." formControlName="regCtrl" required>
           </mat-form-field><br>
@@ -50,6 +52,7 @@
       </mat-step>
       <mat-step [stepControl]="thirdFormGroup">
         <form [formGroup]="thirdFormGroup">
+          <h4>Proof Upload</h4>
           <mat-form-field class="form-input-right">
             <input matInput placeholder="{{'EMIRATESID' | translate}}" [(ngModel)]="emiratesID" formControlName="idCtrl"
               required>
@@ -76,18 +79,21 @@
 
       </mat-step>
       <mat-step>
+        <h4>Few Questions?</h4>
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
         </div>
       </mat-step>
       <mat-step>
+        <h4>Verify OTP</h4>
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
         </div>
       </mat-step>
       <mat-step>
+        <h4>Policy Details</h4>
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button (click)="stepper.reset()">Done</button>
