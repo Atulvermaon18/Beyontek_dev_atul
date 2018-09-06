@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiServiceService } from '../api-service.service';
+
 @Component({
   selector: 'app-quotes-form',
   templateUrl: './quotes-form.component.html',
@@ -21,111 +23,16 @@ export class QuotesFormComponent implements OnInit {
   fifthFormGroup: FormGroup;
 
   quoteSelected = false;
-  inputData={
-    step1:{
-      title:'Personal Details',
-      inputs:[
-        {
-          label:'Id',
-          type:'text'
-        },
-        {
-          label:'name',
-          type:'text'
-        },
-        {
-          label:'age',
-          type:'number'
-        },
-        {
-          label:'gender',
-          type:'text'
-        },
-        {
-          label:'nationality',
-          type:'text'
-        },
-        {
-          label:'mobile',
-          type:'number'
-        }
-      ]
-    },
-    step2:{
-      title:'Vehicle Details',
-      inputs:[
-        {
-          label:'reg',
-          type:'text'
-        },
-        {
-          label:'chassis',
-          type:'text'
-        }
-      ]
-    },
-    step3:{
-      title:'Upload Details',
-      inputs:[
-        {
-          label:'Id',
-          type:'text'
-        },
-        {
-          label:'photoId',
-          type:'text'
-        },
-        {
-          label:'proofofincome',
-          type:'number'
-        },
-        {
-          label:'visacopy',
-          type:'text'
-        },
-        {
-          label:'regcopy',
-          type:'text'
-        }
-      ]
-    },
-    step4:{
-      title:'Few Questions?',
-      inputs:[
-        {
-          label:'qno1',
-          type:'text',
-          content:"How far is your office from home?"
-        },
-        {
-          content:'What is the average driving in a day?',
-          type:'text',
-          label:"qno2"
-        },
-        {
-          label:"qno3",
-          content:'How long you have been driving in UAE?',
-          type:'number'
-        }
-      ]
-    },
-    step5:{
-      title:'Verify OTP',
-      context:"One time password has been sent to ********98. Please enter the same here to view your quotes",
-      inputs:[
-        {
-          label:'otp',
-          type:'text',
-          content:"Enter your OTP"         
-        }        
-      ]
-    },
-  }
+  inputData={};
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder, private service: ApiServiceService) {
+    service.getInuts().then(() => {
+      console.log(service.data);
+      this.inputData=service.data;
+    });
+   }
 
   ngOnInit() {
-
     
     this.firstFormGroup = this._formBuilder.group({
       IdCtrl: ['', Validators.required],
