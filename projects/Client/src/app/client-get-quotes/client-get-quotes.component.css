@@ -7,3 +7,6 @@
 .align-center {
   text-align: center;
 }
+.container{
+  display: inline-block;
+}

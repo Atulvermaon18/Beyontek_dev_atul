@@ -1,14 +1,14 @@
 {
-  "NAME": "Name",
-  "AGE": "Age",
-  "GENDER": "Gender",
-  "NATIONALITY": "Nationality",
-  "MOBILE": "Mobile",
-  "EMIRATESID": "Aadhar Id",
-  "PHOTOID": "Photo Id",
-  "PROOFOFINCOME": "Proof of Income",
-  "VISACOPY": "Visa Copy",
-  "REGCOPY": "Reg Copy"
-
-
+  "name": "Name",
+  "age": "Age",
+  "gender": "Gender",
+  "nationality": "Nationality",
+  "mobile": "Mobile",
+  "Id": "Aadhar Id",
+  "photoId": "Photo Id",
+  "proofofincome": "Proof of Income",
+  "visacopy": "Visa Copy",
+  "regcopy":"Registration Copy",
+  "reg": "Registration Id",
+  "chassis": "Chassis Id"
 }

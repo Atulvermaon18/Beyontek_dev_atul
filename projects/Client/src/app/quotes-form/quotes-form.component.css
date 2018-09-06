@@ -1,15 +1,10 @@
-.background-left-dynamic {
-  background-position: 45% 63%;
-  background-size: cover;
-  display: inline-block;
-  width: 43%;
-  height: 400px;
-}
 
 .background-right-dynamic {
   display: inline-block;
   position: absolute;
-  width: 50%;
+  width: 49%;
+  margin-left: 50px;
+  padding: 0 42px;
 }
 
 .example-container {
