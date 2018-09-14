@@ -1,0 +1,124 @@
+{
+    "data":[
+      {
+      "title":"Personal Details",
+      "inputs":[
+        {
+          "label":"Id",
+          "key":"Id",
+          "type":"text"
+        },
+        {
+          "label":"name",
+          "key":"name",
+          "type":"text"
+        },
+        {
+          "label":"age",
+          "key":"age",
+          "type":"number"
+        },
+        {
+          "label":"gender",
+          "key":"gender",
+          "type":"text"
+        },
+        {
+          "label":"nationality",
+          "key":"nationality",
+          "type":"text"
+        },
+        {
+          "label":"mobile",
+          "key":"mobile",
+          "type":"number"
+        }
+      ]
+    },
+    {
+      "title":"Vehicle Details",
+      "inputs":[
+        {
+          "label":"reg",
+          "key":"reg",
+          "type":"text"
+        },
+        {
+          "label":"chassis",
+          "key":"chassis",
+          "type":"text"
+        }
+      ]
+    },
+    {
+      "title":"Upload Details",
+      "inputs":[
+        {
+          "label":"uploadId",
+          "key":"Id",
+          "type":"text"
+        },
+        {
+          "label":"photoId",
+          "key":"photoId",
+          "type":"text"
+        },
+        {
+          "label":"proofofincome",
+          "key":"proofofincome",
+          "type":"number"
+        },
+        {
+          "label":"visacopy",
+          "type":"text",
+          "key":"visacopy"
+        },
+        {
+          "label":"regcopy",
+          "type":"text",
+          "key":"regcopy"
+        }
+      ]
+    },
+   {
+      "title":"Few Questions?",
+      "inputs":[
+        {
+          "label":"qno1",
+          "type":"text",
+          "key":"How far is your office from home?"
+        },
+        {
+          "key":"What is the average driving in a day?",
+          "type":"text",
+          "label":"qno2"
+        },
+        {
+          "label":"qno3",
+          "key":"How long you have been driving in UAE?",
+          "type":"number"
+        }
+      ]
+    },
+    {
+      "title":"Verify OTP",
+      "context":"One time password has been sent to ********98. Please enter the same here to view your quotes",
+      "inputs":[
+        {
+          "label":"otp",
+          "type":"text",
+          "key":"Enter your OTP"         
+        }        
+      ]
+    },
+    {
+        "title":"Policy Details",
+        "context":"",
+        "inputs":[
+          {
+            "label":"policy",
+            "key":"Your Policy"   
+          }
+        ]
+      }]
+  }

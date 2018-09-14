@@ -13,59 +13,51 @@ export class QuotesFormComponent implements OnInit {
 
   @Output() notify: EventEmitter<string> = new EventEmitter<string>();
 
-
-
   isLinear = false;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
-  thirdFormGroup: FormGroup;
-  fourthFormGroup: FormGroup;
-  fifthFormGroup: FormGroup;
+  formgroup: FormGroup;
 
   quoteSelected = false;
   inputData={};
 
   constructor(private _formBuilder: FormBuilder, private service: ApiServiceService) {
     service.getInuts().then(() => {
-      console.log(service.data);
-      this.inputData=service.data;
+      console.log(service.data.data);
+      this.inputData=service.data.data;
     });
    }
 
   ngOnInit() {
-    
-    this.firstFormGroup = this._formBuilder.group({
-      IdCtrl: ['', Validators.required],
-      nameCtrl: ['', Validators.required],
-      ageCtrl: ['', Validators.required],
-      genderCtrl: ['', Validators.required],
-      nationalityCtrl: ['', Validators.required],
-      mobileCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      regCtrl: ['', Validators.required],
-      chassisCtrl: ['', Validators.required]
-    });
-    this.thirdFormGroup = this._formBuilder.group({
-      IdCtrl: ['', Validators.required],
-      photoIdCtrl: ['', Validators.required],
-      proofofincomeCtrl: ['', Validators.required],
-      visacopyCtrl: ['', Validators.required],
-      regcopyCtrl: ['', Validators.required],
-    });
-    this.fourthFormGroup = this._formBuilder.group({
-      IdCtrl: ['', Validators.required],
-      photoIdCtrl: ['', Validators.required],
-      proofofincomeCtrl: ['', Validators.required],
-      visacopyCtrl: ['', Validators.required],
-      regcopyCtrl: ['', Validators.required],
-    });
-    this.fifthFormGroup = this._formBuilder.group({
-      otpCtrl: ['', Validators.required]
-    });
 
+    this.formgroup = this._formBuilder.group({
+      Id: ['', Validators.required],
+      name: ['', Validators.required],
+      age: ['', Validators.required],
+      gender: ['', Validators.required],
+      nationality: ['', Validators.required],
+      mobile: ['', Validators.required],
+      reg: ['', Validators.required],
+      uploadId:['', Validators.required],
+      chassis: ['', Validators.required],
+      photoId: ['', Validators.required],
+      proofofincome: ['', Validators.required],
+      visacopy: ['', Validators.required],
+      regcopy: ['', Validators.required],
+      otp: ['', Validators.required],
+      policy: ['', Validators.required],
+      qno1: ['', Validators.required],
+      qno2: ['', Validators.required],
+      qno3: ['', Validators.required]
+    });
   }
 
+  onSubmit(data){
+    
+    for (var key in data.value) {
+      if (data.value.hasOwnProperty(key)) {
+          console.log(key + " -> " + data.value[key]);
+      }
+  }
+  }
 
   handleEvnt() {
     this.notify.emit('Click from Child component');

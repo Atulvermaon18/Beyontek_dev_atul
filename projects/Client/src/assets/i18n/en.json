@@ -10,5 +10,6 @@
   "visacopy": "Visa Copy",
   "regcopy":"Registration Copy",
   "reg": "Registration Id",
-  "chassis": "Chassis Id"
+  "chassis": "Chassis Id",
+  "otp": "Enter your OTP"
 }

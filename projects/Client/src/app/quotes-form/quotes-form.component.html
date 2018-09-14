@@ -6,77 +6,21 @@
     <app-client-get-quotes *ngIf="!quoteSelected" (notifySelection)="handleNotify($event)"></app-client-get-quotes>
 
     <mat-horizontal-stepper class="background-right-dynamic" *ngIf="quoteSelected" [linear]="false" #stepper>
-      <mat-step [stepControl]="firstFormGroup">
-        <h4>{{inputData.step1.title}}</h4>
-        <form [formGroup]="firstFormGroup">
-            <mat-form-field class="form-input-right" *ngFor="let input of inputData.step1.inputs">
-                <input matInput placeholder="{{input.label | translate}}"  formControlName="{{input.label}}Ctrl"
-                  required>
-              </mat-form-field><br>
-          <div>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </form>
 
-      </mat-step>
-      <mat-step [stepControl]="secondFormGroup">
-        <form [formGroup]="secondFormGroup">
-          <h4>{{inputData.step2.title}}</h4>
-          <mat-form-field class="form-input-right" *ngFor="let input of inputData.step2.inputs">
-              <input matInput placeholder="{{input.label | translate}}" formControlName="{{input.label}}Ctrl"
-                required>
+      <mat-step *ngFor="let input of inputData; let i = index" >       
+        <form [formGroup]="formgroup" (submit)="onSubmit(formgroup)">
+          <h4>{{input.title}}</h4>
+          <h5>{{input.context}}</h5>
+          <mat-form-field class="form-input-right" *ngFor="let field of input.inputs" >
+              <input matInput placeholder="{{field.key | translate}}" [formControlName]="field.label" >
             </mat-form-field><br>
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="thirdFormGroup">
-        <form [formGroup]="thirdFormGroup">
-            <h4>{{inputData.step3.title}}</h4>
-            <mat-form-field class="form-input-right" *ngFor="let input of inputData.step3.inputs">
-                <input matInput placeholder="{{input.label | translate}}" formControlName="{{input.label}}Ctrl"
-                  required>
-              </mat-form-field><br>
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </form>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button *ngIf="i!==inputData.length-1"  matStepperNext>Next</button>
+              <button mat-button *ngIf="i===inputData.length-1" type="submit" (click)="stepper.reset()">Done</button>
+            </div>
+      </form>
 
-      </mat-step>
-      <mat-step [stepControl]="fourthFormGroup">
-        <form [formGroup]="fourthFormGroup">
-          <h4>{{inputData.step4.title}}</h4>
-        <mat-form-field  class="form-input-right" *ngFor="let input of inputData.step4.inputs">
-            <input matInput placeholder="{{input.content | translate}}" >
-          </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="fifthFormGroup">
-          <form [formGroup]="fifthFormGroup">
-            <h4>{{inputData.step5.title}}</h4>
-            <h5>{{inputData.step5.context}}</h5>
-          <mat-form-field  class="form-input-right" *ngFor="let input of inputData.step5.inputs">
-              <input matInput placeholder="{{input.content | translate}}" >
-            </mat-form-field>
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-          </form>
-        </mat-step>
-      <mat-step>
-        <h4>Policy Details</h4>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Done</button>
-        </div>
       </mat-step>
     </mat-horizontal-stepper>
     
