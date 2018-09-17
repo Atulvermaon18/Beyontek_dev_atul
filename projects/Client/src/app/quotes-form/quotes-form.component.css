@@ -1,12 +1,16 @@
 
 .background-right-dynamic {
   display: inline-block;
-  position: absolute;
-  width: 49%;
-  margin-left: 50px;
+  width: 50%;
+  margin-top: 18px;
   padding: 0 42px;
 }
-
+.img-holder{
+  float:left;
+  width:40%;
+  /* border:1px solid #000; */
+  height:600px;
+}
 .example-container {
   display: flex;
   flex-direction: column;

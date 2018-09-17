@@ -1,7 +1,5 @@
 <div>
-  <mat-card >
-
-    <app-img-holder></app-img-holder>
+    <app-img-holder class="img-holder"></app-img-holder>
 
     <app-client-get-quotes *ngIf="!quoteSelected" (notifySelection)="handleNotify($event)"></app-client-get-quotes>
 
@@ -15,14 +13,13 @@
               <input matInput placeholder="{{field.key | translate}}" [formControlName]="field.label" >
             </mat-form-field><br>
             <div>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button *ngIf="i!==inputData.length-1"  matStepperNext>Next</button>
-              <button mat-button *ngIf="i===inputData.length-1" type="submit" (click)="stepper.reset()">Done</button>
+              <button mat-button matStepperPrevious  mat-raised-button>Back</button>
+              <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button matStepperNext>Next</button>
+              <button mat-button *ngIf="i===inputData.length-1" mat-raised-button type="submit" (click)="stepper.reset()">Done</button>
             </div>
       </form>
 
       </mat-step>
     </mat-horizontal-stepper>
     
-  </mat-card>
 </div>
