@@ -25,6 +25,7 @@ export class QuotesFormComponent implements OnInit {
       this.inputData=service.data.data;
     });
    }
+   
 
   ngOnInit() {
 
