@@ -16,7 +16,7 @@
 .header-menu-right {
   /* This fills the remaining space, by using flexbox. 
      Every toolbar row uses a flexbox row layout. */
-  margin: 0px auto;
+  flex: 1 1 auto;
 }
 
 .login-btn {

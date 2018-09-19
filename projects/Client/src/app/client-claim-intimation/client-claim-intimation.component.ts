@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./client-claim-intimation.component.css']
 })
 export class ClientClaimIntimationComponent implements OnInit {
-
-  constructor() { }
+  constructor(){}
 
   ngOnInit() {
   }

@@ -24,6 +24,11 @@ import { TranslateService } from './translate.service';
 import { TranslatePipe } from './translate.pipe';
 import { ImgHolderComponent } from './img-holder/img-holder.component';
 import { ClientGetQuotesComponent } from './client-get-quotes/client-get-quotes.component';
+import { ModalPopupComponent } from './modal-popup/modal-popup.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserPersonalDetailComponent } from './user-personal-detail/user-personal-detail.component';
+import { UserPolicyComponent } from './user-policy/user-policy.component';
+import { GeneratedQuotesUsersComponent } from './generated-quotes-users/generated-quotes-users.component';
 
 export function setupTranslateFactory(
   service: TranslateService): Function {
@@ -42,7 +47,12 @@ export function setupTranslateFactory(
     BuyInsuranceModalComponent,
     TranslatePipe,
     ImgHolderComponent,
-    ClientGetQuotesComponent
+    ClientGetQuotesComponent,
+    ModalPopupComponent,
+    UserProfileComponent,
+    UserPersonalDetailComponent,
+    UserPolicyComponent,
+    GeneratedQuotesUsersComponent
   ],
   imports: [
     BrowserModule,
