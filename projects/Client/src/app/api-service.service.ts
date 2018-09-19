@@ -17,7 +17,7 @@ export class ApiServiceService {
 
   getInuts(): Promise<{}> {
     return new Promise<{}>((resolve, reject) => {
-      const inputPath = this.APIEndpoint+"/5ba244d32f00007e008d2ce0";
+      const inputPath = this.APIEndpoint+"/5ba2498d2f000050008d2cf2";
       this.http.get<{}>(inputPath).subscribe(
         data => {
           this.data = data;

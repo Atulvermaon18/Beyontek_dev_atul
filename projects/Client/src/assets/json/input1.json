@@ -52,6 +52,28 @@
       ]
     },
     {
+      "title":"Verify OTP",
+      "context":"One time password has been sent to ********98. Please enter the same here to view your quotes",
+      "inputs":[
+        {
+          "label":"otp",
+          "type":"text",
+          "key":"Enter your OTP"         
+        }        
+      ]
+    },
+
+    {
+      "title":"Policy Details",
+      "context":"",
+      "inputs":[
+        {
+          "label":"policy",
+          "key":"Your Policy"   
+        }
+      ]
+    },
+    {
       "title":"Upload Details",
       "inputs":[
         {
@@ -100,26 +122,5 @@
           "type":"number"
         }
       ]
-    },
-    {
-      "title":"Verify OTP",
-      "context":"One time password has been sent to ********98. Please enter the same here to view your quotes",
-      "inputs":[
-        {
-          "label":"otp",
-          "type":"text",
-          "key":"Enter your OTP"         
-        }        
-      ]
-    },
-    {
-        "title":"Policy Details",
-        "context":"",
-        "inputs":[
-          {
-            "label":"policy",
-            "key":"Your Policy"   
-          }
-        ]
-      }]
+    }]
   }
