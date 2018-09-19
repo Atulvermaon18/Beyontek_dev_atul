@@ -1,6 +1,22 @@
 {
     "data":[
-      {
+
+    {
+      "title":"Vehicle Details",
+      "inputs":[
+        {
+          "label":"reg",
+          "key":"reg",
+          "type":"text"
+        },
+        {
+          "label":"chassis",
+          "key":"chassis",
+          "type":"text"
+        }
+      ]
+    },
+    {
       "title":"Personal Details",
       "inputs":[
         {
@@ -32,21 +48,6 @@
           "label":"mobile",
           "key":"mobile",
           "type":"number"
-        }
-      ]
-    },
-    {
-      "title":"Vehicle Details",
-      "inputs":[
-        {
-          "label":"reg",
-          "key":"reg",
-          "type":"text"
-        },
-        {
-          "label":"chassis",
-          "key":"chassis",
-          "type":"text"
         }
       ]
     },
