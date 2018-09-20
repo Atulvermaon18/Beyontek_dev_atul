@@ -1,0 +1,4 @@
+.text_alignleft ::ng-deep figure{
+    justify-content: left !important;
+    align-items: baseline;
+}
