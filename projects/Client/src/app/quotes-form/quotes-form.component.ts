@@ -31,11 +31,14 @@ export class QuotesFormComponent implements OnInit {
 
     this.formgroup = this._formBuilder.group({
       Id: ['', Validators.required],
-      name: ['', Validators.required],
-      age: ['', Validators.required],
+      fname: ['', Validators.required],
+      lname: ['', Validators.required],
+      dob: ['', Validators.required],
       gender: ['', Validators.required],
       nationality: ['', Validators.required],
       mobile: ['', Validators.required],
+      email: ['', Validators.required],
+      profession: ['', Validators.required],
       reg: ['', Validators.required],
       uploadId:['', Validators.required],
       chassis: ['', Validators.required],
@@ -47,7 +50,20 @@ export class QuotesFormComponent implements OnInit {
       policy: ['', Validators.required],
       qno1: ['', Validators.required],
       qno2: ['', Validators.required],
-      qno3: ['', Validators.required]
+      qno3: ['', Validators.required],
+      vehicletype: ['', Validators.required],
+      make: ['', Validators.required],
+      Variant: ['', Validators.required],
+      Year: ['', Validators.required],
+      Vehiclecolor: ['', Validators.required],
+      enginenumber: ['', Validators.required],
+      vehiclevalue: ['', Validators.required],
+      noofpassengers:['', Validators.required],
+      usage: ['', Validators.required],
+      regat: ['', Validators.required],
+      label: ['', Validators.required],
+      repairtype: ['', Validators.required],
+      model: ['', Validators.required]
     });
   }
 

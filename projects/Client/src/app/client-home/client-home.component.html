@@ -17,10 +17,10 @@
     <div *ngIf="!currentScreen.quotes" style="margin-top:50px;">
         <mat-card class="insurance-card" (click)="initiateQuotes('list.id')" *ngFor="let list of menu; index as i">
           <mat-card-header>
-            <h4 *ngIf="+i%2">{{list.title}}</h4>
+            <span *ngIf="+i%2">{{list.title}}</span>
           </mat-card-header>
           <img mat-card-image src="{{list.img}}">
-          <h4 *ngIf="+i%2==0">{{list.title}}</h4>
+          <span *ngIf="+i%2==0">{{list.title}}</span>
         </mat-card>
       </div>
       <div  *ngIf="currentScreen.quotes">

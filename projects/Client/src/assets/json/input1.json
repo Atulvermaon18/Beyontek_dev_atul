@@ -1,6 +1,5 @@
 {
     "data":[
-
     {
       "title":"Vehicle Details",
       "inputs":[
@@ -12,6 +11,60 @@
         {
           "label":"chassis",
           "key":"chassis",
+          "type":"text"
+        },
+        {
+          "label":"vehicletype",
+          "key":"Vehicle Type",
+          "type":"text"
+        },
+        {
+          "label":"make",
+          "key":"Make",
+          "type":"text"
+        },{
+          "label":"model",
+          "key":"Model",
+          "type":"text"
+        },        {
+          "label":"Variant",
+          "key":"Variant",
+          "type":"text"
+        },
+        {
+          "label":"Year",
+          "key":"Year",
+          "type":"text"
+        },{
+          "label":"Vehiclecolor",
+          "key":"vehicle Color",
+          "type":"text"
+        },
+        {
+          "key":"Engine Number",
+          "label":"enginenumber",
+          "type":"text"
+        },        {
+          "key":"Vehicle Value",
+          "label":"vehiclevalue",
+          "type":"text"
+        },        {
+          "key":"No. of Passengers",
+          "label":"noofpassengers",
+          "type":"text"
+        },
+        {
+          "key":"Usage",
+          "label":"usage",
+          "type":"text"
+        },        {
+          "key":"Registered at",
+          "label":"regat",
+          "type":"text"
+        },
+        {
+          "key":"Repair Type",
+          "label":"repairtype",
           "type":"text"
         }
       ]
@@ -25,13 +78,18 @@
           "type":"text"
         },
         {
-          "label":"name",
-          "key":"name",
+          "label":"fname",
+          "key":"First Name",
           "type":"text"
         },
         {
-          "label":"age",
-          "key":"age",
+          "label":"lname",
+          "key":"Last Name",
+          "type":"text"
+        },
+        {
+          "label":"dob",
+          "key":"Date of Birth",
           "type":"number"
         },
         {
@@ -45,8 +103,12 @@
           "type":"text"
         },
         {
-          "label":"mobile",
-          "key":"mobile",
+          "label":"email",
+          "key":"E-Mail",
+          "type":"number"
+        },{
+          "label":"profession",
+          "key":"Profession",
           "type":"number"
         }
       ]
@@ -62,7 +124,6 @@
         }        
       ]
     },
-
     {
       "title":"Policy Details",
       "context":"",
