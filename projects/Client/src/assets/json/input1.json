@@ -1,6 +1,22 @@
 {
     "data":[
-      {
+
+    {
+      "title":"Vehicle Details",
+      "inputs":[
+        {
+          "label":"reg",
+          "key":"reg",
+          "type":"text"
+        },
+        {
+          "label":"chassis",
+          "key":"chassis",
+          "type":"text"
+        }
+      ]
+    },
+    {
       "title":"Personal Details",
       "inputs":[
         {
@@ -36,17 +52,24 @@
       ]
     },
     {
-      "title":"Vehicle Details",
+      "title":"Verify OTP",
+      "context":"One time password has been sent to ********98. Please enter the same here to view your quotes",
       "inputs":[
         {
-          "label":"reg",
-          "key":"reg",
-          "type":"text"
-        },
+          "label":"otp",
+          "type":"text",
+          "key":"Enter your OTP"         
+        }        
+      ]
+    },
+
+    {
+      "title":"Policy Details",
+      "context":"",
+      "inputs":[
         {
-          "label":"chassis",
-          "key":"chassis",
-          "type":"text"
+          "label":"policy",
+          "key":"Your Policy"   
         }
       ]
     },
@@ -99,26 +122,5 @@
           "type":"number"
         }
       ]
-    },
-    {
-      "title":"Verify OTP",
-      "context":"One time password has been sent to ********98. Please enter the same here to view your quotes",
-      "inputs":[
-        {
-          "label":"otp",
-          "type":"text",
-          "key":"Enter your OTP"         
-        }        
-      ]
-    },
-    {
-        "title":"Policy Details",
-        "context":"",
-        "inputs":[
-          {
-            "label":"policy",
-            "key":"Your Policy"   
-          }
-        ]
-      }]
+    }]
   }
