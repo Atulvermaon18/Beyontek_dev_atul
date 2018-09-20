@@ -16,29 +16,29 @@
         {
           "label":"vehicletype",
           "key":"Vehicle Type",
-          "type":"text"
+          "type":"select"
         },
         {
           "label":"make",
           "key":"Make",
-          "type":"text"
+          "type":"select"
         },{
           "label":"model",
           "key":"Model",
-          "type":"text"
+          "type":"select"
         },        {
           "label":"Variant",
           "key":"Variant",
-          "type":"text"
+          "type":"select"
         },
         {
           "label":"Year",
           "key":"Year",
-          "type":"text"
+          "type":"select"
         },{
           "label":"Vehiclecolor",
           "key":"vehicle Color",
-          "type":"text"
+          "type":"select"
         },
         {
           "key":"Engine Number",
@@ -90,7 +90,7 @@
         {
           "label":"dob",
           "key":"Date of Birth",
-          "type":"number"
+          "type":"date"
         },
         {
           "label":"gender",

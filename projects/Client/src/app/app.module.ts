@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatInputModule, MatCardModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule,MatNativeDateModule, MatInputModule, MatCardModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatSelectModule } from '@angular/material';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ClientHomeComponent } from './client-home/client-home.component';
@@ -17,6 +17,7 @@ import { QuotesFormComponent } from './quotes-form/quotes-form.component';
 import { BuyInsuranceModalComponent } from './buy-insurance-modal/buy-insurance-modal.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -73,10 +74,14 @@ export function setupTranslateFactory(
     MatStepperModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     TranslateService,
+    MatDatepickerModule,
     {
       provide: APP_INITIALIZER,
       useFactory: setupTranslateFactory,
