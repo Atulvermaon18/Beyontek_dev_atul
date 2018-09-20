@@ -22,3 +22,7 @@
 .login-btn {
   border: 1px solid #fff;
 }
+.mat-toolbar.mat-primary {
+  background: #fff;
+  color: #868282;
+}
