@@ -11,7 +11,7 @@
           <span>{{input.context}}</span><br>
 
               <div *ngFor="let field of input.inputs" class="col-md-6" style="display: inline-block;">
-                  <mat-form-field  *ngIf="field.type=='text'"  >
+                  <mat-form-field  *ngIf="field.type=='text' || field.type=='number'  "  >
                       <input matInput placeholder="{{field.key | translate}}" [formControlName]="field.label" >
                     </mat-form-field>
                     <mat-form-field *ngIf="field.type=='select'"  >
@@ -23,7 +23,7 @@
                             <input matInput [matDatepicker]="picker"  placeholder="{{field.key | translate}}">
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
-                          </mat-form-field>
+                        </mat-form-field>
               </div>
 
 
