@@ -3,7 +3,7 @@
 
     <!-- <app-client-get-quotes *ngIf="!quoteSelected" (notifySelection)="handleNotify($event)"></app-client-get-quotes> -->
 
-    <mat-horizontal-stepper class="background-right-dynamic" [linear]="false" #stepper>
+    <mat-horizontal-stepper class="background-right-dynamic" [hidden]="quoteSelected" [linear]="false" #stepper>
 
       <mat-step *ngFor="let input of inputData; let i = index" >       
         <form [formGroup]="formgroup" (submit)="onSubmit(formgroup)">
@@ -26,15 +26,17 @@
                         </mat-form-field>
               </div>
 
-
             <div>
               <button mat-button matStepperPrevious  mat-raised-button *ngIf="i" class="float-left"><< {{inputData[i-1].title}}</button>
               <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button matStepperNext class="float-right">{{inputData[i+1].title}} >></button>
-              <button mat-button *ngIf="i===inputData.length-1" mat-raised-button type="submit" (click)="stepper.reset()">Done</button>
+              <button mat-button *ngIf="i===inputData.length-1" mat-raised-button (click)="quoteSelected=true;" >Done</button>
+              <!-- <button mat-button *ngIf="i===inputData.length-1" mat-raised-button type="submit" (click)="stepper.reset();quoteSelected=true;" >Done</button> -->
             </div>
       </form>
 
       </mat-step>
     </mat-horizontal-stepper>
+
+    <app-quotes-detail [hidden]="!quoteSelected" (notifySelection)="handleNotify($event)" [summary]="summary"></app-quotes-detail>
     
 </div>

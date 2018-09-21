@@ -51,15 +51,21 @@ export class ClientHomeComponent implements OnInit {
   }
 
   initiateQuotes(q) {
-    // this.currentScreen.quotes = true;
+    // 
     const dialogRef = this.dialog.open(ModalPopupComponent, {
       width: '300px',
       data: { id: q.id, title: q.title, img: q.img}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+      this.currentScreen.quotes = true;
     });
   }
 
   ngOnInit() {
   }
+
+
 
 
 
