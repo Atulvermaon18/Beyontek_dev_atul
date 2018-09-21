@@ -3,6 +3,9 @@
   height: 398.43px;
   margin-left: 10px;
   display: inline-block;
+  text-align: center;
+  size: 21px;
+  text-decoration: underline;
 }
 
 .card-container {
@@ -17,4 +20,8 @@ strong{
 
 .text-center{
   text-align: center !important;
+}
+
+.carousel-control-prev,.carousel-control-next {
+  width: 20px;
 }
