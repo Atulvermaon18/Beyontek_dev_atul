@@ -1,13 +1,16 @@
-<div class="card-container" *ngIf="!currentScreen.quotes">
-  <mat-card class="insurance-card text-center" (click)="initiateQuotes(list)" *ngFor="let list of menu; index as i">
-    <mat-card-header>
-      <strong *ngIf="+i%2">{{list.title}}</strong>
-    </mat-card-header>
-    <img mat-card-image src="{{list.img}}">
-    <strong *ngIf="+i%2==0">{{list.title}}</strong>
-  </mat-card>
-</div>
-<div *ngIf="currentScreen.quotes">
-  <app-quotes-form  [message]="msg" (notify)='onNotify($event)'>
-  </app-quotes-form>
+
+<div>
+    <div *ngIf="!currentScreen.quotes" style="margin-top:50px;">
+        <mat-card class="insurance-card" (click)="initiateQuotes(list)" *ngFor="let list of menu; index as i">
+          <mat-card-header>
+            <span *ngIf="+i%2">{{list.title}}</span>
+          </mat-card-header>
+          <img mat-card-image src="{{list.img}}">
+          <span *ngIf="+i%2==0">{{list.title}}</span>
+        </mat-card>
+      </div>
+      <div  *ngIf="currentScreen.quotes">
+          <app-quotes-form  [message]="msg" (notify)='onNotify($event)'>
+          </app-quotes-form>
+        </div>
 </div>

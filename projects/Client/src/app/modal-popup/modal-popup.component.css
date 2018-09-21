@@ -15,3 +15,10 @@
     padding: 0px;
     margin: 0px;
 }
+
+.popDetail{
+    position: absolute;
+    bottom: 100px;
+    color: #fff;
+    text-align: center;
+}
