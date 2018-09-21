@@ -75,6 +75,9 @@ export function setupTranslateFactory(
     ReactiveFormsModule,
     HttpClientModule
   ],
+  entryComponents: [
+    ModalPopupComponent
+  ],
   providers: [
     TranslateService,
     {

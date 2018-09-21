@@ -1,3 +1,15 @@
-<p>
-  modal-popup works!
-</p>
+<div class="container text-center">
+  <img class="modal-img" src="{{popImage}}">
+  <strong class="text-center">{{popTitle}}</strong>
+  <div class="row">
+    <div class="col-sm-4">
+      <button mat-button (click)="notifyEvnt($event)"><strong>New</strong></button>
+    </div>
+    <div class="col-sm-4">
+      <button mat-button><strong>Existing<br>Customer</strong></button>
+    </div>
+    <div class="col-sm-4">
+      <button mat-button><strong>Renew</strong></button>
+    </div>
+  </div>
+</div>

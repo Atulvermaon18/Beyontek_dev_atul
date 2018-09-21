@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import {MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-modal-popup',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modal-popup.component.css']
 })
 export class ModalPopupComponent implements OnInit {
+  
+  popImage: string;
+  popTitle: string;
+  splitPopImage: any;
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
+    this.popTitle = this.data.title;
+    this.splitPopImage = this.data.img.split('.');
+    this.splitPopImage = '../..'+this.splitPopImage[4]+2+'.png';
+    this.popImage = this.splitPopImage;
   }
 
 }

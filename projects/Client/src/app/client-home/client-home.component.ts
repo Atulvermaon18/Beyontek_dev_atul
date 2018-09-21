@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
+import { ModalPopupComponent } from '../modal-popup/modal-popup.component';
 
 
 @Component({
@@ -10,27 +13,27 @@ export class ClientHomeComponent implements OnInit {
 
   menu = [
     {
-      img: '../../assets/img/cars.jpg',
+      img: '../../assets/img/home/HOME_INSURANCE.png',
       title: 'HOME INSURANCE',
       id: 'home'
     },
     {
-      img: ' ../../assets/img/home.jpg',
+      img: ' ../../assets/img/home/MEDICAL_INSURANCE.png',
       title: 'MEDICAL INSURANCE',
       id: 'medical'
     },
     {
-      img: ' ../../assets/img/cars.jpg',
+      img: ' ../../assets/img/home/MOTOR_INSURANCE.png',
       title: 'MOTOR INSURANCE',
       id: 'motor'
     },
     {
-      img: ' ../../assets/img/home.jpg',
+      img: ' ../../assets/img/home/PERSONAL_ACCIDENT_INSURANCE.png',
       title: 'PERSONAL ACCIDENT INSURANCE',
       id: 'accident'
     },
     {
-      img: ' ../../assets/img/cars.jpg',
+      img: ' ../../assets/img/home/HOME_INSURANCE.png',
       title: 'TRAVEL INSURANCE',
       id: 'travel'
     }
@@ -39,7 +42,7 @@ export class ClientHomeComponent implements OnInit {
     quotes: false
   }
   msg = "Hi There";
-  constructor() {
+  constructor(public dialog: MatDialog) {
 
   }
 
@@ -48,7 +51,11 @@ export class ClientHomeComponent implements OnInit {
   }
 
   initiateQuotes(q) {
-    this.currentScreen.quotes = true;
+    // this.currentScreen.quotes = true;
+    const dialogRef = this.dialog.open(ModalPopupComponent, {
+      width: '300px',
+      data: { id: q.id, title: q.title, img: q.img}
+    });
   }
 
   ngOnInit() {

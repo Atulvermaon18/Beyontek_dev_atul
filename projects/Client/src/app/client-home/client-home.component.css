@@ -1,5 +1,6 @@
 .insurance-card {
-  max-width: 180px;
+  max-width: 238.21px;
+  height: 398.43px;
   margin-left: 10px;
   display: inline-block;
 }
@@ -7,4 +8,13 @@
 .card-container {
   margin: 10px 10px;
   display: inline-block;
+}
+
+strong{
+  size: 21px;
+  text-decoration: underline;
+}
+
+.text-center{
+  text-align: center !important;
 }
