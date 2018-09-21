@@ -1,4 +1,23 @@
-
+.pad_none{
+  padding-left: 0;
+  /* padding-right: 0; */
+}
+.mar_none{
+  margin-right: 0;
+}
+.mar_topcss{
+  margin-top: 10px;
+}
+.title_css{
+  margin-top: 10px;
+}
+.displayinput_css{
+  display: inline;
+}
+.buttoncolor_css{
+  background-color: #45A175;
+  color: #fff;
+}
 .background-right-dynamic {
   display: inline-block;
   width: 50%;

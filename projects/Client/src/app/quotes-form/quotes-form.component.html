@@ -1,42 +1,46 @@
-<div>
-    <app-img-holder class="img-holder"></app-img-holder>
-
+<div class="row mar_none">
+  <div class="col-sm">
+    <app-img-holder></app-img-holder>
+  </div>
+  <div class="col-sm pad_none mar_topcss">
     <!-- <app-client-get-quotes *ngIf="!quoteSelected" (notifySelection)="handleNotify($event)"></app-client-get-quotes> -->
 
-    <mat-horizontal-stepper class="background-right-dynamic" [hidden]="quoteSelected" [linear]="false" #stepper>
+    <mat-horizontal-stepper [hidden]="quoteSelected" [linear]="false" #stepper>
 
-      <mat-step *ngFor="let input of inputData; let i = index" >       
+      <mat-step *ngFor="let input of inputData; let i = index">
         <form [formGroup]="formgroup" (submit)="onSubmit(formgroup)">
-          <h5>{{input.title}}</h5>
-          <span>{{input.context}}</span><br>
+          <h5 class="title_css">{{input.title}}</h5>
+          <span>{{input.context}}</span>
+          <br>
 
-              <div *ngFor="let field of input.inputs" class="col-md-6" style="display: inline-block;">
-                  <mat-form-field  *ngIf="field.type=='text' || field.type=='number'  "  >
-                      <input matInput placeholder="{{field.key | translate}}" [formControlName]="field.label" >
-                    </mat-form-field>
-                    <mat-form-field *ngIf="field.type=='select'"  >
-                        <mat-select placeholder="{{field.key | translate}}" [formControlName]="field.label">
-                          <mat-option value="option">Option</mat-option>  
-                        </mat-select>
-                      </mat-form-field>                      
-                        <mat-form-field *ngIf="field.type=='date'" >
-                            <input matInput [matDatepicker]="picker"  placeholder="{{field.key | translate}}">
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker>
-                        </mat-form-field>
-              </div>
+          <div *ngFor="let field of input.inputs" class="col-md-6" style="display: inline-block;">
+            <mat-form-field class="displayinput_css" *ngIf="field.type=='text' || field.type=='number'  ">
+              <input matInput placeholder="{{field.key | translate}}" [formControlName]="field.label">
+            </mat-form-field>
+            <mat-form-field class="displayinput_css" *ngIf="field.type=='select'">
+              <mat-select placeholder="{{field.key | translate}}" [formControlName]="field.label">
+                <mat-option value="option">Option</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="displayinput_css" *ngIf="field.type=='date'">
+              <input matInput [matDatepicker]="picker" placeholder="{{field.key | translate}}">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
 
-            <div>
-              <button mat-button matStepperPrevious  mat-raised-button *ngIf="i" class="float-left"><< {{inputData[i-1].title}}</button>
-              <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button matStepperNext class="float-right">{{inputData[i+1].title}} >></button>
-              <button mat-button *ngIf="i===inputData.length-1" mat-raised-button (click)="quoteSelected=true;" >Done</button>
-              <!-- <button mat-button *ngIf="i===inputData.length-1" mat-raised-button type="submit" (click)="stepper.reset();quoteSelected=true;" >Done</button> -->
-            </div>
-      </form>
+          <div>
+            <button mat-button matStepperPrevious mat-raised-button *ngIf="i" class="float-left buttoncolor_css">
+              << {{inputData[i-1].title}}</button>
+                <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button matStepperNext class="float-right buttoncolor_css">{{inputData[i+1].title}} >></button>
+                <button mat-button *ngIf="i===inputData.length-1" mat-raised-button (click)="quoteSelected=true;" class="float-right buttoncolor_css">Done</button>
+                <!-- <button mat-button *ngIf="i===inputData.length-1" mat-raised-button type="submit" (click)="stepper.reset();quoteSelected=true;" >Done</button> -->
+          </div>
+        </form>
 
       </mat-step>
     </mat-horizontal-stepper>
 
     <app-quotes-detail [hidden]="!quoteSelected" (notifySelection)="handleNotify($event)" [summary]="summary"></app-quotes-detail>
-    
+  </div>
 </div>
