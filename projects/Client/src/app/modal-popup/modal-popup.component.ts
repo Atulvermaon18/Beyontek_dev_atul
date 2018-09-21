@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 
 @Component({
   selector: 'app-modal-popup',
@@ -12,13 +12,17 @@ export class ModalPopupComponent implements OnInit {
   popTitle: string;
   splitPopImage: any;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dialogRef: MatDialogRef<ModalPopupComponent>) { }
 
   ngOnInit() {
     this.popTitle = this.data.title;
     this.splitPopImage = this.data.img.split('.');
     this.splitPopImage = '../..'+this.splitPopImage[4]+2+'.png';
     this.popImage = this.splitPopImage;
+  }
+
+  handleSelect(selected): void {
+    this.dialogRef.close({'selected':selected});
   }
 
 }
