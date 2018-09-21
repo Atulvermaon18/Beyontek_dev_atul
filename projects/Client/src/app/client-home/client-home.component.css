@@ -26,16 +26,6 @@ strong{
   width: 20px;
 }
 
-.ng-star-inserted{
-  position: relative;
-  bottom: 100px;
-}
-
-.container {
-  max-width: 1300px;
-  margin-top: 0px;
-}
-
 ::ng-deep .mat-card:nth-child(odd) {
   position: relative;
   bottom: 187px;
