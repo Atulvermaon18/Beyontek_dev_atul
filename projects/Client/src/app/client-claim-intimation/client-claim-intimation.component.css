@@ -1,12 +1,7 @@
-.img-holder{
-    float:left;
-    width:40%;
-    /* border:1px solid #000; */
-    height:600px;
-  } 
-  .background-right-dynamic {
-    display: inline-block;
-    width: 57%;
-    margin-top: 18px;
-    padding: 0px 20px;
-  }
+.pad_none{
+  padding-left: 0;
+  /* padding-right: 0; */
+}
+.mar_none{
+  margin-right: 0;
+}

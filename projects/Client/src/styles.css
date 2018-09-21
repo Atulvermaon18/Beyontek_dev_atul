@@ -1,10 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Nunitosans';
+  src: url('/assets/fonts/NunitoSans-Regular.ttf');  
+}
+@font-face {
+  font-family: 'Nunitosanssemibold';
+  src: url('/assets/fonts/NunitoSans-SemiBold.ttf');  
+}
+@font-face {
+  font-family: 'Nunitosansbold';
+  src: url('/assets/fonts/NunitoSans-Bold.ttf');  
+}
 html,
 body {
   height: 100%;
+  background-color: #EFEFEF;
+  font-family: 'Nunitosans';
 }
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
 }
