@@ -1,5 +1,4 @@
-
-<!-- <div>
+<div>
     <div *ngIf="!currentScreen.quotes" style="margin-top:50px;">
         <mat-card class="insurance-card" (click)="initiateQuotes(list)" *ngFor="let list of menu; index as i">
           <mat-card-header>
@@ -13,44 +12,4 @@
           <app-quotes-form  [message]="msg" (notify)='onNotify($event)'>
           </app-quotes-form>
         </div>
-</div> -->
-<div>
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="col-sm">
-        <div *ngIf="!currentScreen.quotes" style="margin-top:50px;">
-            <mat-card class="insurance-card" (click)="initiateQuotes(list)" *ngFor="let list of menu; index as i">
-              <mat-card-header>
-                <span *ngIf="+i%2">{{list.title}}</span>
-              </mat-card-header>
-              <img mat-card-image src="{{list.img}}">
-              <span *ngIf="+i%2==0">{{list.title}}</span>
-            </mat-card>
-          </div>
-          </div>
-    </div>
-    <div class="carousel-item">
-        <div *ngIf="!currentScreen.quotes" style="margin-top:50px;">
-          <div>
-            <mat-card class="insurance-card" (click)="initiateQuotes(list)" *ngFor="let list of menu; index as i">
-              <mat-card-header>
-                <span *ngIf="+i%2">{{list.title}}</span>
-              </mat-card-header>
-              <img mat-card-image src="{{list.img}}">
-              <span *ngIf="+i%2==0">{{list.title}}</span>
-            </mat-card>
-            </div>
-          </div>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <img src="../../assets/img/home/back_left.png">
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <img src="../../assets/img/home/back_right.png">
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-</div>
+</div> 
