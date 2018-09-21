@@ -1,5 +1,6 @@
-import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material';
+
+import { Component, OnInit, Inject } from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 
 @Component({
   selector: 'app-modal-popup',
@@ -7,14 +8,12 @@ import {MAT_DIALOG_DATA} from '@angular/material';
   styleUrls: ['./modal-popup.component.css']
 })
 export class ModalPopupComponent implements OnInit {
-
-  @Output() notifySelection: EventEmitter<boolean> = new EventEmitter<boolean>();
   
   popImage: string;
   popTitle: string;
   splitPopImage: any;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dialogRef: MatDialogRef<ModalPopupComponent>) { }
 
   ngOnInit() {
     this.popTitle = this.data.title;
@@ -23,9 +22,9 @@ export class ModalPopupComponent implements OnInit {
     this.popImage = this.splitPopImage;
   }
 
-  notifyEvnt() {
-    console.log('Sending Event');
-    this.notifySelection.emit(true);
+
+  handleSelect(selected): void {
+    this.dialogRef.close({'selected':selected});
   }
 
 }
