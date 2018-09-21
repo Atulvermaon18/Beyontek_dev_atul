@@ -1,0 +1,28 @@
+.generate_textcss{
+    font-family: 'Nunitosansbold';
+    font-size: 20px;
+    color: #3C3C3C;
+}
+.quoteno_css{
+    color: #256C4A;
+}
+.listhead_css{
+    font-family: 'Nunitosans';
+    font-size: 15px;
+    color: #5A5A5A;
+}
+.listquote_css{
+    font-family: 'Nunitosanssemibold';
+    font-size: 16px;
+    color: #5A5A5A;
+}
+.viewtext_css{
+    font-family: 'Nunitosanssemibold';
+    color: #154979;
+    float: right;
+    margin-right: 55px;
+    font-size: 14px;
+}
+.paymettext_css{
+    margin-left: 20px;
+}
