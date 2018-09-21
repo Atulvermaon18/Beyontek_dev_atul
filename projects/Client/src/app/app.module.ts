@@ -31,6 +31,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserPersonalDetailComponent } from './user-personal-detail/user-personal-detail.component';
 import { UserPolicyComponent } from './user-policy/user-policy.component';
 import { GeneratedQuotesUsersComponent } from './generated-quotes-users/generated-quotes-users.component';
+import { QuotesDetailComponent } from './quotes-detail/quotes-detail.component';
 
 export function setupTranslateFactory(
   service: TranslateService): Function {
@@ -54,7 +55,8 @@ export function setupTranslateFactory(
     UserProfileComponent,
     UserPersonalDetailComponent,
     UserPolicyComponent,
-    GeneratedQuotesUsersComponent
+    GeneratedQuotesUsersComponent,
+    QuotesDetailComponent
   ],
   imports: [
     BrowserModule,

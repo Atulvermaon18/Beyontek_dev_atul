@@ -67,6 +67,8 @@ export class QuotesFormComponent implements OnInit {
     });
   }
 
+  summary:any={};
+
   onSubmit(data){
     
     for (var key in data.value) {
@@ -74,15 +76,15 @@ export class QuotesFormComponent implements OnInit {
           console.log(key + " -> " + data.value[key]);
       }
   }
+  this.summary = data;
   }
 
   handleEvnt() {
     this.notify.emit('Click from Child component');
-
   }
 
   handleNotify(message: boolean): void {
-    this.quoteSelected = true;
+    this.quoteSelected = false;
   }
 
 
