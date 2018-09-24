@@ -20,7 +20,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFileUploadModule } from 'angular-material-fileupload';
-
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateService } from './translate.service';
@@ -33,6 +33,13 @@ import { UserPersonalDetailComponent } from './user-personal-detail/user-persona
 import { UserPolicyComponent } from './user-policy/user-policy.component';
 import { GeneratedQuotesUsersComponent } from './generated-quotes-users/generated-quotes-users.component';
 import { QuotesDetailComponent } from './quotes-detail/quotes-detail.component';
+import { MypolicypremiumComponent } from './mypolicy_details/mypolicypremium/mypolicypremium.component';
+import { MypolicyclaimComponent } from './mypolicy_details/mypolicyclaim/mypolicyclaim.component';
+import { MypolicyrenewComponent } from './mypolicy_details/mypolicyrenew/mypolicyrenew.component';
+import { MypolicyviewdetailComponent } from './mypolicy_details/mypolicyviewdetail/mypolicyviewdetail.component';
+import { MypolicyquotedetailComponent } from './mypolicy_details/mypolicyquotedetail/mypolicyquotedetail.component';
+import { MypolicymakepaymentComponent } from './mypolicy_details/mypolicymakepayment/mypolicymakepayment.component';
+import { UserDetailPreviewComponent } from './user-detail-preview/user-detail-preview.component';
 
 export function setupTranslateFactory(
   service: TranslateService): Function {
@@ -57,7 +64,14 @@ export function setupTranslateFactory(
     UserPersonalDetailComponent,
     UserPolicyComponent,
     GeneratedQuotesUsersComponent,
-    QuotesDetailComponent
+    QuotesDetailComponent,
+    MypolicypremiumComponent,
+    MypolicyclaimComponent,
+    MypolicyrenewComponent,
+    MypolicyviewdetailComponent,
+    MypolicyquotedetailComponent,
+    MypolicymakepaymentComponent,
+    UserDetailPreviewComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +95,8 @@ export function setupTranslateFactory(
     HttpClientModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTabsModule
   ],
   entryComponents: [
     ModalPopupComponent
