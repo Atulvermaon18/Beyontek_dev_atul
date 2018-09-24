@@ -67,16 +67,23 @@ export class QuotesFormComponent implements OnInit {
     });
   }
 
+  // tslint:disable-next-line:member-ordering
   summary: any = {};
 
   onSubmit(data) {
 
-    for (var key in data.value) {
+    // tslint:disable-next-line:prefer-const
+    for (let key in data.value) {
       if (data.value.hasOwnProperty(key)) {
-        console.log(key + " -> " + data.value[key]);
+        console.log(key + ' -> ' + data.value[key]);
       }
     }
-    this.summary = data;
+  }
+
+  showDetails(data) {
+    this.quoteSelected = true;
+    console.log(data);
+    this.summary = data.value;
   }
 
   handleEvnt() {

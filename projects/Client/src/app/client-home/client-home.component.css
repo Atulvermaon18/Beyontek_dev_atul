@@ -6,6 +6,7 @@
   text-align: center;
   size: 21px;
   text-decoration: underline;
+  font-family: 'Nunitosansextrabold';
 }
 
 .card-container {
@@ -24,4 +25,13 @@ strong{
 
 .carousel-control-prev,.carousel-control-next {
   width: 20px;
+}
+
+::ng-deep .mat-card:nth-child(odd) {
+  position: relative;
+  bottom: 187px;
+}
+
+.card_allign{
+  margin-left: 2%;  
 }

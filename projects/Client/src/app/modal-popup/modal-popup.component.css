@@ -24,7 +24,12 @@
     position: absolute;
     bottom: 100px;
     color: #fff;
-    margin-left: 50px;
+    margin-left: 25px;
+    font-family: 'Nunitosansextrabold';
+}
+
+strong{
+    font-size: 17px;
 }
 
 a{

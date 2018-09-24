@@ -1,3 +1,24 @@
-<p>
-  generated-quotes-users works!
-</p>
+<label class="generate_textcss" *ngIf="!hideGeneratedQuotes">Generated Quotes</label>
+<div class="card">
+  <table class="table table-borderless">
+    <thead>
+      <tr class="listhead_css">
+        <th scope="col">Policy 1</th>
+        <th scope="col">Cover Type</th>
+        <th scope="col">Quote Date</th>
+        <th scope="col">Premium</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="listquote_css">
+        <td class="quoteno_css">Q-2018-000456</td>
+        <td>Comprehensive</td>
+        <td>09/01/2018</td>
+        <td>AED 2,200</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="" *ngIf="!hideGeneratedQuotes">
+    <p class="viewtext_css">VIEW DETAILS <span class="paymettext_css">MAKE PAYMENT</span></p>
+  </div>
+</div>
