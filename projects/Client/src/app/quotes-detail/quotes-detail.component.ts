@@ -12,7 +12,7 @@ export class QuotesDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.summary)
+    console.log('Details quotes: ',this.summary)
   }
 
   notifyEvnt() {
