@@ -15,17 +15,17 @@ export class QuotesFormComponent implements OnInit {
 
   isLinear = false;
   formgroup: FormGroup;
-
+  isDriverInsured = false;
   quoteSelected = false;
-  inputData={};
+  inputData = {};
 
   constructor(private _formBuilder: FormBuilder, private service: ApiServiceService) {
     service.getInuts().then(() => {
       console.log(service.data.data);
-      this.inputData=service.data.data;
+      this.inputData = service.data.data;
     });
-   }
-   
+  }
+
 
   ngOnInit() {
 
@@ -40,7 +40,7 @@ export class QuotesFormComponent implements OnInit {
       email: ['', Validators.required],
       profession: ['', Validators.required],
       reg: ['', Validators.required],
-      uploadId:['', Validators.required],
+      uploadId: ['', Validators.required],
       chassis: ['', Validators.required],
       photoId: ['', Validators.required],
       proofofincome: ['', Validators.required],
@@ -58,7 +58,7 @@ export class QuotesFormComponent implements OnInit {
       Vehiclecolor: ['', Validators.required],
       enginenumber: ['', Validators.required],
       vehiclevalue: ['', Validators.required],
-      noofpassengers:['', Validators.required],
+      noofpassengers: ['', Validators.required],
       usage: ['', Validators.required],
       regat: ['', Validators.required],
       label: ['', Validators.required],
@@ -67,16 +67,16 @@ export class QuotesFormComponent implements OnInit {
     });
   }
 
-  summary:any={};
+  summary: any = {};
 
-  onSubmit(data){
-    
+  onSubmit(data) {
+
     for (var key in data.value) {
       if (data.value.hasOwnProperty(key)) {
-          console.log(key + " -> " + data.value[key]);
+        console.log(key + " -> " + data.value[key]);
       }
-  }
-  this.summary = data;
+    }
+    this.summary = data;
   }
 
   handleEvnt() {
@@ -87,5 +87,12 @@ export class QuotesFormComponent implements OnInit {
     this.quoteSelected = false;
   }
 
+  checkUncheckDriver() {
+    if (this.isDriverInsured) {
+      this.isDriverInsured = false;
+    } else {
+      this.isDriverInsured = true;
+    }
+  }
 
 }

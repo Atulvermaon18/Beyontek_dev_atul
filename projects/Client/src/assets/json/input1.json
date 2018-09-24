@@ -1,187 +1,200 @@
 {
-    "data":[
+  "data": [
     {
-      "title":"Vehicle Details",
-      "inputs":[
+      "title": "Vehicle Details",
+      "inputs": [
         {
-          "label":"reg",
-          "key":"reg",
-          "type":"text"
+          "label": "reg",
+          "key": "reg",
+          "type": "text"
         },
         {
-          "label":"chassis",
-          "key":"chassis",
-          "type":"text"
+          "label": "chassis",
+          "key": "chassis",
+          "type": "text"
         },
         {
-          "label":"vehicletype",
-          "key":"Vehicle Type",
-          "type":"select"
+          "label": "vehicletype",
+          "key": "Vehicle Type",
+          "type": "select"
         },
         {
-          "label":"make",
-          "key":"Make",
-          "type":"select"
-        },{
-          "label":"model",
-          "key":"Model",
-          "type":"select"
-        },        {
-          "label":"Variant",
-          "key":"Variant",
-          "type":"select"
+          "label": "make",
+          "key": "Make",
+          "type": "select"
         },
         {
-          "label":"Year",
-          "key":"Year",
-          "type":"select"
-        },{
-          "label":"Vehiclecolor",
-          "key":"vehicle Color",
-          "type":"select"
+          "label": "model",
+          "key": "Model",
+          "type": "select"
         },
         {
-          "key":"Engine Number",
-          "label":"enginenumber",
-          "type":"text"
-        },        {
-          "key":"Vehicle Value",
-          "label":"vehiclevalue",
-          "type":"text"
-        },        {
-          "key":"No. of Passengers",
-          "label":"noofpassengers",
-          "type":"text"
+          "label": "Variant",
+          "key": "Variant",
+          "type": "select"
         },
         {
-          "key":"Usage",
-          "label":"usage",
-          "type":"text"
-        },        {
-          "key":"Registered at",
-          "label":"regat",
-          "type":"text"
+          "label": "Year",
+          "key": "Year",
+          "type": "select"
         },
         {
-          "key":"Repair Type",
-          "label":"repairtype",
-          "type":"text"
+          "label": "Vehiclecolor",
+          "key": "vehicle Color",
+          "type": "select"
+        },
+        {
+          "key": "Engine Number",
+          "label": "enginenumber",
+          "type": "text"
+        },
+        {
+          "key": "Vehicle Value",
+          "label": "vehiclevalue",
+          "type": "text"
+        },
+        {
+          "key": "No. of Passengers",
+          "label": "noofpassengers",
+          "type": "text"
+        },
+        {
+          "key": "Usage",
+          "label": "usage",
+          "type": "text"
+        },
+        {
+          "key": "Registered at",
+          "label": "regat",
+          "type": "text"
+        },
+        {
+          "key": "Repair Type",
+          "label": "repairtype",
+          "type": "text"
         }
       ]
     },
     {
-      "title":"Personal Details",
-      "inputs":[
+      "title": "Personal Details",
+      "inputs": [
         {
-          "label":"Id",
-          "key":"Id",
-          "type":"text"
+          "label": "Id",
+          "key": "Id",
+          "type": "text"
         },
         {
-          "label":"fname",
-          "key":"First Name",
-          "type":"text"
+          "label": "fname",
+          "key": "First Name",
+          "type": "text"
         },
         {
-          "label":"lname",
-          "key":"Last Name",
-          "type":"text"
+          "label": "lname",
+          "key": "Last Name",
+          "type": "text"
         },
         {
-          "label":"dob",
-          "key":"Date of Birth",
-          "type":"date"
+          "label": "dob",
+          "key": "Date of Birth",
+          "type": "date"
         },
         {
-          "label":"gender",
-          "key":"gender",
-          "type":"text"
+          "label": "gender",
+          "key": "gender",
+          "type": "text"
         },
         {
-          "label":"nationality",
-          "key":"nationality",
-          "type":"text"
+          "label": "nationality",
+          "key": "nationality",
+          "type": "text"
         },
         {
-          "label":"email",
-          "key":"E-Mail",
-          "type":"number"
-        },{
-          "label":"profession",
-          "key":"Profession",
-          "type":"number"
+          "label": "email",
+          "key": "E-Mail",
+          "type": "number"
+        },
+        {
+          "label": "profession",
+          "key": "Profession",
+          "type": "number"
+        },
+        {
+          "label": "isDriverSameInsured",
+          "key": "Is Driver Same as Insured",
+          "type": "checkbox"
         }
       ]
     },
     {
-      "title":"Verify OTP",
-      "context":"One time password has been sent to ********98. Please enter the same here to view your quotes",
-      "inputs":[
+      "title": "Verify OTP",
+      "context": "One time password has been sent to ********98. Please enter the same here to view your quotes",
+      "inputs": [
         {
-          "label":"otp",
-          "type":"text",
-          "key":"Enter your OTP"         
-        }        
-      ]
-    },
-    {
-      "title":"Policy Details",
-      "context":"",
-      "inputs":[
-        {
-          "label":"policy",
-          "key":"Your Policy"   
+          "label": "otp",
+          "type": "text",
+          "key": "Enter your OTP"
         }
       ]
     },
     {
-      "title":"Upload Details",
-      "inputs":[
+      "title": "Policy Details",
+      "context": "",
+      "inputs": [
         {
-          "label":"uploadId",
-          "key":"Id",
-          "type":"text"
-        },
-        {
-          "label":"photoId",
-          "key":"photoId",
-          "type":"text"
-        },
-        {
-          "label":"proofofincome",
-          "key":"proofofincome",
-          "type":"number"
-        },
-        {
-          "label":"visacopy",
-          "type":"text",
-          "key":"visacopy"
-        },
-        {
-          "label":"regcopy",
-          "type":"text",
-          "key":"regcopy"
+          "label": "policy",
+          "key": "Your Policy"
         }
       ]
     },
-   {
-      "title":"Few Questions?",
-      "inputs":[
+    {
+      "title": "Upload Details",
+      "inputs": [
         {
-          "label":"qno1",
-          "type":"text",
-          "key":"How far is your office from home?"
+          "label": "uploadId",
+          "key": "Id",
+          "type": "text"
         },
         {
-          "key":"What is the average driving in a day?",
-          "type":"text",
-          "label":"qno2"
+          "label": "photoId",
+          "key": "photoId",
+          "type": "text"
         },
         {
-          "label":"qno3",
-          "key":"How long you have been driving in UAE?",
-          "type":"number"
+          "label": "proofofincome",
+          "key": "proofofincome",
+          "type": "number"
+        },
+        {
+          "label": "visacopy",
+          "type": "text",
+          "key": "visacopy"
+        },
+        {
+          "label": "regcopy",
+          "type": "text",
+          "key": "regcopy"
         }
       ]
-    }]
-  }
+    },
+    {
+      "title": "Few Questions?",
+      "inputs": [
+        {
+          "label": "qno1",
+          "type": "text",
+          "key": "How far is your office from home?"
+        },
+        {
+          "key": "What is the average driving in a day?",
+          "type": "text",
+          "label": "qno2"
+        },
+        {
+          "label": "qno3",
+          "key": "How long you have been driving in UAE?",
+          "type": "number"
+        }
+      ]
+    }
+  ]
+}

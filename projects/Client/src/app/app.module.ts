@@ -6,7 +6,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule,MatNativeDateModule, MatInputModule, MatCardModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatSelectModule } from '@angular/material';
+import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule } from '@angular/material';
+import { MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatSelectModule } from '@angular/material';
+import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ClientHomeComponent } from './client-home/client-home.component';
@@ -17,7 +20,7 @@ import { QuotesFormComponent } from './quotes-form/quotes-form.component';
 import { BuyInsuranceModalComponent } from './buy-insurance-modal/buy-insurance-modal.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -79,7 +82,8 @@ export function setupTranslateFactory(
     HttpClientModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCheckboxModule
   ],
   entryComponents: [
     ModalPopupComponent
