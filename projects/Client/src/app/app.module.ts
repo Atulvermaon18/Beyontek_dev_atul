@@ -19,7 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateService } from './translate.service';
@@ -32,6 +32,7 @@ import { UserPersonalDetailComponent } from './user-personal-detail/user-persona
 import { UserPolicyComponent } from './user-policy/user-policy.component';
 import { GeneratedQuotesUsersComponent } from './generated-quotes-users/generated-quotes-users.component';
 import { QuotesDetailComponent } from './quotes-detail/quotes-detail.component';
+import { UserDetailPreviewComponent } from './user-detail-preview/user-detail-preview.component';
 
 export function setupTranslateFactory(
   service: TranslateService): Function {
@@ -56,7 +57,8 @@ export function setupTranslateFactory(
     UserPersonalDetailComponent,
     UserPolicyComponent,
     GeneratedQuotesUsersComponent,
-    QuotesDetailComponent
+    QuotesDetailComponent,
+    UserDetailPreviewComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +81,8 @@ export function setupTranslateFactory(
     HttpClientModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTabsModule
   ],
   entryComponents: [
     ModalPopupComponent

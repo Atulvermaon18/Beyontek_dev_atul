@@ -1,28 +1,4 @@
-<label class="generate_textcss">Generated Quotes</label>
-<!-- <div class="card">
-  <div class="card-body">
-    <div class="row">
-      <div class="col-sm">
-        <ul class="listhead_css">
-          <li class="">Policy 1</li>
-          <li class="">Cover Type</li>
-          <li class="">Quote Date</li>
-          <li class="">Premium</li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm">
-        <ul class="listquote_css">
-          <li class="">Q-2018-000456</li>
-          <li class="">Comprehensive</li>
-          <li class="">09/01/2018</li>
-          <li class="">AED 2,200</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div> -->
+<label class="generate_textcss" *ngIf="!hideGeneratedQuotes">Generated Quotes</label>
 <div class="card">
   <table class="table table-borderless">
     <thead>
@@ -42,7 +18,7 @@
       </tr>
     </tbody>
   </table>
-  <div class="">
+  <div class="" *ngIf="!hideGeneratedQuotes">
     <p class="viewtext_css">VIEW DETAILS <span class="paymettext_css">MAKE PAYMENT</span></p>
   </div>
 </div>
