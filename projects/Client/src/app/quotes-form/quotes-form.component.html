@@ -27,13 +27,16 @@
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
+            <div class="displayinput_css" *ngIf="field.type=='file'">
+                <input type="file" placeholder="{{field.key | translate}}" multiple>
+            </div>
           </div>
 
           <div>
             <button mat-button matStepperPrevious mat-raised-button *ngIf="i" class="float-left buttoncolor_css">
               << {{inputData[i-1].title}}</button>
                 <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button matStepperNext class="float-right buttoncolor_css">{{inputData[i+1].title}} >></button>
-                <button mat-button *ngIf="i===inputData.length-1" mat-raised-button (click)="quoteSelected=true;" class="float-right buttoncolor_css">Done</button>
+                <button mat-button *ngIf="i===inputData.length-1" mat-raised-button (click)="showDetails(formgroup)" class="float-right buttoncolor_css">Done</button>
                 <!-- <button mat-button *ngIf="i===inputData.length-1" mat-raised-button type="submit" (click)="stepper.reset();quoteSelected=true;" >Done</button> -->
           </div>
         </form>

@@ -6,6 +6,7 @@
   text-align: center;
   size: 21px;
   text-decoration: underline;
+  font-family: 'Nunitosansextrabold';
 }
 
 .card-container {
@@ -29,4 +30,8 @@ strong{
 ::ng-deep .mat-card:nth-child(odd) {
   position: relative;
   bottom: 187px;
+}
+
+.card_allign{
+  margin-left: 2%;  
 }

@@ -76,7 +76,13 @@ export class QuotesFormComponent implements OnInit {
           console.log(key + " -> " + data.value[key]);
       }
   }
-  this.summary = data;
+  
+  }
+
+  showDetails(data){
+    this.quoteSelected=true;
+    console.log(data)
+    this.summary = data.value;
   }
 
   handleEvnt() {
