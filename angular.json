@@ -154,7 +154,6 @@
               {
                 "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
               },
-              
               "projects/Client/src/styles.css"
             ],
             "scripts": []
@@ -375,6 +374,125 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "projects/Broker-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "Login": {
+      "root": "projects/Login/",
+      "sourceRoot": "projects/Login/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/Login",
+            "index": "projects/Login/src/index.html",
+            "main": "projects/Login/src/main.ts",
+            "polyfills": "projects/Login/src/polyfills.ts",
+            "tsConfig": "projects/Login/tsconfig.app.json",
+            "assets": [
+              "projects/Login/src/favicon.ico",
+              "projects/Login/src/assets"
+            ],
+            "styles": [
+              "projects/Login/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/Login/src/environments/environment.ts",
+                  "with": "projects/Login/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "Login:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "Login:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "Login:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/Login/src/test.ts",
+            "polyfills": "projects/Login/src/polyfills.ts",
+            "tsConfig": "projects/Login/tsconfig.spec.json",
+            "karmaConfig": "projects/Login/karma.conf.js",
+            "styles": [
+              "projects/Login/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/Login/src/favicon.ico",
+              "projects/Login/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/Login/tsconfig.app.json",
+              "projects/Login/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "Login-e2e": {
+      "root": "projects/Login-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/Login-e2e/protractor.conf.js",
+            "devServerTarget": "Login:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "Login:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/Login-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]

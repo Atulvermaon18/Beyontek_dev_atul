@@ -11,6 +11,10 @@
   font-family: 'Nunitosansbold';
   src: url('/assets/fonts/NunitoSans-Bold.ttf');  
 }
+@font-face {
+  font-family: 'Nunitosansextrabold';
+  src: url('/assets/fonts/NunitoSans-ExtraBold.ttf');  
+}
 html,
 body {
   height: 100%;
