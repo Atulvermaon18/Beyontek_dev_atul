@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { Router } from '@angular/router';
 
 import { ModalPopupComponent } from '../modal-popup/modal-popup.component';
+import { QuotesFormComponent } from '../quotes-form/quotes-form.component';
 
 
 @Component({
@@ -42,7 +44,7 @@ export class ClientHomeComponent implements OnInit {
     quotes: false
   }
   msg = "Hi There";
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, public router: Router) {
 
   }
 
@@ -58,7 +60,14 @@ export class ClientHomeComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);
-      this.currentScreen.quotes = true;
+      if(result.selected === 'new'){
+        this.router.navigate(['/home']);
+        this.currentScreen.quotes = true;
+      }
+      else if(result.selected === 'existing' || result.selected === 'renew'){
+        this.router.navigate(['/claimintimation']);
+        this.currentScreen.quotes = true;
+      }
     });
   }
 
