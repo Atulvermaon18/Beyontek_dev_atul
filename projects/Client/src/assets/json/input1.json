@@ -121,7 +121,50 @@
         {
           "label": "isDriverSameInsured",
           "key": "Is Driver Same as Insured",
-          "type": "checkbox"
+          "type": "checkbox",
+          "isChecked":true,
+          "driverDetails":[
+            {
+              "label": "Id",
+              "key": "Id",
+              "type": "text"
+            },
+            {
+              "label": "dfname",
+              "key": "First Name",
+              "type": "text"
+            },
+            {
+              "label": "dlname",
+              "key": "Last Name",
+              "type": "text"
+            },
+            {
+              "label": "dob",
+              "key": "Date of Birth",
+              "type": "date"
+            },
+            {
+              "label": "gender",
+              "key": "gender",
+              "type": "text"
+            },
+            {
+              "label": "nationality",
+              "key": "nationality",
+              "type": "text"
+            },
+            {
+              "label": "email",
+              "key": "E-Mail",
+              "type": "number"
+            },
+            {
+              "label": "profession",
+              "key": "Profession",
+              "type": "number"
+            }
+          ]
         }
       ]
     },

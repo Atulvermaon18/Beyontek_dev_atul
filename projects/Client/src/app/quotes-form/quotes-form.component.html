@@ -30,25 +30,26 @@
             <div class="displayinput_css" *ngIf="field.type=='file'">
               <input type="file" placeholder="{{field.key | translate}}" multiple>
             </div>
-            <mat-checkbox matInput *ngIf="field.type=='checkbox'" id="cbxSendEmail" (click)="checkUncheckDriver()">
+            <mat-checkbox matInput *ngIf="field.type=='checkbox'" id="cbxSendEmail"
+             (click)="checkUncheckDriver()" checked>
               {{field.key | translate}}</mat-checkbox>
-          </div>
 
-          <div class="si-grid-popup" [hidden]="!isDriverInsured">
-            <div *ngFor="let field of input.inputs" class="col-md-6" style="display: inline-block;">
-              <mat-form-field class="displayinput_css" *ngIf="field.type=='text' || field.type=='number'  ">
-                <input matInput placeholder="{{field.key | translate}}" [formControlName]="field.label">
-              </mat-form-field>
-              <mat-form-field class="displayinput_css" *ngIf="field.type=='select'">
-                <mat-select placeholder="{{field.key | translate}}" [formControlName]="field.label">
-                  <mat-option value="option">Option</mat-option>
-                </mat-select>
-              </mat-form-field>
-              <mat-form-field class="displayinput_css" *ngIf="field.type=='date'">
-                <input matInput [matDatepicker]="picker" placeholder="{{field.key | translate}}">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field>                        
+            <div class="si-grid-popup" [hidden]="!field.isChecked">
+              <div *ngFor="let driverField of input.driverDetails" class="col-md-6" style="display: inline-block;">
+                <mat-form-field class="displayinput_css" *ngIf="driverField.type=='text' || driverField.type=='number'  ">
+                  <input matInput placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
+                </mat-form-field>
+                <mat-form-field class="displayinput_css" *ngIf="driverField.type=='select'">
+                  <mat-select placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
+                    <mat-option value="option">Option</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field class="displayinput_css" *ngIf="driverField.type=='date'">
+                  <input matInput [matDatepicker]="picker" placeholder="{{driverField.key | translate}}">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
             </div>
           </div>
 
