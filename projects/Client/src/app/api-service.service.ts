@@ -7,17 +7,17 @@ import { environment } from './../environments/environment';
 })
 export class ApiServiceService {
 
-  data:any ={};
-  APIEndpoint:String='';
+  data: any = {};
+  APIEndpoint: String = '';
 
   constructor(private http: HttpClient) {
-     this.APIEndpoint = environment.APIEndpoint;
-   }
+    this.APIEndpoint = environment.APIEndpoint;
+  }
 
 
   getInuts(): Promise<{}> {
     return new Promise<{}>((resolve, reject) => {
-      const inputPath = this.APIEndpoint+"/5ba894453200004b00e2eb0d";
+      const inputPath = this.APIEndpoint + "/5ba894453200004b00e2eb0d";
       this.http.get<{}>(inputPath).subscribe(
         data => {
           this.data = data;
