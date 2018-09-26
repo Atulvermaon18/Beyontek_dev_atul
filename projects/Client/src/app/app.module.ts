@@ -19,6 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFileUploadModule } from 'angular-material-fileupload';
 import {MatTabsModule} from '@angular/material/tabs';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -74,6 +75,7 @@ export function setupTranslateFactory(
   ],
   imports: [
     BrowserModule,
+    MatFileUploadModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
