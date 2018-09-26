@@ -71,21 +71,53 @@ export class MypolicyrenewComponent implements OnInit {
         {
           "label":"Third Party Bodily Injury",
           "isChecked":"true",
+          "amount":""
         },
         {
-          "label":"Third Party Bodily Injury",
-          "isChecked":"true",
+          "label":"Third Party Property Damage",
+          "isChecked":"",
+          "amount":"AED 500,000"
         },
         {
-          "label":"Third Party Bodily Injury",
+          "label":"Loss or Damage to Your Vehicle",
           "isChecked":"true",
+          "amount":""
         },
         {
-          "label":"Third Party Bodily Injury",
+          "label":"Repair",
+          "isChecked":"",
+          "amount":"Agency"
+        },
+        {
+          "label":"Personal Accident Cover for Driver",
           "isChecked":"true",
+          "amount":""
+        },
+        {
+          "label":"Personal Accident Cover for Passengers",
+          "isChecked":"true",
+          "amount":""
+        },
+        {
+          "label":"Breakdown Recovery - Silver",
+          "isChecked":"true",
+          "amount":""
         }        
       ],
-      "grosspremium":'2,2200'
+      "grosspremium":[
+        {
+        'label':'Gross Premium',
+        'price':'2200'
+      },
+      {
+        'label':'Total Discount',
+        'price':'2200'
+      },
+      {
+        'label':'Total Premium',
+        'price':'2200'
+      },
+    ]
 
     }
   ]
