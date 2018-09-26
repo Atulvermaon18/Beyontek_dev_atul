@@ -1,5 +1,5 @@
-<div class="card_allign">
-  <div *ngIf="!currentScreen.quotes" style="margin-top:50px;">
+<div class="card_allign">  
+  <div *ngIf="!currentScreen.quotes" style="margin-top:50px;">    
     <mat-card class="insurance-card" (click)="initiateQuotes(list)" *ngFor="let list of menu; index as i">
       <mat-card-header>
         <span *ngIf="+i%2==0">{{list.title}}</span>
@@ -11,5 +11,5 @@
   <div *ngIf="currentScreen.quotes">
     <app-quotes-form [message]="msg" (notify)='onNotify($event)'>
     </app-quotes-form>
-  </div>
+  </div>  
 </div>

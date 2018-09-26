@@ -1,5 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { ModalPopupComponent } from '../modal/modal-popup/modal-popup.component';
 import { ApiServiceService } from '../api-service.service';
 
 @Component({
@@ -19,7 +22,7 @@ export class QuotesFormComponent implements OnInit {
   quoteSelected = false;
   inputData={};
 
-  constructor(private _formBuilder: FormBuilder, private service: ApiServiceService) {
+  constructor(public dialog: MatDialog, private _formBuilder: FormBuilder, private service: ApiServiceService) {
     service.getInuts().then(() => {
       console.log(service.data.data);
       this.inputData=service.data.data;
@@ -80,9 +83,18 @@ export class QuotesFormComponent implements OnInit {
   }
 
   showDetails(data){
-    this.quoteSelected=true;
-    console.log(data)
-    this.summary = data.value;
+    // this.quoteSelected=true;
+    // this.summary = data.value;
+    const dialogRef = this.dialog.open(ModalPopupComponent, {
+      width: '1034px',
+      height: '448px',
+      data: { head: 'buyplan', value: data}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+      this.quoteSelected=true;
+      this.summary = data.value;
+    });
   }
 
   handleEvnt() {

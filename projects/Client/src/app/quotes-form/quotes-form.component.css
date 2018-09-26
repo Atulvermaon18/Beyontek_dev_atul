@@ -65,3 +65,13 @@
 .form-input-right {
   width: 70%;
 }
+
+.attach_button {
+  bottom: 37px;
+  left: 180px;
+  color: #C4C4C4;
+}
+
+::ng-deep .mat-button:hover{
+  background-color: transparent;
+}
