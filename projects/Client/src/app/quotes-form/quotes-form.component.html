@@ -31,10 +31,11 @@
               <input type="text" class="form-control" placeholder="{{field.key | translate}}" multiple>
               <input type="file" class="form-control" placeholder="{{field.key | translate}}" multiple>
             </div> -->
-            <div *ngIf="field.type=='file'" class="displayinput_css" >
-              <div>
-              <input type="text" class="form-control" placeholder="{{field.key | translate}}" multiple>
-              <button mat-button color="primary" class="attach_button" (click)="imgFileInput.click()"><mat-icon>attachment</mat-icon></button> 
+            <div *ngIf="field.type=='file'" class="displayinput_css text-center" >
+              <div class="row">
+              <input type="text" class="upload_input form-control col-md-8" placeholder="{{field.key | translate}}" multiple>
+              <!-- <button ma/t-button color="primary" class="col-md-2 attach_button" (click)="imgFileInput.click()"><mat-icon>attachment</mat-icon></button> -->
+              <img src="../../assets/img/home/add_box.png" class="attach_button" (click)="imgFileInput.click()">
               <input hidden type="file" #imgFileInput (change)="previewImage($event)"/> 
               </div>
             </div>
