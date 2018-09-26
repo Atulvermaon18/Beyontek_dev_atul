@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ModalPopupComponent } from '../modal/modal-popup/modal-popup.component';
@@ -18,17 +18,17 @@ export class QuotesFormComponent implements OnInit {
 
   isLinear = false;
   formgroup: FormGroup;
-
+  isDriverInsured = false;
   quoteSelected = false;
-  inputData={};
+  inputData = {};
 
   constructor(public dialog: MatDialog, private _formBuilder: FormBuilder, private service: ApiServiceService) {
     service.getInuts().then(() => {
       console.log(service.data.data);
-      this.inputData=service.data.data;
+      this.inputData = service.data.data;
     });
-   }
-   
+  }
+
 
   ngOnInit() {
 
@@ -43,7 +43,7 @@ export class QuotesFormComponent implements OnInit {
       email: ['', Validators.required],
       profession: ['', Validators.required],
       reg: ['', Validators.required],
-      uploadId:['', Validators.required],
+      uploadId: ['', Validators.required],
       chassis: ['', Validators.required],
       photoId: ['', Validators.required],
       proofofincome: ['', Validators.required],
@@ -61,38 +61,48 @@ export class QuotesFormComponent implements OnInit {
       Vehiclecolor: ['', Validators.required],
       enginenumber: ['', Validators.required],
       vehiclevalue: ['', Validators.required],
-      noofpassengers:['', Validators.required],
+      noofpassengers: ['', Validators.required],
       usage: ['', Validators.required],
       regat: ['', Validators.required],
       label: ['', Validators.required],
       repairtype: ['', Validators.required],
-      model: ['', Validators.required]
+      model: ['', Validators.required],
+      isDriverSameInsured: ['', Validators.required],
+      dId: ['', Validators.required],
+      dfname: ['', Validators.required],
+      dlname: ['', Validators.required],
+      ddob: ['', Validators.required],
+      dgender: ['', Validators.required],
+      dnationality: ['', Validators.required],
+      demail: ['', Validators.required],
+      dprofession: ['', Validators.required]
     });
   }
 
-  summary:any={};
+  // tslint:disable-next-line:member-ordering
+  summary: any = {};
 
-  onSubmit(data){
-    
-    for (var key in data.value) {
+  onSubmit(data) {
+
+    // tslint:disable-next-line:prefer-const
+    for (let key in data.value) {
       if (data.value.hasOwnProperty(key)) {
-          console.log(key + " -> " + data.value[key]);
+        console.log(key + ' -> ' + data.value[key]);
       }
-  }
-  
+    }
   }
 
-  showDetails(data){
+  showDetails(data) {
     // this.quoteSelected=true;
     // this.summary = data.value;
     const dialogRef = this.dialog.open(ModalPopupComponent, {
       width: '1034px',
       height: '448px',
-      data: { head: 'buyplan', value: data}
+      data: { head: 'buyplan', value: data }
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);
-      this.quoteSelected=true;
+      this.quoteSelected = true;
       this.summary = data.value;
     });
   }
@@ -105,5 +115,12 @@ export class QuotesFormComponent implements OnInit {
     this.quoteSelected = false;
   }
 
+  checkUncheckDriver() {
+    if (this.isDriverInsured) {
+      this.isDriverInsured = false;
+    } else {
+      this.isDriverInsured = true;
+    }
+  }
 
 }

@@ -14,30 +14,51 @@
           <br>
 
           <div *ngFor="let field of input.inputs" style="display: inline-block;" [ngClass]="{'col-md-6':field.type!=='file','col-md-12': field.type==='file'}">
+            
             <mat-form-field class="displayinput_css" *ngIf="field.type=='text' || field.type=='number'  ">
               <input matInput placeholder="{{field.key | translate}}" [formControlName]="field.label">
             </mat-form-field>
+
             <mat-form-field class="displayinput_css" *ngIf="field.type=='select'">
               <mat-select placeholder="{{field.key | translate}}" [formControlName]="field.label">
                 <mat-option value="option">Option</mat-option>
               </mat-select>
             </mat-form-field>
+
             <mat-form-field class="displayinput_css" *ngIf="field.type=='date'">
               <input matInput [matDatepicker]="picker" placeholder="{{field.key | translate}}">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
-            <!-- <div class="displayinput_css" *ngIf="field.type=='file'">
-              <input type="text" class="form-control" placeholder="{{field.key | translate}}" multiple>
-              <input type="file" class="form-control" placeholder="{{field.key | translate}}" multiple>
-            </div> -->
+            
+            <mat-checkbox [(ngModel)]="field.isChecked" *ngIf="field.type=='checkbox'" [formControlName]="field.label">
+              {{field.key | translate}}
+            </mat-checkbox>
+
             <div *ngIf="field.type=='file'" class="displayinput_css" >
-              <div>
-              <input type="text" class="form-control" placeholder="{{field.key | translate}}" multiple>
-              <button mat-button color="primary" class="attach_button" (click)="imgFileInput.click()"><mat-icon>attachment</mat-icon></button> 
+              <div class="row">
+              <input type="text" class="upload_input form-control col-md-8" placeholder="{{field.key | translate}}" multiple>
+              <!-- <button ma/t-button color="primary" class="col-md-2 attach_button" (click)="imgFileInput.click()"><mat-icon>attachment</mat-icon></button> -->
+              <img src="../../assets/img/home/add_box.png" class="attach_button" (click)="imgFileInput.click()">
               <input hidden type="file" #imgFileInput (change)="previewImage($event)"/> 
               </div>
             </div>
+
+            <div *ngFor="let driverField of field.driverDetails" [hidden]="!field.isChecked">
+            <mat-form-field class="displayinput_css" *ngIf="driverField.type=='text' || driverField.type=='number'  ">
+              <input matInput placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
+            </mat-form-field>
+            <mat-form-field class="displayinput_css" *ngIf="driverField.type=='select'">
+              <mat-select placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
+                <mat-option value="option">Option</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="displayinput_css" *ngIf="driverField.type=='date'">
+              <input matInput [matDatepicker]="picker" placeholder="{{driverField.key | translate}}">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
           </div>
           <br>
           <div>
