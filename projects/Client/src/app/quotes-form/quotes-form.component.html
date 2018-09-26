@@ -31,35 +31,44 @@
               <input type="text" class="form-control" placeholder="{{field.key | translate}}" multiple>
               <input type="file" class="form-control" placeholder="{{field.key | translate}}" multiple>
             </div> -->
-            <div *ngIf="field.type=='file'" class="displayinput_css" >
+            <div *ngIf="field.type=='file'" class="displayinput_css">
               <div>
-              <input type="text" class="form-control" placeholder="{{field.key | translate}}" multiple>
-              <button mat-button color="primary" class="attach_button" (click)="imgFileInput.click()"><mat-icon>attachment</mat-icon></button> 
-              <input hidden type="file" #imgFileInput (change)="previewImage($event)"/> 
+                <input type="text" class="form-control" placeholder="{{field.key | translate}}" multiple>
+                <button mat-button color="primary" class="attach_button" (click)="imgFileInput.click()">
+                  <mat-icon>attachment</mat-icon>
+                </button>
+                <input hidden type="file" #imgFileInput (change)="previewImage($event)" />
               </div>
             </div>
             <mat-checkbox [(ngModel)]="field.isChecked" *ngIf="field.type=='checkbox'" [formControlName]="field.label">
               {{field.key | translate}}
             </mat-checkbox>
             <!-- <div class="si-grid-popup col-md-12" [hidden]="!field.isChecked"> -->
-              <div *ngFor="let driverField of field.driverDetails" [hidden]="!field.isChecked"
-                class="col-md-6" [hidden]="!field.isChecked" style="display: inline-block;">
-                <mat-form-field class="displayinput_css" *ngIf="driverField.type=='text' || driverField.type=='number'  ">
-                  <input matInput placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
-                </mat-form-field>
-                <mat-form-field class="displayinput_css" *ngIf="driverField.type=='select'">
-                  <mat-select placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
-                    <mat-option value="option">Option</mat-option>
-                  </mat-select>
-                </mat-form-field>
-                <mat-form-field class="displayinput_css" *ngIf="driverField.type=='date'">
-                  <input matInput [matDatepicker]="picker" placeholder="{{driverField.key | translate}}">
-                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                  <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
-              </div>
+
             <!-- </div> -->
+            <div *ngFor="let driverField of field.driverDetails" [hidden]="!field.isChecked" [hidden]="!field.isChecked"
+              style="display: inline-block;">
+              <mat-form-field class="displayinput_css" *ngIf="driverField.type=='text' || driverField.type=='number'  ">
+                <input matInput placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
+              </mat-form-field>
+              <mat-form-field class="displayinput_css" *ngIf="driverField.type=='select'">
+                <mat-select placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
+                  <mat-option value="option">Option</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="displayinput_css" *ngIf="driverField.type=='date'">
+                <input matInput [matDatepicker]="picker" placeholder="{{driverField.key | translate}}">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+            <div *ngIf="field.label=='policy'">
+
+            </div>
+
           </div>
+
           <br>
           <div>
             <button mat-button matStepperPrevious mat-raised-button *ngIf="i" class="float-left buttoncolor_css">
