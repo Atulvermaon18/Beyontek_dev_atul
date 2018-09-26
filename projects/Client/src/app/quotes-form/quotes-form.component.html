@@ -27,10 +27,7 @@
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
-            <!-- <div class="displayinput_css" *ngIf="field.type=='file'">
-              <input type="text" class="form-control" placeholder="{{field.key | translate}}" multiple>
-              <input type="file" class="form-control" placeholder="{{field.key | translate}}" multiple>
-            </div> -->
+            
             <div *ngIf="field.type=='file'" class="displayinput_css">
               <div>
                 <input type="text" class="form-control" placeholder="{{field.key | translate}}" multiple>
@@ -43,11 +40,8 @@
             <mat-checkbox [(ngModel)]="field.isChecked" *ngIf="field.type=='checkbox'" [formControlName]="field.label">
               {{field.key | translate}}
             </mat-checkbox>
-            <!-- <div class="si-grid-popup col-md-12" [hidden]="!field.isChecked"> -->
-
-            <!-- </div> -->
-            <div *ngFor="let driverField of field.driverDetails" [hidden]="!field.isChecked" [hidden]="!field.isChecked"
-              style="display: inline-block;">
+            
+            <div *ngFor="let driverField of field.driverDetails" [hidden]="!field.isChecked">
               <mat-form-field class="displayinput_css" *ngIf="driverField.type=='text' || driverField.type=='number'  ">
                 <input matInput placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
               </mat-form-field>
@@ -82,8 +76,6 @@
 
       </mat-step>
     </mat-horizontal-stepper>
-
-    <app-quotes-detail [hidden]="!quoteSelected" (notifySelection)="handleNotify($event)" [summary]="summary"></app-quotes-detail>
 
     <app-quotes-detail [hidden]="!quoteSelected" (notifySelection)="handleNotify($event)" [summary]="summary"></app-quotes-detail>
   </div>
