@@ -36,3 +36,7 @@ a{
     text-align: left;
     margin-right: 10px;
 }
+
+a:hover{
+    cursor: pointer;
+}

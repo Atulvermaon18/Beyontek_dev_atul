@@ -30,7 +30,7 @@ import { TranslateService } from './translate.service';
 import { TranslatePipe } from './translate.pipe';
 import { ImgHolderComponent } from './img-holder/img-holder.component';
 import { ClientGetQuotesComponent } from './client-get-quotes/client-get-quotes.component';
-import { ModalPopupComponent } from './modal-popup/modal-popup.component';
+import { ModalPopupComponent } from './modal/modal-popup/modal-popup.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserPersonalDetailComponent } from './user-personal-detail/user-personal-detail.component';
 import { UserPolicyComponent } from './user-policy/user-policy.component';
@@ -43,6 +43,8 @@ import { MypolicyviewdetailComponent } from './mypolicy_details/mypolicyviewdeta
 import { MypolicyquotedetailComponent } from './mypolicy_details/mypolicyquotedetail/mypolicyquotedetail.component';
 import { MypolicymakepaymentComponent } from './mypolicy_details/mypolicymakepayment/mypolicymakepayment.component';
 import { UserDetailPreviewComponent } from './user-detail-preview/user-detail-preview.component';
+import { ModalCardComponent } from './modal/modal-card/modal-card.component';
+import { ModalBuyplanComponent } from './modal/modal-buyplan/modal-buyplan.component';
 
 export function setupTranslateFactory(
   service: TranslateService): Function {
@@ -74,7 +76,9 @@ export function setupTranslateFactory(
     MypolicyviewdetailComponent,
     MypolicyquotedetailComponent,
     MypolicymakepaymentComponent,
-    UserDetailPreviewComponent
+    UserDetailPreviewComponent,
+    ModalCardComponent,
+    ModalBuyplanComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,7 @@
           <span>{{input.context}}</span>
           <br>
 
-          <div *ngFor="let field of input.inputs" class="col-md-6" style="display: inline-block;">
+          <div *ngFor="let field of input.inputs" style="display: inline-block;" [ngClass]="{'col-md-6':field.type!=='file','col-md-12': field.type==='file'}">
             <mat-form-field class="displayinput_css" *ngIf="field.type=='text' || field.type=='number'  ">
               <input matInput placeholder="{{field.key | translate}}" [formControlName]="field.label">
             </mat-form-field>
@@ -27,9 +27,16 @@
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
-
-            <div class="displayinput_css" *ngIf="field.type=='file'">
-              <input type="file" placeholder="{{field.key | translate}}" multiple>
+            <!-- <div class="displayinput_css" *ngIf="field.type=='file'">
+              <input type="text" class="form-control" placeholder="{{field.key | translate}}" multiple>
+              <input type="file" class="form-control" placeholder="{{field.key | translate}}" multiple>
+            </div> -->
+            <div *ngIf="field.type=='file'" class="displayinput_css" >
+              <div>
+              <input type="text" class="form-control" placeholder="{{field.key | translate}}" multiple>
+              <button mat-button color="primary" class="attach_button" (click)="imgFileInput.click()"><mat-icon>attachment</mat-icon></button> 
+              <input hidden type="file" #imgFileInput (change)="previewImage($event)"/> 
+              </div>
             </div>
             <mat-checkbox [(ngModel)]="field.isChecked" *ngIf="field.type=='checkbox'" [formControlName]="field.label">
               {{field.key | translate}}
@@ -53,7 +60,7 @@
               </div>
             <!-- </div> -->
           </div>
-
+          <br>
           <div>
             <button mat-button matStepperPrevious mat-raised-button *ngIf="i" class="float-left buttoncolor_css">
               << {{inputData[i-1].title}} </button> <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button

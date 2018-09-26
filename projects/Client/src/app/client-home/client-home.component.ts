@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { Router } from '@angular/router';
 
-import { ModalPopupComponent } from '../modal-popup/modal-popup.component';
+import { ModalPopupComponent } from '../modal/modal-popup/modal-popup.component';
 import { QuotesFormComponent } from '../quotes-form/quotes-form.component';
 
 
@@ -17,27 +17,32 @@ export class ClientHomeComponent implements OnInit {
     {
       img: '../../assets/img/home/HOME_INSURANCE.png',
       title: 'HOME INSURANCE',
-      id: 'home'
+      id: 'home',
+      head: 'card'
     },
     {
       img: ' ../../assets/img/home/MEDICAL_INSURANCE.png',
       title: 'MEDICAL INSURANCE',
-      id: 'medical'
+      id: 'medical',
+      head: 'card'
     },
     {
       img: ' ../../assets/img/home/MOTOR_INSURANCE.png',
       title: 'MOTOR INSURANCE',
-      id: 'motor'
+      id: 'motor',
+      head: 'card'
     },
     {
       img: ' ../../assets/img/home/PERSONAL_ACCIDENT_INSURANCE.png',
       title: 'PERSONAL ACCIDENT INSURANCE',
-      id: 'accident'
+      id: 'accident',
+      head: 'card'
     },
     {
       img: ' ../../assets/img/home/HOME_INSURANCE.png',
       title: 'TRAVEL INSURANCE',
-      id: 'travel'
+      id: 'travel',
+      head: 'card'
     }
   ];
   currentScreen = {
@@ -56,7 +61,7 @@ export class ClientHomeComponent implements OnInit {
     // 
     const dialogRef = this.dialog.open(ModalPopupComponent, {
       width: '300px',
-      data: { id: q.id, title: q.title, img: q.img}
+      data: { head: q.head, id: q.id, title: q.title, img: q.img}
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);
