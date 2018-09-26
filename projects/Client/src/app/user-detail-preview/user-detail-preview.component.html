@@ -1,24 +1,16 @@
 <div class="card margintop20">
     <mat-tab-group>
-        <mat-tab label="VEHICLE DETAILS"> 
-          <div class="padding10px">
-              Vechile Details
-          </div>
+        <mat-tab *ngFor="let item of userDetailPreview" label="{{item.tab}}">
+            <div class="padding10px row">
+                <div *ngFor="let subItem of item.data" class="col-sm-4">
+                    <div>
+                        <div class="labettext_css">{{subItem.label}}</div>
+                        <p class="valuetext_css">{{subItem.value}}</p>
+                    </div>
+
+                </div>
+
+            </div>
         </mat-tab>
-        <mat-tab label="PERSONAL DETAILS">          
-          <div class="padding10px">
-            Personal Details
-        </div>
-      </mat-tab>
-        <mat-tab label="UPLOAD DOCUMENT">         
-           <div class="padding10px">
-           upload document
-        </div>
-      </mat-tab>
-        <mat-tab label="COVERAGE & PREMIUM">
-            <div class="padding10px">
-               Coverage & Premium
-             </div>
-        </mat-tab>
-      </mat-tab-group>
+    </mat-tab-group>
 </div>

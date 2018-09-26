@@ -32,16 +32,13 @@ import { UserPersonalDetailComponent } from './user-personal-detail/user-persona
 import { UserPolicyComponent } from './user-policy/user-policy.component';
 import { GeneratedQuotesUsersComponent } from './generated-quotes-users/generated-quotes-users.component';
 import { QuotesDetailComponent } from './quotes-detail/quotes-detail.component';
-<<<<<<< HEAD
 import { MypolicypremiumComponent } from './mypolicy_details/mypolicypremium/mypolicypremium.component';
 import { MypolicyclaimComponent } from './mypolicy_details/mypolicyclaim/mypolicyclaim.component';
 import { MypolicyrenewComponent } from './mypolicy_details/mypolicyrenew/mypolicyrenew.component';
 import { MypolicyviewdetailComponent } from './mypolicy_details/mypolicyviewdetail/mypolicyviewdetail.component';
 import { MypolicyquotedetailComponent } from './mypolicy_details/mypolicyquotedetail/mypolicyquotedetail.component';
 import { MypolicymakepaymentComponent } from './mypolicy_details/mypolicymakepayment/mypolicymakepayment.component';
-=======
 import { UserDetailPreviewComponent } from './user-detail-preview/user-detail-preview.component';
->>>>>>> ee913f6226184f1708ac1170be61423e0501d699
 
 export function setupTranslateFactory(
   service: TranslateService): Function {
