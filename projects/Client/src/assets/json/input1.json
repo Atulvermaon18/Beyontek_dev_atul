@@ -125,7 +125,7 @@
           "isChecked":true,
           "driverDetails":[
             {
-              "label": "Id",
+              "label": "dId",
               "key": "Id",
               "type": "text"
             },
@@ -140,27 +140,27 @@
               "type": "text"
             },
             {
-              "label": "dob",
+              "label": "ddob",
               "key": "Date of Birth",
               "type": "date"
             },
             {
-              "label": "gender",
+              "label": "dgender",
               "key": "gender",
               "type": "text"
             },
             {
-              "label": "nationality",
+              "label": "dnationality",
               "key": "nationality",
               "type": "text"
             },
             {
-              "label": "email",
+              "label": "demail",
               "key": "E-Mail",
               "type": "number"
             },
             {
-              "label": "profession",
+              "label": "dprofession",
               "key": "Profession",
               "type": "number"
             }

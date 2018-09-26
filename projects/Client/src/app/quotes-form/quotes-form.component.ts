@@ -63,7 +63,16 @@ export class QuotesFormComponent implements OnInit {
       regat: ['', Validators.required],
       label: ['', Validators.required],
       repairtype: ['', Validators.required],
-      model: ['', Validators.required]
+      model: ['', Validators.required],
+      isDriverSameInsured: ['', Validators.required],
+      dId: ['', Validators.required],
+      dfname: ['', Validators.required],
+      dlname: ['', Validators.required],
+      ddob: ['', Validators.required],
+      dgender: ['', Validators.required],
+      dnationality: ['', Validators.required],
+      demail: ['', Validators.required],
+      dprofession: ['', Validators.required]
     });
   }
 
