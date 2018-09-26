@@ -31,26 +31,59 @@
               <input type="text" class="form-control" placeholder="{{field.key | translate}}" multiple>
               <input type="file" class="form-control" placeholder="{{field.key | translate}}" multiple>
             </div> -->
-            <div *ngIf="field.type=='file'" class="displayinput_css" >
+            <div *ngIf="field.type=='file'" class="displayinput_css">
               <div>
-              <input type="text" class="form-control" placeholder="{{field.key | translate}}" multiple>
-              <button mat-button color="primary" class="attach_button" (click)="imgFileInput.click()"><mat-icon>attachment</mat-icon></button> 
-              <input hidden type="file" #imgFileInput (change)="previewImage($event)"/> 
+                <input type="text" class="form-control" placeholder="{{field.key | translate}}" multiple>
+                <button mat-button color="primary" class="attach_button" (click)="imgFileInput.click()">
+                  <mat-icon>attachment</mat-icon>
+                </button>
+                <input hidden type="file" #imgFileInput (change)="previewImage($event)" />
               </div>
             </div>
+            <mat-checkbox [(ngModel)]="field.isChecked" *ngIf="field.type=='checkbox'" [formControlName]="field.label">
+              {{field.key | translate}}
+            </mat-checkbox>
+            <!-- <div class="si-grid-popup col-md-12" [hidden]="!field.isChecked"> -->
+
+            <!-- </div> -->
+            <div *ngFor="let driverField of field.driverDetails" [hidden]="!field.isChecked" [hidden]="!field.isChecked"
+              style="display: inline-block;">
+              <mat-form-field class="displayinput_css" *ngIf="driverField.type=='text' || driverField.type=='number'  ">
+                <input matInput placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
+              </mat-form-field>
+              <mat-form-field class="displayinput_css" *ngIf="driverField.type=='select'">
+                <mat-select placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
+                  <mat-option value="option">Option</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="displayinput_css" *ngIf="driverField.type=='date'">
+                <input matInput [matDatepicker]="picker" placeholder="{{driverField.key | translate}}">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+            <div *ngIf="field.label=='policy'">
+
+            </div>
+
           </div>
+
           <br>
           <div>
             <button mat-button matStepperPrevious mat-raised-button *ngIf="i" class="float-left buttoncolor_css">
-              << {{inputData[i-1].title}}</button>
-                <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button matStepperNext class="float-right buttoncolor_css">{{inputData[i+1].title}} >></button>
-                <button mat-button *ngIf="i===inputData.length-1" mat-raised-button (click)="showDetails(formgroup)" class="float-right buttoncolor_css">Done</button>
-                <!-- <button mat-button *ngIf="i===inputData.length-1" mat-raised-button type="submit" (click)="stepper.reset();quoteSelected=true;" >Done</button> -->
+              << {{inputData[i-1].title}} </button> <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button
+                matStepperNext class="float-right buttoncolor_css">{{inputData[i+1].title}} >>
+            </button>
+            <button mat-button *ngIf="i===inputData.length-1" mat-raised-button (click)="showDetails(formgroup)" class="float-right buttoncolor_css">Done</button>
+            <!-- <button mat-button *ngIf="i===inputData.length-1" mat-raised-button type="submit" (click)="stepper.reset();quoteSelected=true;" >Done</button> -->
           </div>
         </form>
 
       </mat-step>
     </mat-horizontal-stepper>
+
+    <app-quotes-detail [hidden]="!quoteSelected" (notifySelection)="handleNotify($event)" [summary]="summary"></app-quotes-detail>
 
     <app-quotes-detail [hidden]="!quoteSelected" (notifySelection)="handleNotify($event)" [summary]="summary"></app-quotes-detail>
   </div>
