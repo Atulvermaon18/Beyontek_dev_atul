@@ -9,9 +9,18 @@
 
       <mat-step *ngFor="let input of inputData; let i = index">
         <form [formGroup]="formgroup" (submit)="onSubmit(formgroup)">
-          <h5 class="title_css">{{input.title}}</h5>
+          <h5 class="title_css">{{input.title}}raji</h5>
           <span>{{input.context}}</span>
           <br>
+
+          {{input}}
+          <div *ngIf="input.label=='policy'"> raji
+            <mat-card class="col-md-3">Simple card</mat-card>
+            <mat-card class="col-md-3">Simple card</mat-card>
+            <mat-card class="col-md-3">Simple card</mat-card>
+            <mat-card class="col-md-3">Simple card</mat-card>
+          </div>
+
 
           <div *ngFor="let field of input.inputs" style="display: inline-block;" [ngClass]="{'col-md-6':field.type!=='file','col-md-12': field.type==='file'}">
             <mat-form-field class="displayinput_css" *ngIf="field.type=='text' || field.type=='number'  ">
@@ -62,11 +71,6 @@
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
             </div>
-
-            <div *ngIf="field.label=='policy'">
-
-            </div>
-
           </div>
 
           <br>
