@@ -1,0 +1,32 @@
+.sidenav-container {
+  height: 100%;
+}
+.shadow{
+  box-shadow: 0 8px 15px -1px #999;
+}
+.sidenav {
+  width: 200px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+}
+
+.header-menu-right {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.login-btn {
+  border: 1px solid #fff;
+}
+.mat-toolbar.mat-primary {
+  background: #fff;
+  color: #868282;
+}
+
+.logo_allign {
+  margin-left: 25px;
+}
