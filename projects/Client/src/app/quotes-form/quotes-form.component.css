@@ -67,11 +67,26 @@
 }
 
 .attach_button {
-  bottom: 37px;
-  left: 180px;
-  color: #C4C4C4;
+  margin-left: 5px;
 }
 
 ::ng-deep .mat-button:hover{
   background-color: transparent;
+}
+
+.upload_input {
+  width: 388px;
+  height: 68px;
+  background-image: url(../../assets/img/home/upload.png);
+  background-repeat: no-repeat;  
+  background-position: right;
+}
+
+.row {
+  margin-bottom: 15px;
+}
+
+::placeholder {
+  font-style: Nunitosansbold;
+  font-size: 17px;
 }
