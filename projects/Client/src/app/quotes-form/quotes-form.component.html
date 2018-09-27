@@ -9,21 +9,19 @@
 
       <mat-step *ngFor="let input of inputData; let i = index">
         <form [formGroup]="formgroup" (submit)="onSubmit(formgroup)">
-          <h5 class="title_css">{{input.title}}raji</h5>
+          <h5 class="title_css">{{input.title}}</h5>
           <span>{{input.context}}</span>
           <br>
-
-          {{input}}
-          <div *ngIf="input.label=='policy'"> raji
-            <mat-card class="col-md-3">Simple card</mat-card>
-            <mat-card class="col-md-3">Simple card</mat-card>
-            <mat-card class="col-md-3">Simple card</mat-card>
-            <mat-card class="col-md-3">Simple card</mat-card>
+          <div *ngIf="input.label=='policy'" class="row">
+            <mat-card class="col-md-3">Simple card 1</mat-card>
+            <mat-card class="col-md-3">Simple card 2</mat-card>
+            <mat-card class="col-md-3">Simple card 3</mat-card>
+            <mat-card class="col-md-3">Simple card 4</mat-card>
           </div>
 
 
           <div *ngFor="let field of input.inputs" style="display: inline-block;" [ngClass]="{'col-md-6':field.type!=='file','col-md-12': field.type==='file'}">
-            
+
             <mat-form-field class="displayinput_css" *ngIf="field.type=='text' || field.type=='number'  ">
               <input matInput placeholder="{{field.key | translate}}" [formControlName]="field.label">
             </mat-form-field>
@@ -39,43 +37,45 @@
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
-            
+
             <mat-checkbox [(ngModel)]="field.isChecked" *ngIf="field.type=='checkbox'" [formControlName]="field.label">
               {{field.key | translate}}
             </mat-checkbox>
 
-            <div *ngIf="field.type=='file'" class="displayinput_css" >
+            <div *ngIf="field.type=='file'" class="displayinput_css">
               <div class="row">
-              <input type="text" class="upload_input form-control col-md-8" placeholder="{{field.key | translate}}" multiple>
-              <!-- <button ma/t-button color="primary" class="col-md-2 attach_button" (click)="imgFileInput.click()"><mat-icon>attachment</mat-icon></button> -->
-              <img src="../../assets/img/home/add_box.png" class="attach_button" (click)="imgFileInput.click()">
-              <input hidden type="file" #imgFileInput (change)="previewImage($event)"/> 
+                <input type="text" class="upload_input form-control col-md-8" placeholder="{{field.key | translate}}"
+                  multiple>
+                <!-- <button ma/t-button color="primary" class="col-md-2 attach_button" (click)="imgFileInput.click()"><mat-icon>attachment</mat-icon></button> -->
+                <img src="../../assets/img/home/add_box.png" class="attach_button" (click)="imgFileInput.click()">
+                <input hidden type="file" #imgFileInput (change)="previewImage($event)" />
               </div>
             </div>
 
             <div *ngFor="let driverField of field.driverDetails" [hidden]="!field.isChecked">
-            <mat-form-field class="displayinput_css" *ngIf="driverField.type=='text' || driverField.type=='number'  ">
-              <input matInput placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
-            </mat-form-field>
-            <mat-form-field class="displayinput_css" *ngIf="driverField.type=='select'">
-              <mat-select placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
-                <mat-option value="option">Option</mat-option>
-              </mat-select>
-            </mat-form-field>
-            <mat-form-field class="displayinput_css" *ngIf="driverField.type=='date'">
-              <input matInput [matDatepicker]="picker" placeholder="{{driverField.key | translate}}">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-          </div>
+              <mat-form-field class="displayinput_css" *ngIf="driverField.type=='text' || driverField.type=='number'  ">
+                <input matInput placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
+              </mat-form-field>
+              <mat-form-field class="displayinput_css" *ngIf="driverField.type=='select'">
+                <mat-select placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
+                  <mat-option value="option">Option</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="displayinput_css" *ngIf="driverField.type=='date'">
+                <input matInput [matDatepicker]="picker" placeholder="{{driverField.key | translate}}">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
           </div>
           <br>
           <div>
             <button mat-button matStepperPrevious mat-raised-button *ngIf="i" class="float-left buttoncolor_css">
-              << {{inputData[i-1].title}}</button>
-                <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button matStepperNext class="float-right buttoncolor_css">{{inputData[i+1].title}} >></button>
-                <button mat-button *ngIf="i===inputData.length-1" mat-raised-button (click)="showDetails(formgroup)" class="float-right buttoncolor_css">Done</button>
-                <!-- <button mat-button *ngIf="i===inputData.length-1" mat-raised-button type="submit" (click)="stepper.reset();quoteSelected=true;" >Done</button> -->
+              << {{inputData[i-1].title}} </button> <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button
+                matStepperNext class="float-right buttoncolor_css">{{inputData[i+1].title}} >>
+            </button>
+            <button mat-button *ngIf="i===inputData.length-1" mat-raised-button (click)="showDetails(formgroup)" class="float-right buttoncolor_css">Done</button>
+            <!-- <button mat-button *ngIf="i===inputData.length-1" mat-raised-button type="submit" (click)="stepper.reset();quoteSelected=true;" >Done</button> -->
           </div>
         </form>
 
