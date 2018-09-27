@@ -181,6 +181,7 @@
     },
     {
       "title": "Plan Details",
+      "label": "policy",
       "context": "",
       "coverage": {
         "label": "coverage",
@@ -282,32 +283,25 @@
           "executive": "tick"
         },
         {
-          "label": "riotstrikecivilcommotion",
-          "key": "Third Party Bodily Injured",
-          "classic": "",
-          "premium": "",
-          "executive": ""
+          "label": "breakdownrecoverysilver",
+          "key": "Breakdown Recovery - Silver",
+          "classic": "checkbox",
+          "premium": "checkbox",
+          "executive": "checkbox"
         },
         {
-          "label": "thirdpartybodilyinjured",
-          "key": "Third Party Bodily Injured",
-          "classic": "",
-          "premium": "",
-          "executive": ""
+          "label": "breakdownrecoverygold",
+          "key": "Breakdown Recovery - Gold",
+          "classic": "checkbox",
+          "premium": "checkbox",
+          "executive": "checkbox"
         },
         {
-          "label": "thirdpartybodilyinjured",
-          "key": "Third Party Bodily Injured",
-          "classic": "",
-          "premium": "",
-          "executive": ""
-        },
-        {
-          "label": "thirdpartybodilyinjured",
-          "key": "Third Party Bodily Injured",
-          "classic": "",
-          "premium": "",
-          "executive": ""
+          "label": "breakdownrecoveryplatinum",
+          "key": "Breakdown Recovery - Platinum",
+          "classic": "checkbox",
+          "premium": "checkbox",
+          "executive": "checkbox"
         }
       ]
     },
@@ -317,26 +311,26 @@
         {
           "label": "uploadId",
           "key": "Id",
-          "type": "text"
+          "type": "file"
         },
         {
           "label": "photoId",
           "key": "photoId",
-          "type": "text"
+          "type": "file"
         },
         {
           "label": "proofofincome",
           "key": "proofofincome",
-          "type": "number"
+          "type": "file"
         },
         {
           "label": "visacopy",
-          "type": "text",
+          "type": "file",
           "key": "visacopy"
         },
         {
           "label": "regcopy",
-          "type": "text",
+          "type": "file",
           "key": "regcopy"
         }
       ]

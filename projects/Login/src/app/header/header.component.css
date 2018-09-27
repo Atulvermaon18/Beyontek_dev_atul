@@ -1,0 +1,20 @@
+
+.displayupcss{
+  z-index: 11111;
+  position: relative;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+}
+
+.header-menu-right {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.login-btn {
+  border: 1px solid #fff;
+}
