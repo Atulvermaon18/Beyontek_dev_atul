@@ -1,11 +1,7 @@
-.sidenav-container {
-  height: 100%;
-}
-.shadow{
-  box-shadow: 0 8px 15px -1px #999;
-}
-.sidenav {
-  width: 200px;
+
+.displayupcss{
+  z-index: 11111;
+  position: relative;
 }
 
 .mat-toolbar.mat-primary {
@@ -21,12 +17,4 @@
 
 .login-btn {
   border: 1px solid #fff;
-}
-.mat-toolbar.mat-primary {
-  background: #fff;
-  color: #868282;
-}
-
-.logo_allign {
-  margin-left: 25px;
 }
