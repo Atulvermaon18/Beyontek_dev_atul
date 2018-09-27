@@ -44,7 +44,7 @@
               </div>
             </div>
 
-            <div *ngFor="let driverField of field.driverDetails" [hidden]="!field.isChecked">
+            <!-- <div *ngFor="let driverField of field.driverDetails" [hidden]="!field.isChecked">
             <mat-form-field class="displayinput_css" *ngIf="driverField.type=='text' || driverField.type=='number'  ">
               <input matInput placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
             </mat-form-field>
@@ -58,9 +58,35 @@
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
+          </div> -->
+
+
           </div>
+
+          <!-- this is for driver details  -->
+          <div  *ngFor="let field of input.inputs"  [hidden]="!field.isChecked">
+            <div *ngFor="let driverField of field.driverDetails"  style="display: inline-block;" class="col-md-6">
+              <mat-form-field class="displayinput_css" *ngIf="driverField.type=='text' || driverField.type=='number'  ">
+                <input matInput placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
+              </mat-form-field>
+              <mat-form-field class="displayinput_css" *ngIf="driverField.type=='select'">
+                <mat-select placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
+                  <mat-option value="option">Option</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="displayinput_css" *ngIf="driverField.type=='date'">
+                <input matInput [matDatepicker]="picker" placeholder="{{driverField.key | translate}}">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
           </div>
+
+          <!-- this is for driver details  -->
           <br>
+
+
+
           <div>
             <button mat-button matStepperPrevious mat-raised-button *ngIf="i" class="float-left buttoncolor_css">
               << {{inputData[i-1].title}}</button>
