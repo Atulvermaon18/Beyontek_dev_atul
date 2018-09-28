@@ -1,0 +1,11 @@
+<div class="card_allign">  
+  <div style="margin-top:50px;">    
+    <mat-card class="insurance-card card_size" (click)="initiateQuotes(list)" *ngFor="let list of menu; index as i">
+      <mat-card-header>
+        <span *ngIf="+i%2==0">{{list.title}}</span>
+      </mat-card-header>
+      <img mat-card-image src="{{list.img}}">
+      <span *ngIf="+i%2">{{list.title}}</span>
+    </mat-card>
+  </div> 
+</div>

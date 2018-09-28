@@ -45,6 +45,7 @@ export class ClientHomeComponent implements OnInit {
       head: 'card'
     }
   ];
+  
   currentScreen = {
     quotes: false
   }
