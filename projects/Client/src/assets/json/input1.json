@@ -311,26 +311,26 @@
         {
           "label": "uploadId",
           "key": "Id",
-          "type": "text"
+          "type": "file"
         },
         {
           "label": "photoId",
           "key": "photoId",
-          "type": "text"
+          "type": "file"
         },
         {
           "label": "proofofincome",
           "key": "proofofincome",
-          "type": "number"
+          "type": "file"
         },
         {
           "label": "visacopy",
-          "type": "text",
+          "type": "file",
           "key": "visacopy"
         },
         {
           "label": "regcopy",
-          "type": "text",
+          "type": "file",
           "key": "regcopy"
         }
       ]
