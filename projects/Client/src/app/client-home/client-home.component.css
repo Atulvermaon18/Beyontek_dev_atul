@@ -27,7 +27,7 @@ strong{
   width: 20px;
 }
 
-.mat-card:nth-child(odd) {
+::ng-deep .card_size.mat-card:nth-child(odd) {
   position: relative;
   bottom: 187px;
 }
