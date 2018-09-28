@@ -37,13 +37,13 @@ a:hover{
 .btn_img{
   margin-right: 20px;
   position: relative;
-  top: 25px; 
+  /* top: 25px;  */
 }
 
 .btn_flag{
   margin-right: 10px;
   position: relative;
-  top: 10px;
+  /* top: 10px; */
   width: 30px;
   height: 30px;
 }

@@ -1,0 +1,42 @@
+.text-center{
+    text-align: center !important;
+}
+
+.text-left{
+    text-align: left !important;
+}
+
+.modal-img{
+    width: 300px;
+    height: 500px;
+}
+
+::ng-deep .mat-dialog-container{
+    padding: 0px;
+}
+
+.container{
+    padding: 0px;
+    margin: 0px;
+}
+
+.popDetail{
+    position: absolute;
+    bottom: 100px;
+    color: #fff;
+    margin-left: 25px;
+    font-family: 'Nunitosansextrabold';
+}
+
+strong{
+    font-size: 17px;
+}
+
+a{
+    text-align: left;
+    margin-right: 10px;
+}
+
+a:hover{
+    cursor: pointer;
+}
