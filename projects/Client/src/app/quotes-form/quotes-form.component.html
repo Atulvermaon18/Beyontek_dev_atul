@@ -1,7 +1,5 @@
 <div class="row mar_none">
-  <div class="col-sm">
-    <app-img-holder></app-img-holder>
-  </div>
+
   <div class="col-sm pad_none mar_topcss">
     <!-- <app-client-get-quotes *ngIf="!quoteSelected" (notifySelection)="handleNotify($event)"></app-client-get-quotes> -->
 
@@ -92,5 +90,8 @@
     </mat-horizontal-stepper>
 
     <app-quotes-detail [hidden]="!quoteSelected" (notifySelection)="handleNotify($event)" [summary]="summary"></app-quotes-detail>
+  </div>
+  <div class="col-sm">
+    <app-img-holder></app-img-holder>
   </div>
 </div>
