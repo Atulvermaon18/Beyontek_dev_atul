@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import { NgModule } from '@angular/core';
 import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatFormFieldModule, MatRadioModule } from '@angular/material';
 import { MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
@@ -8,7 +10,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
@@ -19,9 +20,9 @@ import { SignInComponent } from './sign-in/sign-in.component';
     SignInComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
     MatToolbarModule,
     MatButtonModule,

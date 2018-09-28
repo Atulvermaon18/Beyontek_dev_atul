@@ -1,9 +1,13 @@
 .pad_none{
   padding-left: 0;
-  /* padding-right: 0; */
+  padding-right: 0;
 }
 .mar_none{
   margin-right: 0;
+  margin-left: 0;
+}
+.img_aligncss{
+  padding-right: 0;
 }
 .mar_topcss{
   margin-top: 10px;

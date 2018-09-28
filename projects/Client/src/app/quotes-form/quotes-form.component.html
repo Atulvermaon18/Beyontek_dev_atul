@@ -1,7 +1,5 @@
 <div class="row mar_none">
-  <div class="col-sm">
-    <app-img-holder></app-img-holder>
-  </div>
+  
   <div class="col-sm pad_none mar_topcss">
     <!-- <app-client-get-quotes *ngIf="!quoteSelected" (notifySelection)="handleNotify($event)"></app-client-get-quotes> -->
 
@@ -52,7 +50,11 @@
               </div>
             </div>
 
-            <div *ngFor="let driverField of field.driverDetails" [hidden]="!field.isChecked">
+          </div>
+
+          <!-- this is for driver details  -->
+          <div  *ngFor="let field of input.inputs"  [hidden]="!field.isChecked">
+            <div *ngFor="let driverField of field.driverDetails"  style="display: inline-block;" class="col-md-6">
               <mat-form-field class="displayinput_css" *ngIf="driverField.type=='text' || driverField.type=='number'  ">
                 <input matInput placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
               </mat-form-field>
@@ -68,7 +70,12 @@
               </mat-form-field>
             </div>
           </div>
+
+          <!-- this is for driver details  -->
           <br>
+
+
+
           <div>
             <button mat-button matStepperPrevious mat-raised-button *ngIf="i" class="float-left buttoncolor_css">
               << {{inputData[i-1].title}} </button> <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button
@@ -83,5 +90,8 @@
     </mat-horizontal-stepper>
 
     <app-quotes-detail [hidden]="!quoteSelected" (notifySelection)="handleNotify($event)" [summary]="summary"></app-quotes-detail>
+  </div>
+  <div class="col-sm img_aligncss">
+    <app-img-holder></app-img-holder>
   </div>
 </div>

@@ -1,7 +1,63 @@
-
 .displayupcss{
   z-index: 11111;
+  position: relative;  
+}
+
+a:hover{
+  cursor: pointer;
+}
+
+.displayupcss a {
+  text-decoration: none;
+  color: #3C3C3C;
+}
+
+.displayupcss a:active {
+  color: #3C3C3C;
+}
+
+.displayupcss img{
+  cursor: pointer;
+}
+
+.btn_home{
+  font-family: Nunitosanssemibold;
+  font-size: 14px;
+  color: #000000; 
+  margin-right: 30px;
+}
+
+.btn_login{
+  font-family: Nunitosans;
+  font-size: 14px;
+  color: #3C3C3C;
+  margin-right: 10px;
+}
+
+.btn_img{
+  margin-right: 20px;
   position: relative;
+  top: 25px; 
+}
+
+.btn_flag{
+  margin-right: 10px;
+  position: relative;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+::ng-deep mat-toolbar{
+  background-color: transparent;
+}
+
+::ng-deep .mat-button{
+  background-color: transparent;
+}
+
+::ng-deep .mat-button:hover{
+  background-color: transparent;
 }
 
 .mat-toolbar.mat-primary {
@@ -17,4 +73,35 @@
 
 .login-btn {
   border: 1px solid #fff;
+}
+
+.lang_dropdown{
+  width: 140px;
+  margin-right: 20px;
+  font-family: Nunitosans;
+  font-size: 14px;
+  color: #3C3C3C;
+  border: 0;
+  background: transparent;
+}
+
+.header_login {
+  text-align: right;
+}
+
+::ng-deep  .mat-menu-panel{
+  margin-top: 60px;
+  background: transparent;
+}
+
+::ng-deep .mat-menu-content{
+  width:240px
+}
+
+.icon_align{
+  margin-left: 10px;
+}
+
+::ng-deep button.mat-menu-item{
+  height: 40px;
 }
