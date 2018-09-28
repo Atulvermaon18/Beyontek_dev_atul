@@ -118,12 +118,16 @@ export function setupTranslateFactory(
     TranslateService,
     MatDatepickerModule,
     {
-      provide: [APP_INITIALIZER,HTTP_INTERCEPTORS],
+      provide: APP_INITIALIZER,
       useFactory: setupTranslateFactory,
-      deps: [TranslateService],
+      deps: [TranslateService],      
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
       useClass: LoaderInterceptorService,
       multi: true
-    }],
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
