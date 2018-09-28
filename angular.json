@@ -401,6 +401,9 @@
               "projects/Login/src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
               "projects/Login/src/styles.css"
             ],
             "scripts": []
@@ -450,6 +453,9 @@
             "tsConfig": "projects/Login/tsconfig.spec.json",
             "karmaConfig": "projects/Login/karma.conf.js",
             "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
               "projects/Login/src/styles.css"
             ],
             "scripts": [],
