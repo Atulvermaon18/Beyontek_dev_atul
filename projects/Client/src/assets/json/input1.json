@@ -1,9 +1,7 @@
 {
-  "data": [
-    {
+  "data": [{
       "title": "Vehicle Details",
-      "inputs": [
-        {
+      "inputs": [{
           "label": "reg",
           "key": "reg",
           "type": "text"
@@ -77,8 +75,7 @@
     },
     {
       "title": "Personal Details",
-      "inputs": [
-        {
+      "inputs": [{
           "label": "Id",
           "key": "Id",
           "type": "text"
@@ -123,8 +120,7 @@
           "key": "Is Driver Same as Insured",
           "type": "checkbox",
           "isChecked": true,
-          "driverDetails": [
-            {
+          "driverDetails": [{
               "label": "dId",
               "key": "Id",
               "type": "text"
@@ -171,144 +167,117 @@
     {
       "title": "Verify OTP",
       "context": "One time password has been sent to ********98. Please enter the same here to view your quotes",
-      "inputs": [
-        {
-          "label": "otp",
-          "type": "text",
-          "key": "Enter your OTP"
-        }
-      ]
+      "inputs": [{
+        "label": "otp",
+        "type": "text",
+        "key": "Enter your OTP"
+      }]
     },
     {
       "title": "Plan Details",
       "label": "policy",
-      "context": "",
-      "coverage": {
-        "label": "coverage",
-        "key": "Coverage",
-        "classic": "AED 1,250",
-        "premium": "AED 2,010",
-        "executive": "AED 3,100"
-      },
-      "coverages": [
-        {
-          "label": "thirdpartybodilyinjured",
-          "key": "Third Party Bodily Injured",
-          "classic": "tick",
-          "premium": "tick",
-          "executive": "tick"
+      "plans": [{
+          "label": "MOTOR EXECUTIVE",
+          "star": "1",
+          "price": "1,050",
+          "currency": "AED",
+          "plan_summary": {
+            "label": "Motor Executive Plan Summary",
+            "coverages": ["Third Party Bodily Injured",
+              "Third Party Property Damage(AED 500,0000)",
+              "Loss or Damage to your Vehicle",
+              "Non Agency Repair", "Breakdown Recovery(Platinum)"
+            ],
+            "optional_coverages": {
+              "label": "Add Optional Cover",
+              "coverages": [{
+                  "label": "Hire Car",
+                  "isChecked": false
+                },
+                {
+                  "label": "Personal Accident Cover for Driver",
+                  "isChecked": false
+                },
+                {
+                  "label": "Personal Accident Cover for Passengers",
+                  "isChecked": false
+                },
+                {
+                  "label": "Oman Cover Third Party",
+                  "isChecked": false
+                }
+              ]
+            }
+
+          }
         },
         {
-          "label": "thirdpartypropertydamage",
-          "key": "Third Party Property Damage",
-          "classic": "AED 500,000",
-          "premium": "AED 1,000,000",
-          "executive": "AED 3,500,000"
+          "label": "MOTOR PREMIER",
+          "star": "2",
+          "price": "1,350",
+          "currency": "AED",
+          "plan_summary": {
+            "label": "Motor Premiur Plan Summary",
+            "coverages": ["Third Party Bodily Injured",
+              "Third Party Property Damage(AED 500,0000)",
+              "Loss or Damage to your Vehicle",
+              "Non Agency Repair", "Breakdown Recovery(Platinum)"
+            ],
+            "optional_coverages": [{
+                "label": "Hire Car",
+                "isChecked": false
+              },
+              {
+                "label": "Personal Accident Cover for Driver",
+                "isChecked": false
+              },
+              {
+                "label": "Personal Accident Cover for Passengers",
+                "isChecked": false
+              },
+              {
+                "label": "Oman Cover Third Party",
+                "isChecked": false
+              }
+            ]
+          }
         },
         {
-          "label": "lossordamagetovehicle",
-          "key": "Loss or Damage to your Vehicle",
-          "classic": "tick",
-          "premium": "tick",
-          "executive": "tick"
-        },
-        {
-          "label": "medicalexpenseduetoaccident",
-          "key": "Medical Expense Due to on Accident",
-          "classic": "",
-          "premium": "AED 3,500",
-          "executive": "AED 6,000"
-        },
-        {
-          "label": "personalbelongings",
-          "key": "Personal Belongings",
-          "classic": "",
-          "premium": "AED 4,000",
-          "executive": "AED 4,000"
-        },
-        {
-          "label": "naturalperils",
-          "key": "Natural Perils (Storms/Flood)",
-          "classic": "",
-          "premium": "tick",
-          "executive": "tick"
-        },
-        {
-          "label": "offroadcover",
-          "key": "Off Road Cover",
-          "classic": "",
-          "premium": "checkbox",
-          "executive": "tick"
-        },
-        {
-          "label": "repair",
-          "key": "Repair",
-          "classic": "Agency",
-          "premium": "Agency",
-          "executive": "Agency"
-        },
-        {
-          "label": "omancoverowndamage",
-          "key": "Oman Cover Own Damage",
-          "classic": "",
-          "premium": "tick",
-          "executive": "tick"
-        },
-        {
-          "label": "hirecar",
-          "key": "Hire Car",
-          "classic": "checkbox",
-          "premium": "checkbox",
-          "executive": "tick"
-        },
-        {
-          "label": "personalaccidentcoverfordriver",
-          "key": "Personal Accident Cover for Driver",
-          "classic": "",
-          "premium": "tick",
-          "executive": "tick"
-        },
-        {
-          "label": "personalaccidentcoverforpassenger",
-          "key": "Personal Accident Cover for Passenger",
-          "classic": "checkbox",
-          "premium": "tick",
-          "executive": "tick"
-        },
-        {
-          "label": "exceeswaiverforwindscreendamage",
-          "key": "Excess Waiver for Windscreen damage only",
-          "classic": "",
-          "premium": "tick",
-          "executive": "tick"
-        },
-        {
-          "label": "breakdownrecoverysilver",
-          "key": "Breakdown Recovery - Silver",
-          "classic": "checkbox",
-          "premium": "checkbox",
-          "executive": "checkbox"
-        },
-        {
-          "label": "breakdownrecoverygold",
-          "key": "Breakdown Recovery - Gold",
-          "classic": "checkbox",
-          "premium": "checkbox",
-          "executive": "checkbox"
-        },
-        {
-          "label": "breakdownrecoveryplatinum",
-          "key": "Breakdown Recovery - Platinum",
-          "classic": "checkbox",
-          "premium": "checkbox",
-          "executive": "checkbox"
+          "label": "MOTOR CLASSIC",
+          "star": "3",
+          "price": "2,050",
+          "currency": "AED",
+          "plan_summary": {
+            "label": "Motor Classic Plan Summary",
+            "coverages": ["Third Party Bodily Injured",
+              "Third Party Property Damage(AED 500,0000)",
+              "Loss or Damage to your Vehicle",
+              "Non Agency Repair", "Breakdown Recovery(Platinum)"
+            ],
+            "optional_coverages": [{
+                "label": "Hire Car",
+                "isChecked": false
+              },
+              {
+                "label": "Personal Accident Cover for Driver",
+                "isChecked": false
+              },
+              {
+                "label": "Personal Accident Cover for Passengers",
+                "isChecked": false
+              },
+              {
+                "label": "Oman Cover Third Party",
+                "isChecked": false
+              }
+            ]
+          }
         }
       ]
     },
     {
       "title": "Upload Details",
-      "inputs": [
-        {
+      "inputs": [{
           "label": "uploadId",
           "key": "Id",
           "type": "text"
@@ -337,8 +306,7 @@
     },
     {
       "title": "Few Questions?",
-      "inputs": [
-        {
+      "inputs": [{
           "label": "qno1",
           "type": "text",
           "key": "How far is your office from home?"

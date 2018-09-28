@@ -13,10 +13,60 @@
           <span>{{input.context}}</span>
           <br>
           <div *ngIf="input.label=='policy'" class="row">
-            <mat-card class="col-md-3">Simple card 1</mat-card>
-            <mat-card class="col-md-3">Simple card 2</mat-card>
-            <mat-card class="col-md-3">Simple card 3</mat-card>
-            <mat-card class="col-md-3">Simple card 4</mat-card>
+            <mat-card class="policy-card col-md-3" *ngFor="let plan of input.plans; let i = index">
+              <mat-card-header class="plan-card-header">
+                <mat-card-title>{{plan.label}}</mat-card-title>
+              </mat-card-header>
+              <mat-card-content class="plan-card-content" (click)="displayPlanSummary(plan['plan_summary']['label'])">
+                <div *ngIf="plan.star=='1'">
+                  <mat-icon class="star-rating">star_rate</mat-icon>
+                </div>
+                <div *ngIf="plan.star=='2'">
+                  <mat-icon class="star-rating">star_rate</mat-icon>
+                  <mat-icon class="star-rating">star_rate</mat-icon>
+                </div>
+                <div *ngIf="plan.star=='3'">
+                  <mat-icon class="star-rating">star_rate</mat-icon>
+                  <mat-icon class="star-rating">star_rate</mat-icon>
+                  <mat-icon class="star-rating">star_rate</mat-icon>
+                </div>
+                <label for="plan-currency">{{plan.currency}}</label> <br>
+                <label for="plan-price">{{plan.price}}</label>
+              </mat-card-content>
+              <mat-card-footer class="plan-card-footer">
+                <button class="plan-card-footer-btn" mat-button>COMPARE</button>
+                <button class="plan-card-footer-btn" mat-button>BUY PLAN</button>
+              </mat-card-footer>
+            </mat-card>
+
+            <div class="row col-md-12" *ngFor="let plan of input.plans; let i = index">
+              <div *ngIf="plan['plan_summary']['label']==planLabel">
+                <div>
+                  <div class="col-md-12">
+                    <label for="summary-plan-label">{{plan['plan_summary']['label']}}</label>
+                  </div>
+                  <div class="col-md-12">
+                    <mat-list role="list">
+                      <mat-list-item *ngFor="let coverage of plan['plan_summary']['coverages']; let i = index" role="listitem">*
+                        {{coverage}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+                <div>
+                  <div class="col-md-12">
+                    <label for="summary-plan-label">{{plan['plan_summary']['optional_coverages']['label']}}</label>
+                  </div>
+                  <!-- <div class="col-md-12">
+                    <mat-list role="list">
+                      <mat-list-item *ngFor="let coverage of plan['plan_summary']['optional_coverages']['coverages']; let i = index" role="listitem">*
+                        {{coverage}}</mat-list-item>
+                    </mat-list>
+                  </div> -->
+                </div>
+
+              </div>
+
+            </div>
           </div>
 
 

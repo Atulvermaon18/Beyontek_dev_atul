@@ -21,6 +21,7 @@ export class QuotesFormComponent implements OnInit {
   isDriverInsured = false;
   quoteSelected = false;
   inputData = {};
+  planLabel;
 
   constructor(public dialog: MatDialog, private _formBuilder: FormBuilder, private service: ApiServiceService) {
     service.getInuts().then(() => {
@@ -121,6 +122,10 @@ export class QuotesFormComponent implements OnInit {
     } else {
       this.isDriverInsured = true;
     }
+  }
+
+  displayPlanSummary(plan) {
+   this.planLabel = plan;
   }
 
 }

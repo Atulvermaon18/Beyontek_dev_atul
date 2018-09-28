@@ -38,6 +38,10 @@
   width: 100%;
 }
 
+.policy-card {
+  margin-left: 40px;
+}
+
 
 ::ng-deep .mat-horizontal-stepper-header-container{
   display: none !important;
@@ -89,4 +93,9 @@
 ::placeholder {
   font-style: Nunitosansbold;
   font-size: 17px;
+}
+
+.plan-card-footer .plan-card-footer-btn {
+    min-width: 0px;
+    padding: 0 6px;
 }
