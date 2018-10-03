@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { MatMenu } from '@angular/material';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -28,7 +29,7 @@ export class HeaderComponent implements OnInit {
       map(result => result.matches)
     );
     
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, public router: Router) {}
   
   bindData(data) {
     this.languageBind = data.viewValue;

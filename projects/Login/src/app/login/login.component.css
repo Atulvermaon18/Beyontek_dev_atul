@@ -1,3 +1,7 @@
+.pad_none{
+    padding-left: 0;
+    padding-right: 0;
+}
 .bg_img {
     background-image: url("../../../../Login/src/assets/img/login/login_bg.png");
     width: 100%;

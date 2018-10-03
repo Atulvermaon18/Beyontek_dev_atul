@@ -1,16 +1,37 @@
-<nav class="displayupcss">
+<nav class="displayupcss" *ngIf="router.url === '/login'">
   <div class="header_login">
+    <span class="header-menu-right">
+      <a routerLink="/home" class="btn_home">HOME</a>
+      <button class="lang_dropdown" color="primary" mat-button [matMenuTriggerFor]="usermenu">
+        <span class="header-label"><img src="{{imageBind}}" class="btn_flag">{{languageBind}}</span>
+        <mat-icon class="icon_align">arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #usermenu="matMenu" class="lang_dropdown">
+        <button mat-menu-item class="add-new-menu-item"  *ngFor="let lang of languages" (click)="bindData(lang);">
+          <img src="{{lang.img}}" class="btn_flag">{{lang.viewValue}}</button>
+      </mat-menu>
+      <a class="btn_login">Login/Sign up</a>
+      <img src="../../assets/img/login/contact.png" class="btn_img" routerLink="/login">
+    </span>
+  </div>
+</nav>
+<nav class="shadow displayupcss" *ngIf="router.url === '/home'">
+  <mat-toolbar class="bg_header">
+    <button type="button" mat-icon-button routerLink="/home">
+      <img class="logo_allign" src="../../assets/img/logo.png">
+    </button>
     <span class="header-menu-right"></span>
-    <a class="btn_home">HOME</a>
+    <a routerLink="/home" class="btn_home">HOME</a>
     <button class="lang_dropdown" color="primary" mat-button [matMenuTriggerFor]="usermenu">
-      <span class="header-label"><img src="{{imageBind}}" class="btn_flag">{{languageBind}}</span>
-      <mat-icon class="icon_align">expand_more</mat-icon>
+      <span class="header-label">
+        <img src="{{imageBind}}" class="btn_flag">{{languageBind}}</span>
+      <mat-icon class="icon_align">arrow_drop_down</mat-icon>
     </button>
     <mat-menu #usermenu="matMenu" class="lang_dropdown">
-      <button mat-menu-item class="add-new-menu-item"  *ngFor="let lang of languages" (click)="bindData(lang);">
+      <button mat-menu-item class="add-new-menu-item" *ngFor="let lang of languages" (click)="bindData(lang);">
         <img src="{{lang.img}}" class="btn_flag">{{lang.viewValue}}</button>
     </mat-menu>
     <a class="btn_login">Login/Sign up</a>
     <img src="../../assets/img/login/contact.png" class="btn_img" routerLink="/login">
-  </div>
+  </mat-toolbar>
 </nav>

@@ -1,0 +1,23 @@
+.insurance-card {
+    max-width: 238.21px;
+    height: 398.43px;
+    margin-left: 10px;
+    display: inline-block;
+    text-align: center;
+    size: 21px;
+    text-decoration: underline;
+    font-family: 'Nunitosansextrabold';
+  }
+    
+  .text-center{
+    text-align: center !important;
+  }
+  
+  ::ng-deep .card_size.mat-card:nth-child(odd) {
+    position: relative;
+    bottom: 187px;
+  }
+  
+  .card_allign{
+    margin-left: 2%;  
+  }

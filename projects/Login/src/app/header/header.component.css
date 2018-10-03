@@ -5,6 +5,7 @@
 
 a:hover{
   cursor: pointer;
+  text-decoration: none;
 }
 
 .displayupcss a {
@@ -37,14 +38,14 @@ a:hover{
 .btn_img{
   margin-right: 20px;
   position: relative;
-  top: 25px; 
+  /* top: 25px;  */
 }
 
 .btn_flag{
   margin-right: 10px;
   position: relative;
-  top: 10px;
-  width: 30px;
+  /* top: 10px; */
+  width: 24.42px;
   height: 30px;
 }
 
@@ -76,13 +77,15 @@ a:hover{
 }
 
 .lang_dropdown{
-  width: 140px;
-  margin-right: 20px;
+  width: 190px;
+  height: 48px;
+  /* margin-right: 20px; */
   font-family: Nunitosans;
   font-size: 14px;
   color: #3C3C3C;
   border: 0;
   background: transparent;
+  text-align: left;
 }
 
 .header_login {
@@ -95,13 +98,24 @@ a:hover{
 }
 
 ::ng-deep .mat-menu-content{
-  width:240px
+  width:242px;
+  font-family: 'Nunitosanssemibold';
+  font-size: 16px;
+  color: #000000;
 }
 
 .icon_align{
-  margin-left: 10px;
+  margin-left: 50px;
 }
 
 ::ng-deep button.mat-menu-item{
   height: 40px;
+}
+
+.shadow {
+  background: transparent;
+}
+
+.bg_header {
+  background-color: #fff;
 }

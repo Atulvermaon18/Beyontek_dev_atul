@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ModalPopupComponent } from '../modal/modal-popup/modal-popup.component';
-import { ApiServiceService } from '../api-service.service';
+import { PostsService } from '../_services/posts.service';
 
 @Component({
   selector: 'app-quotes-form',
@@ -21,13 +21,20 @@ export class QuotesFormComponent implements OnInit {
   isDriverInsured = false;
   quoteSelected = false;
   inputData = {};
-  planLabel;
 
-  constructor(public dialog: MatDialog, private _formBuilder: FormBuilder, private service: ApiServiceService) {
-    service.getInuts().then(() => {
-      console.log(service.data.data);
-      this.inputData = service.data.data;
-    });
+  posts: any;
+  loadingMessage: any;
+  errorMessage: any;
+  planLabel: any;
+
+  constructor(private postsService: PostsService, public dialog: MatDialog,
+    private _formBuilder: FormBuilder) {
+      this.postsService.getInuts().subscribe((service: any) => {
+        this.inputData = service.data;
+      },
+        (err: any) => {
+          this.errorMessage = 'There are no posts pulled from the server!';
+        });
   }
 
 
@@ -98,8 +105,6 @@ export class QuotesFormComponent implements OnInit {
   }
 
   showDetails(data) {
-    // this.quoteSelected=true;
-    // this.summary = data.value;
     const dialogRef = this.dialog.open(ModalPopupComponent, {
       width: '1034px',
       height: '448px',

@@ -1,0 +1,6 @@
+<div class="container text-center" *ngIf="header==='card'">
+  <app-modal-card [cardDetails]="data"></app-modal-card>
+</div>
+<div class="container text-center" *ngIf="header==='buyplan'">
+  <app-modal-buyplan [buyplanDetails]="data"></app-modal-buyplan>
+</div>
