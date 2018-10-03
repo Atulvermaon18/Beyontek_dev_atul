@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule } from '@angular/material';
+import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatMenuModule } from '@angular/material';
 import { MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material';
 import { MatCheckboxModule} from '@angular/material/checkbox';
@@ -49,6 +49,8 @@ import { ModalBuyplanComponent } from './modal/modal-buyplan/modal-buyplan.compo
 
 import { LoaderComponent } from './loader/loader.component';
 import { LoaderInterceptorService } from './_services/loader-interceptor.service';
+import { ModalBuynewpolicyComponent } from './modal/modal-buynewpolicy/modal-buynewpolicy.component';
+import { ModalVideoComponent } from './modal/modal-video/modal-video.component';
 
 export function setupTranslateFactory(
   service: TranslateService): Function {
@@ -83,7 +85,9 @@ export function setupTranslateFactory(
     UserDetailPreviewComponent,
     ModalCardComponent,
     ModalBuyplanComponent,
-    LoaderComponent
+    LoaderComponent,
+    ModalBuynewpolicyComponent,
+    ModalVideoComponent
   ],
   imports: [
     BrowserModule,
@@ -109,6 +113,7 @@ export function setupTranslateFactory(
     MatDatepickerModule,
     MatNativeDateModule,
     MatTabsModule,
+    MatMenuModule,
     MatCheckboxModule
   ],
   entryComponents: [

@@ -108,6 +108,10 @@ a:hover{
   margin-left: 50px;
 }
 
+icon_align1{
+  margin-left: 40px;
+}
+
 ::ng-deep button.mat-menu-item{
   height: 40px;
 }

@@ -5,3 +5,28 @@
 .mar_none{
   margin-right: 0;
 }
+.bg_color{
+  background-color: #8DCE11;
+  bottom: 220px;
+  left: 40px;
+}
+.bg_color1{
+  background-color: #8DCE11;
+  bottom: 220px;
+  left: -40px;
+  float: right;
+}
+::ng-deep .mat-fab{
+  width: 64px;
+  height: 64px;
+}
+.btn_move_left{
+  float:left;
+  position: relative;
+  bottom: 170px;
+}
+.btn_move_right{
+  float:right;
+  position: relative;
+  bottom: 170px;
+}
