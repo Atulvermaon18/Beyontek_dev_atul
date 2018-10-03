@@ -4,3 +4,9 @@
 <div class="container text-center" *ngIf="header==='buyplan'">
   <app-modal-buyplan [buyplanDetails]="data"></app-modal-buyplan>
 </div>
+<div class="container text-center" *ngIf="header==='video'">
+  <app-modal-video [videoDetails]="data"></app-modal-video>
+</div>
+<div class="container text-center" *ngIf="header==='buynewpolicy'">
+  <app-modal-buynewpolicy [buynewpolicyDetails]="data"></app-modal-buynewpolicy>
+</div>
