@@ -12,26 +12,6 @@ export class ClientClaimIntimationComponent implements OnInit {
   constructor(public dialog: MatDialog){}
 
   ngOnInit() {
-  }
-
-  showvideo() {
-    const dialogRef = this.dialog.open(ModalPopupComponent, {
-      width: '300px',
-      data: { head: 'video'}
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed', result);
-    });
-  }
-
-  showbuynewpolicy() {
-    const dialogRef = this.dialog.open(ModalPopupComponent, {
-      width: '300px',
-      data: { head: 'buynewpolicy'}
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed', result);
-    });
-  }
+  }  
 
 }
