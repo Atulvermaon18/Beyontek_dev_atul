@@ -8,30 +8,21 @@
     text-decoration: underline;
     font-family: 'Nunitosansextrabold';
   }
-  
-  .card-container {
-    margin: 10px 10px;
-    display: inline-block;
-  }
-  
-  strong{
-    size: 21px;
-    text-decoration: underline;
-  }
-  
+    
   .text-center{
     text-align: center !important;
-  }
-  
-  .carousel-control-prev,.carousel-control-next {
-    width: 20px;
   }
   
   ::ng-deep .card_size.mat-card:nth-child(odd) {
     position: relative;
     bottom: 187px;
   }
+
+  ::ng-deep .card_size.mat-card:nth-child(4) {
+    position: relative;
+    top: 25px;
+  }
   
   .card_allign{
-    margin-left: 2%;  
+    margin-left: 3%; 
   }

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,7 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFileUploadModule } from 'angular-material-fileupload';
 import {MatTabsModule} from '@angular/material/tabs';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TranslateService } from './translate.service';
 import { TranslatePipe } from './translate.pipe';
 import { ImgHolderComponent } from './img-holder/img-holder.component';
@@ -45,6 +46,9 @@ import { MypolicymakepaymentComponent } from './mypolicy_details/mypolicymakepay
 import { UserDetailPreviewComponent } from './user-detail-preview/user-detail-preview.component';
 import { ModalCardComponent } from './modal/modal-card/modal-card.component';
 import { ModalBuyplanComponent } from './modal/modal-buyplan/modal-buyplan.component';
+
+import { LoaderComponent } from './loader/loader.component';
+import { LoaderInterceptorService } from './_services/loader-interceptor.service';
 
 export function setupTranslateFactory(
   service: TranslateService): Function {
@@ -78,7 +82,8 @@ export function setupTranslateFactory(
     MypolicymakepaymentComponent,
     UserDetailPreviewComponent,
     ModalCardComponent,
-    ModalBuyplanComponent
+    ModalBuyplanComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -115,9 +120,14 @@ export function setupTranslateFactory(
     {
       provide: APP_INITIALIZER,
       useFactory: setupTranslateFactory,
-      deps: [TranslateService],
+      deps: [TranslateService],      
       multi: true
-    }],
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptorService,
+      multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {

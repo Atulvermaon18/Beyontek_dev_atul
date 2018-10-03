@@ -1,5 +1,5 @@
 <div class="card_allign">  
-  <div *ngIf="!currentScreen.quotes" style="margin-top:50px;">    
+  <div *ngIf="!currentScreen.quotes" style="margin-top:30px;">    
     <mat-card class="insurance-card card_size" (click)="initiateQuotes(list)" *ngFor="let list of menu; index as i">
       <mat-card-header>
         <span *ngIf="+i%2==0">{{list.title}}</span>
