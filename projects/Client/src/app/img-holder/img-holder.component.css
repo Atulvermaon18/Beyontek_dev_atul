@@ -7,3 +7,14 @@ img {
     height:500px;
     display: inline-block;
 }
+
+.btn_move_left{
+    float:left;
+    position: relative;
+    bottom: 170px;
+  }
+  .btn_move_right{
+    float:right;
+    position: relative;
+    bottom: 170px;
+  }

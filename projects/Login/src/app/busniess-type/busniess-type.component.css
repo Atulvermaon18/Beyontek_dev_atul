@@ -17,7 +17,12 @@
     position: relative;
     bottom: 187px;
   }
+
+  ::ng-deep .card_size.mat-card:nth-child(4) {
+    position: relative;
+    top: 25px;
+  }
   
   .card_allign{
-    margin-left: 2%;  
+    margin-left: 3%; 
   }

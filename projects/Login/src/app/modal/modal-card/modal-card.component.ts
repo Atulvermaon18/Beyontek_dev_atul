@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal-card',
@@ -14,7 +15,7 @@ export class ModalCardComponent implements OnInit {
   popTitle: string;
   splitPopImage: any;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dialogRef: MatDialogRef<ModalCardComponent>) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dialogRef: MatDialogRef<ModalCardComponent>, public router: Router) { }
 
   ngOnInit() {
     this.popTitle = this.cardDetails.title;
@@ -25,5 +26,6 @@ export class ModalCardComponent implements OnInit {
 
   handleSelect(selected): void {
     this.dialogRef.close({'selected':selected});
+    // this.router.navigate['/check'];
   }
 }

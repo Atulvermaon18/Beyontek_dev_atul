@@ -1,11 +1,109 @@
-.sidenav-container {
+/* .sidenav-container {
   height: 100%;
-}
-.shadow{
+} */
+/* .shadow{
   box-shadow: 0 8px 15px -1px #999;
-}
-.sidenav {
+} */
+/* .sidenav {
   width: 200px;
+} */
+
+/* .mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+} */
+
+/* ::ng-deep .btn_hover.mat-button:hover{
+  background-color: white !important;
+} */
+
+/* ::ng-deep .btn_hover.mat-button:focus{
+  outline-color: white;
+} */
+
+/* ::ng-deep .mat-icon-button:focus{
+  outline-color: white;
+} */
+
+/* .header-menu-right { */
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  /* flex: 1 1 auto;
+} */
+
+/* .login-btn {
+  border: 1px solid #fff;
+} */
+/* .mat-toolbar.mat-primary {
+  background: #fff;
+  color: #868282;
+} */
+
+/* .logo_allign {
+  margin-left: 25px;
+} */
+
+.displayupcss{
+  z-index: 11111;
+  position: relative;  
+}
+
+a:hover{
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.displayupcss a {
+  text-decoration: none;
+  color: #3C3C3C;
+}
+
+.displayupcss a:active {
+  color: #3C3C3C;
+}
+
+.displayupcss img{
+  cursor: pointer;
+}
+
+.btn_home{
+  font-family: Nunitosanssemibold;
+  font-size: 14px;
+  color: #000000; 
+  margin-right: 30px;
+}
+
+.btn_login{
+  font-family: Nunitosans;
+  font-size: 14px;
+  color: #3C3C3C;
+  margin-right: 10px;
+}
+
+.btn_img{
+  margin-right: 20px;
+  position: relative;
+  /* top: 25px;  */
+}
+
+.btn_flag{
+  margin-right: 10px;
+  position: relative;
+  /* top: 10px; */
+  width: 24.42px;
+  height: 30px;
+}
+
+::ng-deep mat-toolbar{
+  background-color: transparent;
+}
+
+::ng-deep .mat-button{
+  background-color: transparent;
+}
+
+::ng-deep .mat-button:hover{
+  background-color: transparent;
 }
 
 .mat-toolbar.mat-primary {
@@ -22,11 +120,51 @@
 .login-btn {
   border: 1px solid #fff;
 }
-.mat-toolbar.mat-primary {
-  background: #fff;
-  color: #868282;
+
+.lang_dropdown{
+  width: 190px;
+  height: 48px;
+  /* margin-right: 20px; */
+  font-family: Nunitosans;
+  font-size: 14px;
+  color: #3C3C3C;
+  border: 0;
+  background: transparent;
+  text-align: left;
+}
+
+.header_login {
+  text-align: right;
+}
+
+::ng-deep  .mat-menu-panel{
+  margin-top: 60px;
+  background: white;
+}
+
+::ng-deep .mat-menu-content{
+  width:242px;
+  font-family: 'Nunitosanssemibold';
+  font-size: 16px;
+  color: #000000;
+}
+
+.icon_align{
+  margin-left: 50px;
+}
+
+::ng-deep button.mat-menu-item{
+  height: 40px;
+}
+
+.shadow {
+  background: transparent;
+}
+
+.bg_header {
+  background-color: #fff;
 }
 
 .logo_allign {
-  margin-left: 25px;
+  margin-left: 20px;
 }

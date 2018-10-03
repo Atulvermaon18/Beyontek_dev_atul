@@ -1,5 +1,5 @@
 .pad_none{
-  padding-left: 0;
+  /* padding-left: 0; */
   padding-right: 0;
 }
 .mar_none{
@@ -19,6 +19,10 @@
   display: inline;
 }
 .buttoncolor_css{
+  background-color: #45A175;
+  color: #fff;
+}
+::ng-deep .buttoncolor_css.mat-button:hover{
   background-color: #45A175;
   color: #fff;
 }
@@ -88,6 +92,7 @@
   background-image: url(../../assets/img/home/upload.png);
   background-repeat: no-repeat;  
   background-position: right;
+  margin-left: 25px;
 }
 
 .row {

@@ -26,11 +26,13 @@ export class QuotesFormComponent implements OnInit {
   loadingMessage: any;
   errorMessage: any;
   planLabel: any;
+  show_form: any;
 
   constructor(private postsService: PostsService, public dialog: MatDialog,
     private _formBuilder: FormBuilder) {
       this.postsService.getInuts().subscribe((service: any) => {
         this.inputData = service.data;
+        this.show_form = true;
       },
         (err: any) => {
           this.errorMessage = 'There are no posts pulled from the server!';

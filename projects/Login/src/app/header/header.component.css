@@ -94,7 +94,7 @@ a:hover{
 
 ::ng-deep  .mat-menu-panel{
   margin-top: 60px;
-  background: transparent;
+  background: white;
 }
 
 ::ng-deep .mat-menu-content{
@@ -108,6 +108,10 @@ a:hover{
   margin-left: 50px;
 }
 
+icon_align1{
+  margin-left: 40px;
+}
+
 ::ng-deep button.mat-menu-item{
   height: 40px;
 }
@@ -118,4 +122,8 @@ a:hover{
 
 .bg_header {
   background-color: #fff;
+}
+
+.logo_allign {
+  margin-left: 20px;
 }
