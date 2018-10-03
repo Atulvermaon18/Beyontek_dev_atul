@@ -22,21 +22,28 @@
 
 .popDetail{
     position: absolute;
-    bottom: 100px;
+    width: 300px;
+    bottom: 105px;
     color: #fff;
-    margin-left: 25px;
     font-family: 'Nunitosansextrabold';
 }
 
-strong{
-    font-size: 17px;
+p{
+    font-size: 24px;
 }
 
 a{
     text-align: left;
-    margin-right: 10px;
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: 17px;
+    color: #FFFFFF;
 }
 
 a:hover{
     cursor: pointer;
+}
+
+.row{
+    margin: 0;
 }
