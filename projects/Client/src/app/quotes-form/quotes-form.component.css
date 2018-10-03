@@ -99,3 +99,7 @@
     min-width: 0px;
     padding: 0 6px;
 }
+
+.coverage-plans-list, .opt-coverage-plans-list {
+  font-size: 13px;
+}

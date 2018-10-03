@@ -40,28 +40,27 @@
             </mat-card>
 
             <div class="row col-md-12" *ngFor="let plan of input.plans; let i = index">
-              <div *ngIf="plan['plan_summary']['label']==planLabel">
-                <div>
+              <div *ngIf="plan['plan_summary']['label']==planLabel" class="row">
+                <div class="col-md-6">
                   <div class="col-md-12">
-                    <label for="summary-plan-label">{{plan['plan_summary']['label']}}</label>
+                    <b><label for="summary-plan-label">{{plan['plan_summary']['label']}}</label></b>
                   </div>
                   <div class="col-md-12">
                     <mat-list role="list">
-                      <mat-list-item *ngFor="let coverage of plan['plan_summary']['coverages']; let i = index" role="listitem">*
+                      <mat-list-item class="coverage-plans-list" *ngFor="let coverage of plan['plan_summary']['coverages']; let i = index" role="listitem">*
                         {{coverage}}</mat-list-item>
                     </mat-list>
                   </div>
                 </div>
-                <div>
+                <div class="col-md-6">
                   <div class="col-md-12">
-                    <label for="summary-plan-label">{{plan['plan_summary']['optional_coverages']['label']}}</label>
+                   <u><b> <label for="summary-plan-label">{{plan['plan_summary']['optional_coverages']['label']}}</label></b></u>
                   </div>
-                  <!-- <div class="col-md-12">
-                    <mat-list role="list">
-                      <mat-list-item *ngFor="let coverage of plan['plan_summary']['optional_coverages']['coverages']; let i = index" role="listitem">*
-                        {{coverage}}</mat-list-item>
-                    </mat-list>
-                  </div> -->
+                  <div class="col-md-12" *ngFor="let opt of plan['plan_summary']['optional_coverages']['coverages']; let i = index">
+                    <mat-checkbox [(ngModel)]="opt.isChecked" [formControlName]="opt.name">
+                    </mat-checkbox>
+                    <label for="additional-coverage" class="opt-coverage-plans-list">{{opt.label}}</label>
+                  </div>
                 </div>
 
               </div>
@@ -105,8 +104,8 @@
           </div>
 
           <!-- this is for driver details  -->
-          <div  *ngFor="let field of input.inputs"  [hidden]="!field.isChecked">
-            <div *ngFor="let driverField of field.driverDetails"  style="display: inline-block;" class="col-md-6">
+          <div *ngFor="let field of input.inputs" [hidden]="!field.isChecked">
+            <div *ngFor="let driverField of field.driverDetails" style="display: inline-block;" class="col-md-6">
               <mat-form-field class="displayinput_css" *ngIf="driverField.type=='text' || driverField.type=='number'  ">
                 <input matInput placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
               </mat-form-field>

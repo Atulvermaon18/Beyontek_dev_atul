@@ -192,23 +192,26 @@
               "label": "Add Optional Cover",
               "coverages": [{
                   "label": "Hire Car",
+                  "name": "hirecar",
                   "isChecked": false
                 },
                 {
                   "label": "Personal Accident Cover for Driver",
+                  "name": "personalaccidentcoverfordriver",
                   "isChecked": false
                 },
                 {
                   "label": "Personal Accident Cover for Passengers",
+                  "name": "personalaccidentcoverforpassenger",
                   "isChecked": false
                 },
                 {
                   "label": "Oman Cover Third Party",
+                  "name": "omancoverthirdparty",
                   "isChecked": false
                 }
               ]
             }
-
           }
         },
         {
@@ -223,23 +226,30 @@
               "Loss or Damage to your Vehicle",
               "Non Agency Repair", "Breakdown Recovery(Platinum)"
             ],
-            "optional_coverages": [{
+            "optional_coverages": {
+              "label": "Add Optional Cover",
+              "coverages": [{
                 "label": "Hire Car",
+                "name": "hirecar",
                 "isChecked": false
               },
               {
                 "label": "Personal Accident Cover for Driver",
+                "name": "personalaccidentcoverfordriver",
                 "isChecked": false
               },
               {
                 "label": "Personal Accident Cover for Passengers",
+                "name": "personalaccidentcoverforpassenger",
                 "isChecked": false
               },
               {
                 "label": "Oman Cover Third Party",
+                "name": "omancoverthirdparty",
                 "isChecked": false
               }
             ]
+            }
           }
         },
         {
@@ -254,23 +264,30 @@
               "Loss or Damage to your Vehicle",
               "Non Agency Repair", "Breakdown Recovery(Platinum)"
             ],
-            "optional_coverages": [{
+            "optional_coverages": {
+              "label": "Add Optional Cover",
+              "coverages": [{
                 "label": "Hire Car",
+                "name": "hirecar",
                 "isChecked": false
               },
               {
                 "label": "Personal Accident Cover for Driver",
+                "name": "personalaccidentcoverfordriver",
                 "isChecked": false
               },
               {
                 "label": "Personal Accident Cover for Passengers",
+                "name": "personalaccidentcoverforpassenger",
                 "isChecked": false
               },
               {
                 "label": "Oman Cover Third Party",
+                "name": "omancoverthirdparty",
                 "isChecked": false
               }
             ]
+            }
           }
         }
       ]

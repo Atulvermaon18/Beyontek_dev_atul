@@ -76,7 +76,11 @@ export class QuotesFormComponent implements OnInit {
       dgender: ['', Validators.required],
       dnationality: ['', Validators.required],
       demail: ['', Validators.required],
-      dprofession: ['', Validators.required]
+      dprofession: ['', Validators.required],
+      hirecar: ['', Validators.required],
+      personalaccidentcoverfordriver: ['', Validators.required],
+      personalaccidentcoverforpassenger: ['', Validators.required],
+      omancoverthirdparty: ['', Validators.required]
     });
   }
 
