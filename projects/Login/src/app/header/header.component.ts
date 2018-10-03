@@ -15,7 +15,16 @@ export class HeaderComponent implements OnInit {
   @Input() matMenu = MatMenu;
 
   languageBind: string;
+  userBind: string;
   imageBind: any;
+  isLogged:boolean = false;
+
+  user = [
+    { value: 'profile', viewValue: 'Profile', img: '../../assets/img/flag/usa.png', default: true },
+    { value: 'changepassword', viewValue: 'Change Password', img: '../../assets/img/flag/mexico.png', default: false  },
+    { value: 'document', viewValue: 'Document', img: '../../assets/img/flag/spain.png', default: false },
+    { value: 'logout', viewValue: 'Logout', img: '../../assets/img/flag/uae.png', default: false }
+  ];
 
   languages = [
     { value: 'english', viewValue: 'English', img: '../../assets/img/flag/usa.png', default: true },
@@ -41,6 +50,7 @@ export class HeaderComponent implements OnInit {
   bindFlagData(data) {
     this.languageBind = data.viewValue;
     this.imageBind = data.img;
+    
   }
 
   bindData(data) {
@@ -49,7 +59,17 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.languageBind = 'English';
+    this.userBind = 'Atul';
     this.imageBind = '../../assets/img/flag/usa.png';
+    if(localStorage.getItem('logged') !== null){
+      this.router.navigate(['/profile']);
+      console.log('Test');
+      this.isLogged = true;
+    }else{
+      alert("Please login!");
+      this.isLogged = false;
+      this.router.navigate(['/login']);
+    }
   }
 
   }

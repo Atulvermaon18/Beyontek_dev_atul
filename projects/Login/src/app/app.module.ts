@@ -15,6 +15,14 @@ import { BusniessTypeComponent } from './busniess-type/busniess-type.component';
 import { ModalPopupComponent } from './modal/modal-popup/modal-popup.component';
 import { ModalCardComponent } from './modal/modal-card/modal-card.component';
 import { ModalBuyplanComponent } from './modal/modal-buyplan/modal-buyplan.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { MyPolicyComponent } from './my-policy/my-policy.component';
+import { UserCardComponent } from './user-card/user-card.component';
+import { ImgHolderComponent } from './img-holder/img-holder.component';
+import { UserPersonalDetailComponent } from './user-personal-detail/user-personal-detail.component';
+import { UserPolicyComponent } from './user-policy/user-policy.component';
+import { GeneratedQuotesUsersComponent } from './generated-quotes-users/generated-quotes-users.component';
+import { ClaimIntimationComponent } from './claim-intimation/claim-intimation.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +33,15 @@ import { ModalBuyplanComponent } from './modal/modal-buyplan/modal-buyplan.compo
     BusniessTypeComponent,
     ModalPopupComponent,
     ModalCardComponent,
-    ModalBuyplanComponent
+    ModalBuyplanComponent,
+    MyProfileComponent,
+    MyPolicyComponent,
+    UserCardComponent,
+    ImgHolderComponent,
+    UserPersonalDetailComponent,
+    UserPolicyComponent,
+    GeneratedQuotesUsersComponent,
+    ClaimIntimationComponent
   ],
   imports: [
     BrowserAnimationsModule,
