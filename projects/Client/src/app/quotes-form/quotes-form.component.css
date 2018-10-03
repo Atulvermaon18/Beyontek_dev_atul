@@ -22,6 +22,10 @@
   background-color: #45A175;
   color: #fff;
 }
+::ng-deep .buttoncolor_css.mat-button:hover{
+  background-color: #45A175;
+  color: #fff;
+}
 .background-right-dynamic {
   display: inline-block;
   width: 50%;

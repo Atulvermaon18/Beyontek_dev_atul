@@ -47,3 +47,7 @@ a:hover{
 .row{
     margin: 0;
 }
+
+.align_center{
+    text-align: center;
+}
