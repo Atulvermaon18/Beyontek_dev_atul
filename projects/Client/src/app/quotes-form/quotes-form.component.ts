@@ -21,24 +21,22 @@ export class QuotesFormComponent implements OnInit {
   isDriverInsured = false;
   quoteSelected = false;
   inputData = {};
-  
 
   posts: any;
   loadingMessage: any;
   errorMessage: any;
+  planLabel: any;
   show_form: any;
 
-  constructor(private postsService: PostsService, public dialog: MatDialog, private _formBuilder: FormBuilder) {
-
+  constructor(private postsService: PostsService, public dialog: MatDialog,
+    private _formBuilder: FormBuilder) {
       this.postsService.getInuts().subscribe((service: any) => {
         this.inputData = service.data;
         this.show_form = true;
       },
         (err: any) => {
-          this.errorMessage = "There are no posts pulled from the server!";          
-        })
-    
-  
+          this.errorMessage = 'There are no posts pulled from the server!';
+        });
   }
 
 
@@ -87,7 +85,11 @@ export class QuotesFormComponent implements OnInit {
       dgender: ['', Validators.required],
       dnationality: ['', Validators.required],
       demail: ['', Validators.required],
-      dprofession: ['', Validators.required]
+      dprofession: ['', Validators.required],
+      hirecar: ['', Validators.required],
+      personalaccidentcoverfordriver: ['', Validators.required],
+      personalaccidentcoverforpassenger: ['', Validators.required],
+      omancoverthirdparty: ['', Validators.required]
     });
   }
 
@@ -131,6 +133,10 @@ export class QuotesFormComponent implements OnInit {
     } else {
       this.isDriverInsured = true;
     }
+  }
+
+  displayPlanSummary(plan) {
+   this.planLabel = plan;
   }
 
 }
