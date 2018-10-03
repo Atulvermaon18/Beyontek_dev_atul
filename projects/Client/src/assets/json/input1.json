@@ -229,26 +229,26 @@
             "optional_coverages": {
               "label": "Add Optional Cover",
               "coverages": [{
-                "label": "Hire Car",
-                "name": "hirecar",
-                "isChecked": false
-              },
-              {
-                "label": "Personal Accident Cover for Driver",
-                "name": "personalaccidentcoverfordriver",
-                "isChecked": false
-              },
-              {
-                "label": "Personal Accident Cover for Passengers",
-                "name": "personalaccidentcoverforpassenger",
-                "isChecked": false
-              },
-              {
-                "label": "Oman Cover Third Party",
-                "name": "omancoverthirdparty",
-                "isChecked": false
-              }
-            ]
+                  "label": "Hire Car",
+                  "name": "hirecar",
+                  "isChecked": false
+                },
+                {
+                  "label": "Personal Accident Cover for Driver",
+                  "name": "personalaccidentcoverfordriver",
+                  "isChecked": false
+                },
+                {
+                  "label": "Personal Accident Cover for Passengers",
+                  "name": "personalaccidentcoverforpassenger",
+                  "isChecked": false
+                },
+                {
+                  "label": "Oman Cover Third Party",
+                  "name": "omancoverthirdparty",
+                  "isChecked": false
+                }
+              ]
             }
           }
         },
@@ -267,26 +267,26 @@
             "optional_coverages": {
               "label": "Add Optional Cover",
               "coverages": [{
-                "label": "Hire Car",
-                "name": "hirecar",
-                "isChecked": false
-              },
-              {
-                "label": "Personal Accident Cover for Driver",
-                "name": "personalaccidentcoverfordriver",
-                "isChecked": false
-              },
-              {
-                "label": "Personal Accident Cover for Passengers",
-                "name": "personalaccidentcoverforpassenger",
-                "isChecked": false
-              },
-              {
-                "label": "Oman Cover Third Party",
-                "name": "omancoverthirdparty",
-                "isChecked": false
-              }
-            ]
+                  "label": "Hire Car",
+                  "name": "hirecar",
+                  "isChecked": false
+                },
+                {
+                  "label": "Personal Accident Cover for Driver",
+                  "name": "personalaccidentcoverfordriver",
+                  "isChecked": false
+                },
+                {
+                  "label": "Personal Accident Cover for Passengers",
+                  "name": "personalaccidentcoverforpassenger",
+                  "isChecked": false
+                },
+                {
+                  "label": "Oman Cover Third Party",
+                  "name": "omancoverthirdparty",
+                  "isChecked": false
+                }
+              ]
             }
           }
         }

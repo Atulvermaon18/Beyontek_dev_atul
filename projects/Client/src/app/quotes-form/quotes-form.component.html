@@ -1,5 +1,5 @@
 <div class="row mar_none">
-  
+
   <div class="col-sm pad_none mar_topcss">
     <!-- <app-client-get-quotes *ngIf="!quoteSelected" (notifySelection)="handleNotify($event)"></app-client-get-quotes> -->
 
@@ -11,31 +11,36 @@
           <span>{{input.context}}</span>
           <br>
           <div *ngIf="input.label=='policy'" class="row">
-            <mat-card class="policy-card col-md-3" *ngFor="let plan of input.plans; let i = index">
-              <mat-card-header class="plan-card-header">
-                <mat-card-title>{{plan.label}}</mat-card-title>
-              </mat-card-header>
-              <mat-card-content class="plan-card-content" (click)="displayPlanSummary(plan['plan_summary']['label'])">
-                <div *ngIf="plan.star=='1'">
-                  <mat-icon class="star-rating">star_rate</mat-icon>
+            <div class="col-md-3 layout-box plan-details-section" *ngFor="let plan of input.plans; let i = index">
+              <div class="plan-header col-md-12">
+                <label class="plan-label" for="plan-label">{{plan.label}}</label>
+              </div>
+              <div class="plan-body col-md-12" (click)="displayPlanSummary(plan['plan_summary']['label'])">
+                <div class="plan-star">
+                  <div *ngIf="plan.star=='1'">
+                    <mat-icon class="star-rating">star_rate</mat-icon>
+                  </div>
+                  <div *ngIf="plan.star=='2'">
+                    <mat-icon class="star-rating">star_rate</mat-icon>
+                    <mat-icon class="star-rating">star_rate</mat-icon>
+                  </div>
+                  <div *ngIf="plan.star=='3'">
+                    <mat-icon class="star-rating">star_rate</mat-icon>
+                    <mat-icon class="star-rating">star_rate</mat-icon>
+                    <mat-icon class="star-rating">star_rate</mat-icon>
+                  </div>
                 </div>
-                <div *ngIf="plan.star=='2'">
-                  <mat-icon class="star-rating">star_rate</mat-icon>
-                  <mat-icon class="star-rating">star_rate</mat-icon>
+                <div class="plan-currency-price col-md-12">
+                  <label for="plan-currency">{{plan.currency}}</label> <br>
+                  <label for="plan-price">{{plan.price}}</label>
                 </div>
-                <div *ngIf="plan.star=='3'">
-                  <mat-icon class="star-rating">star_rate</mat-icon>
-                  <mat-icon class="star-rating">star_rate</mat-icon>
-                  <mat-icon class="star-rating">star_rate</mat-icon>
-                </div>
-                <label for="plan-currency">{{plan.currency}}</label> <br>
-                <label for="plan-price">{{plan.price}}</label>
-              </mat-card-content>
-              <mat-card-footer class="plan-card-footer">
-                <button class="plan-card-footer-btn" mat-button>COMPARE</button>
-                <button class="plan-card-footer-btn" mat-button>BUY PLAN</button>
-              </mat-card-footer>
-            </mat-card>
+                <hr class="horizontal-line">
+              </div>
+              <div class="plan-buy plan-body row">
+                <a class="plan-card-footer-btn" mat-button>COMPARE</a>
+                <a class="plan-card-footer-btn" mat-button>BUY PLAN</a>
+              </div>
+            </div>
 
             <div class="row col-md-12" *ngFor="let plan of input.plans; let i = index">
               <div *ngIf="plan['plan_summary']['label']==planLabel" class="row">
@@ -45,14 +50,15 @@
                   </div>
                   <div class="col-md-12">
                     <mat-list role="list">
-                      <mat-list-item class="coverage-plans-list" *ngFor="let coverage of plan['plan_summary']['coverages']; let i = index" role="listitem">*
+                      <mat-list-item class="coverage-plans-list" *ngFor="let coverage of plan['plan_summary']['coverages']; let i = index"
+                        role="listitem">*
                         {{coverage}}</mat-list-item>
                     </mat-list>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="col-md-12">
-                   <u><b> <label for="summary-plan-label">{{plan['plan_summary']['optional_coverages']['label']}}</label></b></u>
+                    <u><b> <label for="summary-plan-label">{{plan['plan_summary']['optional_coverages']['label']}}</label></b></u>
                   </div>
                   <div class="col-md-12" *ngFor="let opt of plan['plan_summary']['optional_coverages']['coverages']; let i = index">
                     <mat-checkbox [(ngModel)]="opt.isChecked" [formControlName]="opt.name">
@@ -60,9 +66,7 @@
                     <label for="additional-coverage" class="opt-coverage-plans-list">{{opt.label}}</label>
                   </div>
                 </div>
-
               </div>
-
             </div>
           </div>
 
