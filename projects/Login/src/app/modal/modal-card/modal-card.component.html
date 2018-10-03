@@ -1,7 +1,16 @@
 <img class="modal-img" src="{{popImage}}">  
 <div class="popDetail">
-  <strong class="text-center">{{popTitle}}</strong><br>
-  <a (click)="handleSelect('new')"><strong class="text-left">New</strong></a>
-  <a (click)="handleSelect('existing')"><strong class="text-left">Existing Customer</strong></a>
-  <a (click)="handleSelect('renew')"><strong class="text-left">Renew</strong></a>
+  <p class="text-center">{{popTitle}}</p>
+  <div class="row">
+    <a (click)="handleSelect('new')">
+      <strong class="text-left">Buy New</strong>
+    </a>
+    <a (click)="handleSelect('existing')" class="align_center">
+      <strong class="text-center">Retrieve Quote
+        <br> Policy</strong>
+    </a>
+    <a (click)="handleSelect('renew')">
+      <strong class="text-left">Renew</strong>
+    </a>
+  </div>
 </div>
