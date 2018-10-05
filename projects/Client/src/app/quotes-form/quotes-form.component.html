@@ -11,10 +11,63 @@
           <span>{{input.context}}</span>
           <br>
           <div *ngIf="input.label=='policy'" class="row">
-            <mat-card class="col-md-3">Simple card 1</mat-card>
-            <mat-card class="col-md-3">Simple card 2</mat-card>
-            <mat-card class="col-md-3">Simple card 3</mat-card>
-            <mat-card class="col-md-3">Simple card 4</mat-card>
+            <div class="col-md-3 layout-box plan-details-section" *ngFor="let plan of input.plans; let i = index">
+              <div class="plan-header col-md-12">
+                <label class="plan-label" for="plan-label">{{plan.label}}</label>
+              </div>
+              <div class="plan-body col-md-12" (click)="displayPlanSummary(plan['plan_summary']['label'])">
+                <div class="plan-star">
+                  <div *ngIf="plan.star=='1'">
+                    <mat-icon class="star-rating">star_rate</mat-icon>
+                  </div>
+                  <div *ngIf="plan.star=='2'">
+                    <mat-icon class="star-rating">star_rate</mat-icon>
+                    <mat-icon class="star-rating">star_rate</mat-icon>
+                  </div>
+                  <div *ngIf="plan.star=='3'">
+                    <mat-icon class="star-rating">star_rate</mat-icon>
+                    <mat-icon class="star-rating">star_rate</mat-icon>
+                    <mat-icon class="star-rating">star_rate</mat-icon>
+                  </div>
+                </div>
+                <div class="plan-currency-price col-md-12">
+                  <label for="plan-currency">{{plan.currency}}</label> <br>
+                  <label for="plan-price">{{plan.price}}</label>
+                </div>
+                <hr class="horizontal-line">
+              </div>
+              <div class="plan-buy plan-body row">
+                <a class="plan-card-footer-btn" mat-button>COMPARE</a>
+                <a class="plan-card-footer-btn" mat-button>BUY PLAN</a>
+              </div>
+            </div>
+
+            <div class="row col-md-12" *ngFor="let plan of input.plans; let i = index">
+              <div *ngIf="plan['plan_summary']['label']==planLabel" class="row">
+                <div class="col-md-6">
+                  <div class="col-md-12">
+                    <b><label for="summary-plan-label">{{plan['plan_summary']['label']}}</label></b>
+                  </div>
+                  <div class="col-md-12">
+                    <mat-list role="list">
+                      <mat-list-item class="coverage-plans-list" *ngFor="let coverage of plan['plan_summary']['coverages']; let i = index"
+                        role="listitem">*
+                        {{coverage}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="col-md-12">
+                    <u><b> <label for="summary-plan-label">{{plan['plan_summary']['optional_coverages']['label']}}</label></b></u>
+                  </div>
+                  <div class="col-md-12" *ngFor="let opt of plan['plan_summary']['optional_coverages']['coverages']; let i = index">
+                    <mat-checkbox [(ngModel)]="opt.isChecked" [formControlName]="opt.name">
+                    </mat-checkbox>
+                    <label for="additional-coverage" class="opt-coverage-plans-list">{{opt.label}}</label>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
 
@@ -53,8 +106,8 @@
           </div>
 
           <!-- this is for driver details  -->
-          <div  *ngFor="let field of input.inputs"  [hidden]="!field.isChecked">
-            <div *ngFor="let driverField of field.driverDetails"  style="display: inline-block;" class="col-md-6">
+          <div *ngFor="let field of input.inputs" [hidden]="!field.isChecked">
+            <div *ngFor="let driverField of field.driverDetails" style="display: inline-block;" class="col-md-6">
               <mat-form-field class="displayinput_css" *ngIf="driverField.type=='text' || driverField.type=='number'  ">
                 <input matInput placeholder="{{driverField.key | translate}}" [formControlName]="driverField.label">
               </mat-form-field>
