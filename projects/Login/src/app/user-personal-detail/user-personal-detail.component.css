@@ -1,0 +1,20 @@
+.mar_topcss{
+    margin-top: 10px;
+}
+.pad_none{
+    padding-left: 0;
+    padding-right: 0;
+}
+.username_css{
+    color:#154979;
+    font-size: 20px;
+    font-family: 'Nunitosansbold'; 
+}
+.address_css{
+    font-size: 14px;
+    color: #535353;
+    font-family: 'Nunitosanssemibold';    
+}
+.mail_css{
+    color: #4388C7;
+}

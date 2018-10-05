@@ -16,5 +16,5 @@
   src: url('/assets/fonts/NunitoSans-ExtraBold.ttf');  
 }
 
-html, body { height: 100%; }
+html, body { height: 100%;background-color: #EFEFEF; }
 body { margin: 0; font-family: 'Nunitosans'; }
