@@ -40,3 +40,7 @@ strong{
 .card_allign{
   margin-left: 3%;  
 }
+
+.cursor_point{
+  cursor: pointer;
+}

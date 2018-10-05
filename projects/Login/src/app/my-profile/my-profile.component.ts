@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyProfileComponent implements OnInit {
 
+  default_gender = 'Male';
+  default_nationality = 'Bangadeshi';
+
+  genders = [
+    { value: 'male', viewValue: 'Male'},
+    { value: 'female', viewValue: 'Female'}
+  ]
+
   constructor() { }
 
   ngOnInit() {
