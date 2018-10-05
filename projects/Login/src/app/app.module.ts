@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatFormFieldModule, MatRadioModule, MatMenuModule, MatDialogModule, MatCheckboxModule, MatSelectModule, MatDatepickerModule } from '@angular/material';
+import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatFormFieldModule, MatRadioModule, MatMenuModule, MatDialogModule, MatSelectModule,MatCheckboxModule, MatExpansionModule } from '@angular/material';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import {MatTabsModule} from '@angular/material/tabs';
 import { AppRoutingModule } from './app-routing.module';
@@ -31,6 +32,9 @@ import { MypolicyquotedetailComponent } from './mypolicy_details/mypolicyquotede
 import { MypolicymakepaymentComponent } from './mypolicy_details/mypolicymakepayment/mypolicymakepayment.component';
 import { NewclaimComponent } from './newclaim/newclaim.component';
 import { ClaimintimationFormComponent } from './claimintimation-form/claimintimation-form.component';
+import { ModalBuynewpolicyComponent } from './modal/modal-buynewpolicy/modal-buynewpolicy.component';
+import { ModalVideoComponent } from './modal/modal-video/modal-video.component';
+import { MypolicyViewdetailsComponent } from './mypolicy-viewdetails/mypolicy-viewdetails.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +46,8 @@ import { ClaimintimationFormComponent } from './claimintimation-form/claimintima
     ModalPopupComponent,
     ModalCardComponent,
     ModalBuyplanComponent,
+    ModalBuynewpolicyComponent,
+    ModalVideoComponent,
     MyProfileComponent,
     MyPolicyComponent,
     UserCardComponent,
@@ -57,7 +63,8 @@ import { ClaimintimationFormComponent } from './claimintimation-form/claimintima
     MypolicyquotedetailComponent,
     MypolicymakepaymentComponent,
     NewclaimComponent,
-    ClaimintimationFormComponent
+    ClaimintimationFormComponent,
+    MypolicyViewdetailsComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -75,16 +82,19 @@ import { ClaimintimationFormComponent } from './claimintimation-form/claimintima
     MatFormFieldModule,
     MatRadioModule,
     MatMenuModule,
-    MatDialogModule,
-    MatCheckboxModule,
-    MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatExpansionModule
   ],
   entryComponents: [
     ModalPopupComponent
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

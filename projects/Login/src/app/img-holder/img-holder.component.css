@@ -7,3 +7,25 @@ img {
     height:500px;
     display: inline-block;
 }
+
+.btn_move_left{
+    float:left;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 25px;
+}
+.btn_move_right{
+    float:right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.img_full{
+    height: 100%;
+}
+
+.mar_none{
+    margin: 0;
+}
