@@ -1,0 +1,111 @@
+<div class="row">
+  <div class="col-sm mar_topcss">
+    <div class="card">
+
+      <mat-tab-group>
+        <mat-tab label="Claim Intimation">
+          <form class="">
+            <div class="row mar_none">
+              <div class="col-sm">
+                <mat-form-field>
+                  <mat-select placeholder="Select">
+                    <mat-option value="option">Option</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-sm">
+                <span class="textcss">Insured</span>
+                <p class="textname_css">Mr.Bismillah</p>
+              </div>
+              <div class="col-sm">
+                <span class="textcss">Cover Type</span>
+                <p class="textname_css">Comprehensive</p>
+              </div>
+            </div>
+            <div class="row mar_none">
+
+              <div class="col-sm-4">
+                <span class="textcss">Product</span>
+                <p class="textname_css">Motor Classic</p>
+              </div>
+              <div class="col-sm-4">
+                <span class="textcss">Policy Period</span>
+                <p class="textname_css">06/01/2018-05/31/2019</p>
+              </div>
+            </div>
+            
+            <div class="row mar_none">
+              <div class="col-sm">
+                <mat-form-field class="text_boxwidth">
+                  <input matInput [matDatepicker]="pickelossr" placeholder="Loss Date">
+                  <mat-datepicker-toggle matSuffix [for]="pickelossr"></mat-datepicker-toggle>
+                  <mat-datepicker #pickelossr></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-sm">
+                <mat-form-field class="text_boxwidth">
+                  <input matInput [matDatepicker]="picker" placeholder="Intimated Date">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row mar_none">
+              <div class="col-sm">
+                <mat-form-field class="text_boxwidth">
+                  <input matInput placeholder="Accident Location" type="text">
+                  <span matSuffix>
+                    <img class="user_iconstyle" src="assets/img/home/location.png" align="middle" />
+                  </span>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row mar_none">
+              <div class="col-sm">
+                <mat-form-field class="text_boxwidth">
+                  <input matInput placeholder="Police Report No" type="text">
+                </mat-form-field>
+              </div>
+              <div class="col-sm">
+                <mat-form-field class="text_boxwidth">
+                  <input matInput placeholder="Police Station" type="text">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row mar_none">
+              <div class="col-sm">
+                <mat-form-field class="text_boxwidth">
+                  <textarea matInput placeholder="Textarea"></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row mar_none">
+              <div class="col-sm">
+                <p>At Fault</p>
+                <mat-radio-group>
+                  <mat-radio-button class="" value="yes">Yes</mat-radio-button>
+                  <mat-radio-button class="mar_spacecss" value="no">No</mat-radio-button>
+                </mat-radio-group>
+              </div>
+
+            </div>
+            <div class="row mar_none btn_center">
+              <div class="col-sm">
+                <button mat-button mat-raised-button class="float-left buttoncolor_css" routerLink="/claim-intimation">
+                  << My Policy</button>
+
+                    <button mat-button mat-raised-button class="buttonclaim_css">Submit</button>
+              </div>
+
+            </div>
+          </form>
+        </mat-tab>
+
+        <mat-tab label="Document Upload">
+          <form class="">
+          </form>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+.mar_topcss{
+    margin-top: 10px;
+}
+.paymenttext_css{
+    font-family: 'Nunitosansbold';
+    font-size: 18px;
+    color: #5A5A5A;
+    margin: 12px;
+}
+.status_css{
+    color: #B96708;
+    font-size: 15px;
+}
+.status_csspay{
+    color: #154979;
+}
+.tablehead_sizecss{
+    font-family: 'Nunitosanssemibold';
+    font-size: 17px;
+    color: #6E6B6B;
+}
+tablebody_sizecss{
+    font-size: 15px;
+    color: #0B0B0B;
+}
+.makepaymettext_css{
+    font-family: 'Nunitosansbold';
+    color: #154979;
+    cursor: pointer;
+    text-align: right;
+    margin: 20px;
+    /* font-size: 14px; */
+}
+::ng-deep .checkbox_size .mat-checkbox-inner-container{
+    width: 15px;
+    height: 15px;
+}
+.buttoncolor_css{
+    background-color: #45A175;
+    color: #fff;
+    margin-top: 30px;
+  }
+  ::ng-deep .buttoncolor_css.mat-button:hover{
+    background-color: #45A175;
+    color: #fff;
+  }

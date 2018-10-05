@@ -1,3 +1,144 @@
-<p>
-  my-profile works!
-</p>
+<div class="row mar_none bg_color">
+
+  <div class="col-sm pad_none mar_top">
+    <mat-card>
+      <div class="row row_mar">
+        <div class="col-sm-3">
+          <label class="lbl_cls">Member ID</label>
+        </div>
+        <div class="col-sm-9">
+          <mat-form-field class="form_align padding_none" appearance="legacy">
+            <input matInput type="text" value="700-1000-3000000-0">
+            <mat-icon matSuffix>
+              <img src="../../assets/img/home_icon/edit.png" class="icon_align">
+            </mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <label class="lbl_cls">First Name</label>
+        </div>
+        <div class="col-sm-9">
+          <mat-form-field class="form_align padding_none" appearance="legacy">
+            <input matInput type="text" value="Ahmed">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <label class="lbl_cls">Last Name</label>
+        </div>
+        <div class="col-sm-9">
+          <mat-form-field class="form_align padding_none" appearance="legacy">
+            <input matInput type="text" value="Bismillah">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <label class="lbl_cls">Gender</label>
+        </div>
+        <div class="col-sm-9">
+          <mat-form-field class="form_align padding_none" appearance="legacy">
+            <mat-select [(value)]="default_gender">
+              <mat-option value="Male">Male</mat-option>
+              <mat-option value="Female">Female</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <label class="lbl_cls">Mobile No</label>
+        </div>
+        <div class="col-sm-9">
+          <mat-form-field class="form_align padding_none" appearance="legacy">
+            <input matInput type="text" value="+971545990136">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <label class="lbl_cls">Email ID</label>
+        </div>
+        <div class="col-sm-9">
+          <mat-form-field class="form_align padding_none" appearance="legacy">
+            <input matInput type="text" value="ahmaedbismillah@gmail.com">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <label class="lbl_cls">Date of Birth</label>
+        </div>
+        <div class="col-sm-9">
+          <mat-form-field class="form_align displayinput_css padding_none" appearance="legacy">
+            <input matInput type="date" [matDatepicker]="picker" value="23/03/1989">
+            <mat-datepicker-toggle matSuffix [for]="picker"><img src="../../assets/img/home_icon/calendar.png" class="icon_align"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <label class="lbl_cls">Age</label>
+        </div>
+        <div class="col-sm-9">
+          <mat-form-field class="form_align padding_none" appearance="legacy">
+            <input matInput type="text" value="30">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <label class="lbl_cls">Address 1</label>
+        </div>
+        <div class="col-sm-9">
+          <mat-form-field class="form_align padding_none" appearance="legacy">
+            <input matInput type="text" value="Aptm#13, Port Chambly">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <label class="lbl_cls">Address 2</label>
+        </div>
+        <div class="col-sm-9">
+          <mat-form-field class="form_align padding_none" appearance="legacy">
+            <input matInput type="text" value="Terre Rouge, Dubai">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <label class="lbl_cls">Country</label>
+        </div>
+        <div class="col-sm-9">
+          <mat-form-field class="form_align padding_none" appearance="legacy">
+            <input matInput type="text" value="Dubai">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <label class="lbl_cls">Nationality</label>
+        </div>
+        <div class="col-sm-9">
+          <mat-form-field class="form_align padding_none" appearance="legacy">
+            <mat-select [(value)]="default_nationality">
+              <mat-option value="Bangadeshi">Bangadeshi</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <button mat-flat-button class="btn_margin" (click)="saveClose();">SAVE & CLOSE</button>
+      </div>
+    </mat-card>
+  </div>
+  <div class="col-sm rightside_padnone img_align">
+    <app-img-holder></app-img-holder>
+  </div>
+
+</div>

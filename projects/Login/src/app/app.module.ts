@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatFormFieldModule, MatRadioModule, MatMenuModule, MatDialogModule } from '@angular/material';
+import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatFormFieldModule, MatRadioModule, MatMenuModule, MatDialogModule, MatSelectModule,MatCheckboxModule, MatExpansionModule } from '@angular/material';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import {MatTabsModule} from '@angular/material/tabs';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +24,17 @@ import { UserPersonalDetailComponent } from './user-personal-detail/user-persona
 import { UserPolicyComponent } from './user-policy/user-policy.component';
 import { GeneratedQuotesUsersComponent } from './generated-quotes-users/generated-quotes-users.component';
 import { ClaimIntimationComponent } from './claim-intimation/claim-intimation.component';
+import { MypolicypremiumComponent } from './mypolicy_details/mypolicypremium/mypolicypremium.component';
+import { MypolicyclaimComponent } from './mypolicy_details/mypolicyclaim/mypolicyclaim.component';
+import { MypolicyrenewComponent } from './mypolicy_details/mypolicyrenew/mypolicyrenew.component';
+import { MypolicyviewdetailComponent } from './mypolicy_details/mypolicyviewdetail/mypolicyviewdetail.component';
+import { MypolicyquotedetailComponent } from './mypolicy_details/mypolicyquotedetail/mypolicyquotedetail.component';
+import { MypolicymakepaymentComponent } from './mypolicy_details/mypolicymakepayment/mypolicymakepayment.component';
+import { NewclaimComponent } from './newclaim/newclaim.component';
+import { ClaimintimationFormComponent } from './claimintimation-form/claimintimation-form.component';
+import { ModalBuynewpolicyComponent } from './modal/modal-buynewpolicy/modal-buynewpolicy.component';
+import { ModalVideoComponent } from './modal/modal-video/modal-video.component';
+import { MypolicyViewdetailsComponent } from './mypolicy-viewdetails/mypolicy-viewdetails.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +46,8 @@ import { ClaimIntimationComponent } from './claim-intimation/claim-intimation.co
     ModalPopupComponent,
     ModalCardComponent,
     ModalBuyplanComponent,
+    ModalBuynewpolicyComponent,
+    ModalVideoComponent,
     MyProfileComponent,
     MyPolicyComponent,
     UserCardComponent,
@@ -41,7 +55,16 @@ import { ClaimIntimationComponent } from './claim-intimation/claim-intimation.co
     UserPersonalDetailComponent,
     UserPolicyComponent,
     GeneratedQuotesUsersComponent,
-    ClaimIntimationComponent
+    ClaimIntimationComponent,
+    MypolicypremiumComponent,
+    MypolicyclaimComponent,
+    MypolicyrenewComponent,
+    MypolicyviewdetailComponent,
+    MypolicyquotedetailComponent,
+    MypolicymakepaymentComponent,
+    NewclaimComponent,
+    ClaimintimationFormComponent,
+    MypolicyViewdetailsComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -59,12 +82,19 @@ import { ClaimIntimationComponent } from './claim-intimation/claim-intimation.co
     MatFormFieldModule,
     MatRadioModule,
     MatMenuModule,
-    MatDialogModule
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatExpansionModule
   ],
   entryComponents: [
     ModalPopupComponent
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
