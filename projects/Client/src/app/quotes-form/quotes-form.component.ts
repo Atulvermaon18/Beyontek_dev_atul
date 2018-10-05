@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ModalPopupComponent } from '../modal/modal-popup/modal-popup.component';
 import { PostsService } from '../_services/posts.service';
+import { ModalBuyplanComponent } from '../modal/modal-buyplan/modal-buyplan.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quotes-form',
@@ -27,8 +29,12 @@ export class QuotesFormComponent implements OnInit {
   errorMessage: any;
   planLabel: any;
   show_form: any;
+  data: any;
+  currentScreen = {
+    quotes: false
+  };
 
-  constructor(private postsService: PostsService, public dialog: MatDialog,
+  constructor(public router: Router, private postsService: PostsService, public dialog: MatDialog,
     private _formBuilder: FormBuilder) {
       this.postsService.getInuts().subscribe((service: any) => {
         this.inputData = service.data;
@@ -137,6 +143,21 @@ export class QuotesFormComponent implements OnInit {
 
   displayPlanSummary(plan) {
    this.planLabel = plan;
+  }
+
+  comparePlans() {
+    alert('compare plans');
+  }
+
+  buyPlans() {
+    const dialogRef = this.dialog.open(ModalPopupComponent, {
+      width: '1000px',
+      height: '500px',
+      data: { head: 'buyplan' }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+    });
   }
 
 }

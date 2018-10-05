@@ -1,42 +1,52 @@
-.pad_none{
+.pad_none {
   /* padding-left: 0; */
   padding-right: 0;
 }
-.mar_none{
+
+.mar_none {
   margin-right: 0;
   margin-left: 0;
 }
-.img_aligncss{
+
+.img_aligncss {
   padding-right: 0;
 }
-.mar_topcss{
+
+.mar_topcss {
   margin-top: 10px;
 }
-.title_css{
+
+.title_css {
   margin-top: 10px;
 }
-.displayinput_css{
+
+.displayinput_css {
   display: inline;
 }
-.buttoncolor_css{
+
+.buttoncolor_css {
   background-color: #45A175;
   color: #fff;
 }
-::ng-deep .buttoncolor_css.mat-button:hover{
+
+::ng-deep .buttoncolor_css.mat-button:hover {
   background-color: #45A175;
   color: #fff;
 }
+
 .background-right-dynamic {
   display: inline-block;
   width: 50%;
   margin-top: 18px;
   padding: 0 42px;
 }
-.img-holder{
-  float:left;
-  width:40%;
-  height:600px;
+
+.img-holder {
+  float: left;
+  width: 40%;
+  height: 600px;
 }
+
 .example-container {
   display: flex;
   flex-direction: column;
@@ -51,9 +61,10 @@
 }
 
 
-::ng-deep .mat-horizontal-stepper-header-container{
+::ng-deep .mat-horizontal-stepper-header-container {
   display: none !important;
 }
+
 ::ng-deep .mat-stepper-horizontal-line {
   border-top-width: 1px;
   border-top-style: solid !important;
@@ -82,7 +93,7 @@
   margin-left: 5px;
 }
 
-::ng-deep .mat-button:hover{
+::ng-deep .mat-button:hover {
   background-color: transparent;
 }
 
@@ -90,7 +101,7 @@
   width: 388px;
   height: 68px;
   background-image: url(../../assets/img/home/upload.png);
-  background-repeat: no-repeat;  
+  background-repeat: no-repeat;
   background-position: right;
   margin-left: 25px;
 }
@@ -104,7 +115,8 @@
   font-size: 17px;
 }
 
-.coverage-plans-list, .opt-coverage-plans-list {
+.coverage-plans-list,
+.opt-coverage-plans-list {
   font-size: 13px;
 }
 
@@ -121,12 +133,21 @@
   position: relative;
 }
 
-.star-rating, .plan-star, .plan-currency-price {
+.star-rating,
+.plan-star,
+.plan-currency-price {
   text-align: center;
 }
 
-.star-rating, .plan-body {
+.star-rating,
+.plan-body {
   color: #6E6B6B;
+}
+
+.opt-coverage-plans-list,
+.coverage-plans-list {
+  color: #5C5C5C;
+  font-style: Nunitosansbold;
 }
 
 .layout-box {
@@ -135,20 +156,29 @@
 
 .plan-details-section {
   margin-left: 40px;
-  padding-right: 0px; 
+  padding-right: 0px;
   padding-left: 0px;
 }
 
 .plan-card-footer-btn {
   font-size: 12px;
-  margin-right: -20px;
 }
 
 .horizontal-line {
   border: 1px solid #B5D5F2;
 }
 
-/* .plan-body	      {font: bold 14pt "Trebuchet MS"; color: #333; background: #D2DEEE;} */
-.plan-body:hover	  {font: bold 14pt "Trebuchet MS"; color: #333; background: #fff;}
-/* .plan-body:active  { background-color: #154979;} */
-/* .plan-body:focus   {background-color: #154979;} */
+.plan-buy-compare {
+  width: 100%;
+}
+
+.compare-plan,
+.buy-plan {
+  width: 50%;
+  text-align: -webkit-right;
+  font-size: 12px;
+}
+
+.policy-plans div:focus {
+  background-color: #154979;
+}

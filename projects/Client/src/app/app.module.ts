@@ -117,7 +117,8 @@ export function setupTranslateFactory(
     MatCheckboxModule
   ],
   entryComponents: [
-    ModalPopupComponent
+    ModalPopupComponent,
+    ModalBuyplanComponent
   ],
   providers: [
     TranslateService,
@@ -125,7 +126,7 @@ export function setupTranslateFactory(
     {
       provide: APP_INITIALIZER,
       useFactory: setupTranslateFactory,
-      deps: [TranslateService],      
+      deps: [TranslateService],
       multi: true
     },
     {
