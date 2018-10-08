@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { ServiceService } from '../service.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -45,15 +47,11 @@ export class HeaderComponent implements OnInit {
       map(result => result.matches)
     );
     
-  constructor(private breakpointObserver: BreakpointObserver, public router: Router) {}
+  constructor(private breakpointObserver: BreakpointObserver, public router: Router, public service: ServiceService) {}
   
   bindFlagData(data) {
     this.languageBind = data.viewValue;
     this.imageBind = data.img;    
-  }
-
-  check(q) {
-    alert(JSON.stringify(q));
   }
 
   // bindData(data) {
@@ -70,6 +68,10 @@ export class HeaderComponent implements OnInit {
       this.isLogged = false;
       this.router.navigate(['/login']);
     }
+  }
+
+  setName(newName: string) {
+    alert('header'+newName)
   }
 
   ngOnInit() {
