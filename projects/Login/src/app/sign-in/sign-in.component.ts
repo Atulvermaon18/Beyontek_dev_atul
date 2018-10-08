@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router} from '@angular/router';
 
 import { ServiceService } from '../service.service';
@@ -10,6 +10,8 @@ import { ServiceService } from '../service.service';
 })
 export class SignInComponent implements OnInit {
 
+  
+  @Output() onNameChanged = new EventEmitter<string>();
   constructor(private router: Router , public service: ServiceService) { }
 
   ngOnInit() {    
@@ -18,7 +20,8 @@ export class SignInComponent implements OnInit {
   loginEvent(){
     localStorage.setItem("logged", "Atul");
     this.service.getValues('policy');
-    this.router.navigate(['/policy']);    
+    this.onNameChanged.emit('policy');
+    this.router.navigate(['/policy']);      
   }
 
 }
