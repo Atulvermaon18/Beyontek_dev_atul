@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 
+import { ServiceService } from '../service.service';
+
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
@@ -8,14 +10,15 @@ import { Router} from '@angular/router';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private router: Router ) { }
+  constructor(private router: Router , public service: ServiceService) { }
 
-  ngOnInit() {
+  ngOnInit() {    
   }
 
   loginEvent(){
     localStorage.setItem("logged", "Atul");
-    this.router.navigate(['/profile']);
+    this.service.getValues('policy');
+    this.router.navigate(['/policy']);    
   }
 
 }
