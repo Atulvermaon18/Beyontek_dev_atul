@@ -49,8 +49,11 @@ export class HeaderComponent implements OnInit {
   
   bindFlagData(data) {
     this.languageBind = data.viewValue;
-    this.imageBind = data.img;
-    
+    this.imageBind = data.img;    
+  }
+
+  check(q) {
+    alert(JSON.stringify(q));
   }
 
   // bindData(data) {
@@ -63,6 +66,7 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['/profile']);
     }
     else if(data.viewValue == 'Logout'){
+      localStorage.clear();
       this.isLogged = false;
       this.router.navigate(['/login']);
     }
@@ -77,7 +81,7 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['/policy']);
       console.log('Test');      
     }else{
-      alert("Please login!");
+      // alert("Please login!");
       this.isLogged = false;
       this.router.navigate(['/login']);
     }

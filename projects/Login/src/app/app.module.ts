@@ -36,6 +36,8 @@ import { ModalBuynewpolicyComponent } from './modal/modal-buynewpolicy/modal-buy
 import { ModalVideoComponent } from './modal/modal-video/modal-video.component';
 import { MypolicyViewdetailsComponent } from './mypolicy-viewdetails/mypolicy-viewdetails.component';
 
+import { ServiceService } from './service.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,7 +95,8 @@ import { MypolicyViewdetailsComponent } from './mypolicy-viewdetails/mypolicy-vi
     ModalPopupComponent
   ],
   providers: [
-    MatDatepickerModule
+    MatDatepickerModule,
+    ServiceService
   ],
   bootstrap: [AppComponent]
 })
