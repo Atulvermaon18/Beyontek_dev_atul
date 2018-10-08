@@ -179,6 +179,8 @@
   font-size: 12px;
 }
 
-.policy-plans div:focus {
+.policy-plans-active{
   background-color: #154979;
+  color: #FFFFFF;
+  border: none;
 }

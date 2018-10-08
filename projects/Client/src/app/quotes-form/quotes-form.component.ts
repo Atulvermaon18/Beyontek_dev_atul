@@ -23,6 +23,7 @@ export class QuotesFormComponent implements OnInit {
   isDriverInsured = false;
   quoteSelected = false;
   inputData = {};
+  selectedPolicyHighLight: string;
 
   posts: any;
   loadingMessage: any;
@@ -36,13 +37,13 @@ export class QuotesFormComponent implements OnInit {
 
   constructor(public router: Router, private postsService: PostsService, public dialog: MatDialog,
     private _formBuilder: FormBuilder) {
-      this.postsService.getInuts().subscribe((service: any) => {
-        this.inputData = service.data;
-        this.show_form = true;
-      },
-        (err: any) => {
-          this.errorMessage = 'There are no posts pulled from the server!';
-        });
+    this.postsService.getInuts().subscribe((service: any) => {
+      this.inputData = service.data;
+      this.show_form = true;
+    },
+      (err: any) => {
+        this.errorMessage = 'There are no posts pulled from the server!';
+      });
   }
 
 
@@ -102,6 +103,7 @@ export class QuotesFormComponent implements OnInit {
   // tslint:disable-next-line:member-ordering
   summary: any = {};
 
+
   onSubmit(data) {
 
     // tslint:disable-next-line:prefer-const
@@ -142,11 +144,15 @@ export class QuotesFormComponent implements OnInit {
   }
 
   displayPlanSummary(plan) {
-   this.planLabel = plan;
+    this.planLabel = plan;
   }
 
   comparePlans() {
     alert('compare plans');
+  }
+
+  selectedPolicy(select) {
+    this.selectedPolicyHighLight = select;
   }
 
   buyPlans() {
