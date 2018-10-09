@@ -1,9 +1,12 @@
-<p>
-  <app-user-personal-detail></app-user-personal-detail>
-  
-  <app-user-policy></app-user-policy>
+<!-- <p> -->
+<app-user-personal-detail></app-user-personal-detail>
 
-  <app-generated-quotes-users></app-generated-quotes-users>
-  
-  
-</p>
+<mat-tab-group class="mattab_header">
+  <mat-tab label="My Policy">
+    <app-user-policy></app-user-policy>
+  </mat-tab>
+  <mat-tab label="Generated Quotes">
+    <app-generated-quotes-users></app-generated-quotes-users>
+  </mat-tab>
+</mat-tab-group>
+<!-- </p> -->

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router} from '@angular/router';
 
 import { ServiceService } from '../service.service';
@@ -9,6 +9,8 @@ import { ServiceService } from '../service.service';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
+  
+  @Output() onNameChanged = new EventEmitter();
 
   constructor(private router: Router , public service: ServiceService) { }
 
@@ -17,8 +19,17 @@ export class SignInComponent implements OnInit {
 
   loginEvent(){
     localStorage.setItem("logged", "Atul");
-    this.service.getValues('policy');
-    this.router.navigate(['/policy']);    
+    // this.service.subject.next('policy');
+    // this.router.navigate(['/policy']);
+    if(localStorage.getItem('logged') !== null){
+      this.service.isLogged = true;
+      this.router.navigate(['/policy']);
+      console.log('Test');      
+    }else{
+      // alert("Please login!");
+      this.service.isLogged = false;
+      this.router.navigate(['/login']);
+    }      
   }
 
 }

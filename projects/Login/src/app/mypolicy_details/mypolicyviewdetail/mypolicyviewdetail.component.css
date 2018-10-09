@@ -1,0 +1,27 @@
+.pad_none{
+    /* padding-left: 0; */
+    padding-right: 0;
+  }
+  .mar_none{
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .rightside_padnone{
+    padding-right: 0;
+  }
+  .pad_bottomcss{
+      margin-bottom: 10px;
+  }
+.labettext_css{
+    font-family: 'Nunitosanssemibold';
+    font-size: 17px;
+    color: #6E6B6B;
+}
+.valuetext_css{
+    font-family: 'Nunitosanssemibold';
+    font-size: 16px;
+    color: #3C3C3C;
+}
+::ng-deep .pad_none.mat-extension-panel{
+    margin: 0;
+}

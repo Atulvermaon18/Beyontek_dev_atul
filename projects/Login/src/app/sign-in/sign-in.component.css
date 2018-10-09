@@ -17,11 +17,26 @@
     border-radius: 20px;
     margin-bottom: 20px;
 }
+.pad_none{
+    padding-left: 0;
+    padding-right: 0;
+}
 .forgot_textcss{   
     text-align: left;
-    margin-left: 15px;
+    /* margin-left: 15px; */
     color: #fff;
+    font-family: Nunitosanssemibold;
+    margin-top: 10px;
 }
+.remember_textcss{   
+    text-align: left;
+    color: #fff;
+    
+}
+.rememberfont_css{
+    font-family: Nunitosanssemibold !important;
+}
+
 .user_iconstyle{
     width: 25px;
     height: 25px;
