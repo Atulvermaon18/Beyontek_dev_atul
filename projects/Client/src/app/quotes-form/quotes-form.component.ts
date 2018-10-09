@@ -147,8 +147,17 @@ export class QuotesFormComponent implements OnInit {
     this.planLabel = plan;
   }
 
-  comparePlans() {
-    alert('compare plans');
+  comparePlans(plandata) {
+    console.log('i am in quotes form');
+    console.log(plandata);
+    const dialogRef = this.dialog.open(ModalPopupComponent, {
+      width: '900px',
+      height: '550px',
+      data: { head: 'compareplans', planData: plandata }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+    });
   }
 
   selectedPolicy(select) {
@@ -165,5 +174,4 @@ export class QuotesFormComponent implements OnInit {
       console.log('The dialog was closed', result);
     });
   }
-
 }

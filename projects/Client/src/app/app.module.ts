@@ -25,6 +25,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFileUploadModule } from 'angular-material-fileupload';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TranslateService } from './translate.service';
@@ -51,6 +52,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { LoaderInterceptorService } from './_services/loader-interceptor.service';
 import { ModalBuynewpolicyComponent } from './modal/modal-buynewpolicy/modal-buynewpolicy.component';
 import { ModalVideoComponent } from './modal/modal-video/modal-video.component';
+import { ModalCompareplansComponent } from './modal/modal-compareplans/modal-compareplans.component';
 
 
 export function setupTranslateFactory(
@@ -88,7 +90,8 @@ export function setupTranslateFactory(
     ModalBuyplanComponent,
     LoaderComponent,
     ModalBuynewpolicyComponent,
-    ModalVideoComponent
+    ModalVideoComponent,
+    ModalCompareplansComponent
   ],
   imports: [
     BrowserModule,
@@ -115,11 +118,11 @@ export function setupTranslateFactory(
     MatNativeDateModule,
     MatTabsModule,
     MatMenuModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatRadioModule
   ],
   entryComponents: [
-    ModalPopupComponent,
-    ModalBuyplanComponent
+    ModalPopupComponent
   ],
   providers: [
     TranslateService,
