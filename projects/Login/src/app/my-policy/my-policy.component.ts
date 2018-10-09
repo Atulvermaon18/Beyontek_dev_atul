@@ -10,6 +10,7 @@ export class MyPolicyComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // var ch = this.service.subject.getValue();
   }
 
 }
