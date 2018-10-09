@@ -718,7 +718,7 @@ pre, textarea {
   .slider__holder {
     position: relative;
     width: 100%;
-    max-width: 330px;
+    max-width: 300px;
     margin: 0 auto;
     /* margin-top: 80px; */
     text-align: left;
