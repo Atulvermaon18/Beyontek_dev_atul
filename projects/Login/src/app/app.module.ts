@@ -34,7 +34,6 @@ import { NewclaimComponent } from './newclaim/newclaim.component';
 import { ClaimintimationFormComponent } from './claimintimation-form/claimintimation-form.component';
 import { ModalBuynewpolicyComponent } from './modal/modal-buynewpolicy/modal-buynewpolicy.component';
 import { ModalVideoComponent } from './modal/modal-video/modal-video.component';
-import { MypolicyViewdetailsComponent } from './mypolicy-viewdetails/mypolicy-viewdetails.component';
 
 import { ServiceService } from './service.service';
 
@@ -66,7 +65,7 @@ import { ServiceService } from './service.service';
     MypolicymakepaymentComponent,
     NewclaimComponent,
     ClaimintimationFormComponent,
-    MypolicyViewdetailsComponent
+  
   ],
   imports: [
     BrowserAnimationsModule,
