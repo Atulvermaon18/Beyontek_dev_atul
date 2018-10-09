@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import * as Rx from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -6,12 +7,14 @@ import { Injectable } from '@angular/core';
 
 export class ServiceService { 
 
-  header: any;
+  // subject = new Rx.BehaviorSubject<any>("");
+
+  isLogged: boolean = false;
   constructor() {
     
   }
 
-  getValues(q){
-    
-  }
+  // getValues(q){
+  //   this.subject.next(q);
+  // }
 }

@@ -65,26 +65,23 @@ export class HeaderComponent implements OnInit {
     }
     else if(data.viewValue == 'Logout'){
       localStorage.clear();
-      this.isLogged = false;
+      this.service.isLogged = false;
       this.router.navigate(['/login']);
     }
   }
 
-  setName(newName: string) {
-    alert('header'+newName)
-  }
-
   ngOnInit() {
+    // var ch = this.service.subject.getValue();
     this.languageBind = 'English';
     this.userBind = 'Atul';
     this.imageBind = '../../assets/img/flag/usa.png';
     if(localStorage.getItem('logged') !== null){
-      this.isLogged = true;
+      this.service.isLogged = true;
       this.router.navigate(['/policy']);
       console.log('Test');      
     }else{
       // alert("Please login!");
-      this.isLogged = false;
+      this.service.isLogged = false;
       this.router.navigate(['/login']);
     }
   }

@@ -1,4 +1,4 @@
-<nav class="displayupcss" *ngIf="!isLogged && this.router.url==='/login'">  
+<nav class="displayupcss" *ngIf="!service.isLogged && this.router.url==='/login'">  
   <div class="header_login">
     <span class="header-menu-right">
       <a routerLink="/home" class="btn_home">HOME</a>
@@ -15,7 +15,7 @@
     </span>
   </div>
 </nav>
-<nav class="shadow displayupcss" *ngIf="!isLogged && this.router.url==='/home'">
+<nav class="shadow displayupcss" *ngIf="!service.isLogged && this.router.url==='/home'">
   <mat-toolbar class="bg_header">
     <a routerLink="/home">
       <img class="logo_allign" src="../../assets/img/logo.png">
@@ -67,7 +67,7 @@
     <img src="../../assets/img/login/contact.png" class="btn_img" >
   </mat-toolbar>
 </nav> -->
-<nav class="shadow displayupcss" *ngIf="isLogged && this.router.url==='/home' || isLogged && router.url === '/policy' || isLogged && router.url === '/profile' || isLogged && router.url === '/claim-intimation' ||  isLogged && router.url === '/newclaim'">
+<nav class="shadow displayupcss" *ngIf="service.isLogged && this.router.url==='/home' || service.isLogged && router.url === '/policy'|| service.isLogged && router.url === '/policy' || service.isLogged && router.url === '/profile' || service.isLogged && router.url === '/claim-intimation' ||  service.isLogged && router.url === '/newclaim'">
   <mat-toolbar class="bg_header">
     <a routerLink="/policy">
       <img class="logo_allign" src="../../assets/img/logo.png">

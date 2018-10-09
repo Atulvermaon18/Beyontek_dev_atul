@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Login';
 
-  setName(newName: string) {
-    alert('app component'+newName)
+  setName(data) {
+    alert('app component: '+data);
   }
 }
