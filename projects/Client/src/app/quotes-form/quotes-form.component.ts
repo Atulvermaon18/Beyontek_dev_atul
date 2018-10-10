@@ -27,16 +27,18 @@ export class QuotesFormComponent implements OnInit {
   errorMessage: any;
   planLabel: any;
   show_form: any;
+  fileInput: FormGroup;
+  uploadFiles = [];
 
   constructor(private postsService: PostsService, public dialog: MatDialog,
     private _formBuilder: FormBuilder) {
-      this.postsService.getInuts().subscribe((service: any) => {
-        this.inputData = service.data;
-        this.show_form = true;
-      },
-        (err: any) => {
-          this.errorMessage = 'There are no posts pulled from the server!';
-        });
+    this.postsService.getInuts().subscribe((service: any) => {
+      this.inputData = service.data;
+      this.show_form = true;
+    },
+      (err: any) => {
+        this.errorMessage = 'There are no posts pulled from the server!';
+      });
   }
 
 
@@ -136,7 +138,21 @@ export class QuotesFormComponent implements OnInit {
   }
 
   displayPlanSummary(plan) {
-   this.planLabel = plan;
+    this.planLabel = plan;
+  }
+
+  onSelectFile(event, proof) {
+    var leng = event.target.files.length;
+    for(var i=0;i<leng;i++){
+      this.uploadFiles.push({
+        fileName : event.target.files[i].name,
+        proof:proof
+      });
+    }
+  }
+
+  uploadedFile(i) {    
+    this.uploadFiles.splice(i,1);
   }
 
 }
