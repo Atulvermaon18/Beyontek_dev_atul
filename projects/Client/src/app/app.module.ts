@@ -92,11 +92,8 @@ export function setupTranslateFactory(
     LoaderComponent,
     ModalBuynewpolicyComponent,
     ModalVideoComponent,
-<<<<<<< HEAD
-    SummaryWidgetComponent
-=======
+    SummaryWidgetComponent,
     ModalCompareplansComponent
->>>>>>> c977b321a5309719fc3bf9629ab3ff6e3b18f7ce
   ],
   imports: [
     BrowserModule,
