@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-modal-card',
@@ -19,12 +19,12 @@ export class ModalCardComponent implements OnInit {
   ngOnInit() {
     this.popTitle = this.cardDetails.title;
     this.splitPopImage = this.cardDetails.img.split('.');
-    this.splitPopImage = '../..'+this.splitPopImage[4]+2+'.png';
+    this.splitPopImage = '../..' + this.splitPopImage[4] + 2 + '.png';
     this.popImage = this.splitPopImage;
   }
 
   handleSelect(selected): void {
-    this.dialogRef.close({'selected':selected});
+    this.dialogRef.close({ 'selected': selected });
   }
 
 }

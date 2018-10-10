@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-modal-buyplan',
@@ -8,7 +8,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 })
 export class ModalBuyplanComponent implements OnInit {
 
-  @Input() buyplanDetails: any;  
+  @Input() buyplanDetails: any;
 
   constructor(private dialogRef: MatDialogRef<ModalBuyplanComponent>) { }
 
@@ -16,11 +16,11 @@ export class ModalBuyplanComponent implements OnInit {
   }
 
   skipContinue() {
-    this.dialogRef.close({'selected':'sendsomedata'});
+    this.dialogRef.close({ 'selected': 'sendsomedata' });
   }
 
   handleSelect(selected): void {
-    this.dialogRef.close({'selected':selected});
+    this.dialogRef.close({ 'selected': selected });
   }
 
 }
