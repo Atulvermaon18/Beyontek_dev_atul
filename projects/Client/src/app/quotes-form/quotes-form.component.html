@@ -10,24 +10,25 @@
           <h5 class="title_css">{{input.title}}</h5>
           <span>{{input.context}}</span>
           <br>
-          <div *ngIf="input.label=='policy'" class="row">
-            <div class="col-md-3 layout-box plan-details-section" *ngFor="let plan of input.plans; let i = index">
+          <div *ngIf="input.label=='policy'" class="policy-plans row">
+            <div class="col-md-3 layout-box plan-details-section" [ngClass]="{'policy-plans-active': plan.label==selectedPolicyHighLight}"
+              tabindex="{{i}}" *ngFor="let plan of input.plans; let i = index" (click)="selectedPolicy(plan.label)">
               <div class="plan-header col-md-12">
                 <label class="plan-label" for="plan-label">{{plan.label}}</label>
               </div>
-              <div class="plan-body col-md-12" (click)="displayPlanSummary(plan['plan_summary']['label'])">
+              <div class="plan-body col-md-12" (click)="selectedPolicy(plan.label);displayPlanSummary(plan['plan_summary']['label'])">
                 <div class="plan-star">
                   <div *ngIf="plan.star=='1'">
-                    <mat-icon class="star-rating">star_rate</mat-icon>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                   </div>
                   <div *ngIf="plan.star=='2'">
-                    <mat-icon class="star-rating">star_rate</mat-icon>
-                    <mat-icon class="star-rating">star_rate</mat-icon>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                   </div>
                   <div *ngIf="plan.star=='3'">
-                    <mat-icon class="star-rating">star_rate</mat-icon>
-                    <mat-icon class="star-rating">star_rate</mat-icon>
-                    <mat-icon class="star-rating">star_rate</mat-icon>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                   </div>
                 </div>
                 <div class="plan-currency-price col-md-12">
@@ -36,10 +37,14 @@
                   <label for="plan-price">{{plan.price}}</label>
                 </div>
                 <hr class="horizontal-line">
-              </div>
-              <div class="plan-buy plan-body row">
-                <a class="plan-card-footer-btn" mat-button>COMPARE</a>
-                <a class="plan-card-footer-btn" mat-button>BUY PLAN</a>
+                <div class="plan-buy-compare plan-body row">
+                  <div class="compare-plan">
+                    <a (click)="comparePlans(input.plan_comparison)">COMPARE</a>
+                  </div>
+                  <div class="buy-plan">
+                    <a (click)="buyPlans()">BUY PLAN</a>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -58,7 +63,7 @@
                     </mat-list>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 summary-desc">
                   <div class="col-md-12">
                     <u>
                       <b>
@@ -66,10 +71,14 @@
                       </b>
                     </u>
                   </div>
-                  <div class="col-md-12" *ngFor="let opt of plan['plan_summary']['optional_coverages']['coverages']; let i = index">
-                    <mat-checkbox [(ngModel)]="opt.isChecked" [formControlName]="opt.name">
-                    </mat-checkbox>
-                    <label for="additional-coverage" class="opt-coverage-plans-list">{{opt.label}}</label>
+                  <div class="col-md-12 row" *ngFor="let opt of plan['plan_summary']['optional_coverages']['coverages']; let i = index">
+                    <div class="col-md-2">
+                      <mat-checkbox [(ngModel)]="opt.isChecked" [formControlName]="opt.name">
+                      </mat-checkbox>
+                    </div>
+                    <div class="col-md-10">
+                      <label for="additional-coverage" class="opt-coverage-plans-list">{{opt.label}}</label>
+                    </div>
                   </div>
                 </div>
               </div>
