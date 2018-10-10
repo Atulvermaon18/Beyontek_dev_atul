@@ -19,6 +19,9 @@
     margin-top: 25px;
     margin-bottom: 30px;
 }
+.textalign_css{
+  text-align: left;
+}
 /* .pad_none{
     padding-left: 0;
     padding-right: 0;
@@ -387,7 +390,7 @@ pre, textarea {
     position: relative;
     display: inline-block;
     font-weight: 600;
-    color: #5050FF;
+    color: #5050FF !important;
   }
   
   .link:after {

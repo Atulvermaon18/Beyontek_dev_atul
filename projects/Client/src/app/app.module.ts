@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatMenuModule } from '@angular/material';
+import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatMenuModule, MatExpansionModule   } from '@angular/material';
 import { MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material';
 import { MatCheckboxModule} from '@angular/material/checkbox';
@@ -119,7 +119,8 @@ export function setupTranslateFactory(
     MatTabsModule,
     MatMenuModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MatExpansionModule
   ],
   entryComponents: [
     ModalPopupComponent

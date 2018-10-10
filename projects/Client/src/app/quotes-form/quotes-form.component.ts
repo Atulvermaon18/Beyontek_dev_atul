@@ -34,6 +34,8 @@ export class QuotesFormComponent implements OnInit {
   currentScreen = {
     quotes: false
   };
+  fileInput: FormGroup;
+  uploadFiles = [];
 
   constructor(public router: Router, private postsService: PostsService, public dialog: MatDialog,
     private _formBuilder: FormBuilder) {
@@ -157,6 +159,20 @@ export class QuotesFormComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);
     });
+  }
+  
+  onSelectFile(event, proof) {
+    var leng = event.target.files.length;
+    for(var i=0;i<leng;i++){
+      this.uploadFiles.push({
+        fileName : event.target.files[i].name,
+        proof:proof
+      });
+    }
+  }
+
+  uploadedFile(i) {    
+    this.uploadFiles.splice(i,1);
   }
 
   selectedPolicy(select) {
