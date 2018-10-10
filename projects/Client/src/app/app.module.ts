@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatMenuModule } from '@angular/material';
+import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatMenuModule, MatExpansionModule   } from '@angular/material';
 import { MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material';
 import { MatCheckboxModule} from '@angular/material/checkbox';
@@ -25,6 +25,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFileUploadModule } from 'angular-material-fileupload';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TranslateService } from './translate.service';
@@ -52,6 +53,8 @@ import { LoaderInterceptorService } from './_services/loader-interceptor.service
 import { ModalBuynewpolicyComponent } from './modal/modal-buynewpolicy/modal-buynewpolicy.component';
 import { ModalVideoComponent } from './modal/modal-video/modal-video.component';
 import { SummaryWidgetComponent } from './summary-widget/summary-widget.component';
+import { ModalCompareplansComponent } from './modal/modal-compareplans/modal-compareplans.component';
+
 
 export function setupTranslateFactory(
   service: TranslateService): Function {
@@ -89,7 +92,11 @@ export function setupTranslateFactory(
     LoaderComponent,
     ModalBuynewpolicyComponent,
     ModalVideoComponent,
+<<<<<<< HEAD
     SummaryWidgetComponent
+=======
+    ModalCompareplansComponent
+>>>>>>> c977b321a5309719fc3bf9629ab3ff6e3b18f7ce
   ],
   imports: [
     BrowserModule,
@@ -116,7 +123,9 @@ export function setupTranslateFactory(
     MatNativeDateModule,
     MatTabsModule,
     MatMenuModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatRadioModule,
+    MatExpansionModule
   ],
   entryComponents: [
     ModalPopupComponent
@@ -127,7 +136,7 @@ export function setupTranslateFactory(
     {
       provide: APP_INITIALIZER,
       useFactory: setupTranslateFactory,
-      deps: [TranslateService],      
+      deps: [TranslateService],
       multi: true
     },
     {

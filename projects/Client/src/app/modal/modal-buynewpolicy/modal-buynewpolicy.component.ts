@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-modal-buynewpolicy',
@@ -16,7 +16,7 @@ export class ModalBuynewpolicyComponent implements OnInit {
   }
 
   handleSelect(selected): void {
-    this.dialogRef.close({'selected':selected});
+    this.dialogRef.close({ 'selected': selected });
   }
 
 }

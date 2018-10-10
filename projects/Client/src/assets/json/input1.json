@@ -290,6 +290,129 @@
             }
           }
         }
+      ],
+      "plan_comparison": [
+        {
+          "label": "Coverage",
+          "classic": "AED 2,520",
+          "premier": "AED 2,070",
+          "executive": "AED 2,680"
+        },
+        {
+          "label": "Third Party Bodily Injured",
+          "classic": "included",
+          "premier": "included",
+          "executive": "included"
+        },
+        {
+          "label": "Third Party Property Damage",
+          "classic": "AED 500,000",
+          "premier": "AED 1,000,000",
+          "executive": "AED 3,500,000"
+        },
+        {
+          "label": "Loss or Damage to your Vehicle",
+          "classic": "included",
+          "premier": "included",
+          "executive": "included"
+        },
+        {
+          "label": "Medical Expenses Due to an Accident",
+          "classic": "",
+          "premier": "AED 3,500",
+          "executive": "AED 6,000"
+        },
+        {
+          "label": "Personal Belongings",
+          "classic": "",
+          "premier": "AED 4,000",
+          "executive": "AED 4,000"
+        },
+        {
+          "label": "Natural Perils [Storms/Flood]",
+          "classic": "",
+          "premier": "included",
+          "executive": "included"
+        },
+        {
+          "label": "Off Road Cover",
+          "classic": "",
+          "premier": "optional",
+          "premier_context": "offroadcoverpremier",
+          "executive": "included"
+        },
+        {
+          "label": "Repair",
+          "classic": "Agency",
+          "premier": "Agency",
+          "executive": "Agency"
+        },
+        {
+          "label": "Oman Cover Own Damage",
+          "classic": "",
+          "premier": "included",
+          "executive": "included"
+        },
+        {
+          "label": "Hire Car",
+          "classic": "optional",
+          "classic_context": "hirecarclassic",
+          "premier": "optional",
+          "premier_context": "hirecarpremier",
+          "executive": "included"
+        },
+        {
+          "label": "Persoanl Accident Cover for Driver",
+          "classic": "",
+          "premier": "included",
+          "executive": "included"
+        },
+        {
+          "label": "Persoanl Accident Cover for Passengers",
+          "classic": "optional",
+          "classic_context": "personalaccidentcoverpassengers",
+          "premier": "included",
+          "executive": "included"
+        },
+        {
+          "label": "Excess Damage for Windscreen Waiver only",
+          "classic": "",
+          "premier": "included",
+          "executive": "included"
+        },
+        {
+          "label": "Riot, Strike or Civil Commotion",
+          "classic": "",
+          "premier": "included",
+          "executive": "included"
+        },
+        {
+          "label": "Breakdown Recovery - Silver",
+          "classic": "optional",
+          "classic_context": "breakdownrecoveryclassicsilver",
+          "premier": "optional",
+          "premier_context": "breakdownrecoverypremiersilver",
+          "executive": "optional",
+          "executive_context": "breakdownrecoveryexecutivesilver"
+        },
+        {
+          "label": "Breakdown Recovery - Gold",
+          "classic": "optional",
+          "classic_context": "breakdownrecoveryclassicgold",
+          "premier": "optional",
+          "premier_context": "breakdownrecoverypremiergold",
+          "executive": "optional",
+          "executive_context": "breakdownrecoveryexecutivegold"
+        },
+        {
+          "label": "Breakdown Recovery - Platinum",
+          "classic": "optional",
+          "classic_context": "breakdownrecoveryclassicplatinum",
+          "premier": "optional",
+          "premier_context": "breakdownrecoverypremierplatinum",
+          "executive": "optional",
+          "executive_context": "breakdownrecoveryexecutiveplatinum"
+        }
       ]
     },
     {

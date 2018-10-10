@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ModalPopupComponent } from '../modal/modal-popup/modal-popup.component';
 import { PostsService } from '../_services/posts.service';
+import { ModalBuyplanComponent } from '../modal/modal-buyplan/modal-buyplan.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quotes-form',
@@ -21,22 +23,29 @@ export class QuotesFormComponent implements OnInit {
   isDriverInsured = false;
   quoteSelected = false;
   inputData = {};
+  selectedPolicyHighLight: string;
 
   posts: any;
   loadingMessage: any;
   errorMessage: any;
   planLabel: any;
   show_form: any;
+  data: any;
+  currentScreen = {
+    quotes: false
+  };
+  fileInput: FormGroup;
+  uploadFiles = [];
 
-  constructor(private postsService: PostsService, public dialog: MatDialog,
+  constructor(public router: Router, private postsService: PostsService, public dialog: MatDialog,
     private _formBuilder: FormBuilder) {
-      this.postsService.getInuts().subscribe((service: any) => {
-        this.inputData = service.data;
-        this.show_form = true;
-      },
-        (err: any) => {
-          this.errorMessage = 'There are no posts pulled from the server!';
-        });
+    this.postsService.getInuts().subscribe((service: any) => {
+      this.inputData = service.data;
+      this.show_form = true;
+    },
+      (err: any) => {
+        this.errorMessage = 'There are no posts pulled from the server!';
+      });
   }
 
 
@@ -96,6 +105,7 @@ export class QuotesFormComponent implements OnInit {
   // tslint:disable-next-line:member-ordering
   summary: any = {};
 
+
   onSubmit(data) {
 
     // tslint:disable-next-line:prefer-const
@@ -136,7 +146,48 @@ export class QuotesFormComponent implements OnInit {
   }
 
   displayPlanSummary(plan) {
-   this.planLabel = plan;
+    this.planLabel = plan;
   }
 
+  comparePlans(plandata) {
+    console.log('i am in quotes form');
+    console.log(plandata);
+    const dialogRef = this.dialog.open(ModalPopupComponent, {
+      width: '900px',
+      height: '550px',
+      data: { head: 'compareplans', planData: plandata }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+    });
+  }
+  
+  onSelectFile(event, proof) {
+    var leng = event.target.files.length;
+    for(var i=0;i<leng;i++){
+      this.uploadFiles.push({
+        fileName : event.target.files[i].name,
+        proof:proof
+      });
+    }
+  }
+
+  uploadedFile(i) {    
+    this.uploadFiles.splice(i,1);
+  }
+
+  selectedPolicy(select) {
+    this.selectedPolicyHighLight = select;
+  }
+
+  buyPlans() {
+    const dialogRef = this.dialog.open(ModalPopupComponent, {
+      width: '1000px',
+      height: '500px',
+      data: { head: 'buyplan' }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+    });
+  }
 }

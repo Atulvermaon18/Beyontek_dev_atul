@@ -1,5 +1,5 @@
 <div class="row mar_none" [hidden]="!show_form">
-  
+
   <div class="col-sm pad_none mar_topcss">
     <!-- <app-client-get-quotes *ngIf="!quoteSelected" (notifySelection)="handleNotify($event)"></app-client-get-quotes> -->
 
@@ -10,35 +10,41 @@
           <h5 class="title_css">{{input.title}}</h5>
           <span>{{input.context}}</span>
           <br>
-          <div *ngIf="input.label=='policy'" class="row">
-            <div class="col-md-3 layout-box plan-details-section" *ngFor="let plan of input.plans; let i = index">
+          <div *ngIf="input.label=='policy'" class="policy-plans row">
+            <div class="col-md-3 layout-box plan-details-section" [ngClass]="{'policy-plans-active': plan.label==selectedPolicyHighLight}"
+              tabindex="{{i}}" *ngFor="let plan of input.plans; let i = index" (click)="selectedPolicy(plan.label)">
               <div class="plan-header col-md-12">
                 <label class="plan-label" for="plan-label">{{plan.label}}</label>
               </div>
-              <div class="plan-body col-md-12" (click)="displayPlanSummary(plan['plan_summary']['label'])">
+              <div class="plan-body col-md-12" (click)="selectedPolicy(plan.label);displayPlanSummary(plan['plan_summary']['label'])">
                 <div class="plan-star">
                   <div *ngIf="plan.star=='1'">
-                    <mat-icon class="star-rating">star_rate</mat-icon>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                   </div>
                   <div *ngIf="plan.star=='2'">
-                    <mat-icon class="star-rating">star_rate</mat-icon>
-                    <mat-icon class="star-rating">star_rate</mat-icon>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                   </div>
                   <div *ngIf="plan.star=='3'">
-                    <mat-icon class="star-rating">star_rate</mat-icon>
-                    <mat-icon class="star-rating">star_rate</mat-icon>
-                    <mat-icon class="star-rating">star_rate</mat-icon>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                   </div>
                 </div>
                 <div class="plan-currency-price col-md-12">
-                  <label for="plan-currency">{{plan.currency}}</label> <br>
+                  <label for="plan-currency">{{plan.currency}}</label>
+                  <br>
                   <label for="plan-price">{{plan.price}}</label>
                 </div>
                 <hr class="horizontal-line">
-              </div>
-              <div class="plan-buy plan-body row">
-                <a class="plan-card-footer-btn" mat-button>COMPARE</a>
-                <a class="plan-card-footer-btn" mat-button>BUY PLAN</a>
+                <div class="plan-buy-compare plan-body row">
+                  <div class="compare-plan">
+                    <a (click)="comparePlans(input.plan_comparison)">COMPARE</a>
+                  </div>
+                  <div class="buy-plan">
+                    <a (click)="buyPlans()">BUY PLAN</a>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -46,24 +52,33 @@
               <div *ngIf="plan['plan_summary']['label']==planLabel" class="row">
                 <div class="col-md-6">
                   <div class="col-md-12">
-                    <b><label for="summary-plan-label">{{plan['plan_summary']['label']}}</label></b>
+                    <b>
+                      <label for="summary-plan-label">{{plan['plan_summary']['label']}}</label>
+                    </b>
                   </div>
                   <div class="col-md-12">
                     <mat-list role="list">
-                      <mat-list-item class="coverage-plans-list" *ngFor="let coverage of plan['plan_summary']['coverages']; let i = index"
-                        role="listitem">*
-                        {{coverage}}</mat-list-item>
+                      <mat-list-item class="coverage-plans-list" *ngFor="let coverage of plan['plan_summary']['coverages']; let i = index" role="listitem">* {{coverage}}
+                      </mat-list-item>
                     </mat-list>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 summary-desc">
                   <div class="col-md-12">
-                    <u><b> <label for="summary-plan-label">{{plan['plan_summary']['optional_coverages']['label']}}</label></b></u>
+                    <u>
+                      <b>
+                        <label for="summary-plan-label">{{plan['plan_summary']['optional_coverages']['label']}}</label>
+                      </b>
+                    </u>
                   </div>
-                  <div class="col-md-12" *ngFor="let opt of plan['plan_summary']['optional_coverages']['coverages']; let i = index">
-                    <mat-checkbox [(ngModel)]="opt.isChecked" [formControlName]="opt.name">
-                    </mat-checkbox>
-                    <label for="additional-coverage" class="opt-coverage-plans-list">{{opt.label}}</label>
+                  <div class="col-md-12 row" *ngFor="let opt of plan['plan_summary']['optional_coverages']['coverages']; let i = index">
+                    <div class="col-md-2">
+                      <mat-checkbox [(ngModel)]="opt.isChecked" [formControlName]="opt.name">
+                      </mat-checkbox>
+                    </div>
+                    <div class="col-md-10">
+                      <label for="additional-coverage" class="opt-coverage-plans-list">{{opt.label}}</label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -71,7 +86,7 @@
           </div>
 
 
-          <div *ngFor="let field of input.inputs" style="display: inline-block;" [ngClass]="{'col-md-6':field.type!=='file','col-md-12': field.type==='file'}">
+          <div *ngFor="let field of input.inputs; let j = index;" style="display: inline-block;" [ngClass]="{'col-md-6':field.type!=='file','col-md-12': field.type==='file'}">
 
             <mat-form-field class="displayinput_css" *ngIf="field.type=='text' || field.type=='number'  ">
               <input matInput placeholder="{{field.key | translate}}" [formControlName]="field.label">
@@ -93,16 +108,30 @@
               {{field.key | translate}}
             </mat-checkbox>
 
+
             <div *ngIf="field.type=='file'" class="displayinput_css">
               <div class="row">
-                <input type="text" class="upload_input form-control col-md-8" placeholder="{{field.key | translate}}"
-                  multiple>
-                <!-- <button ma/t-button color="primary" class="col-md-2 attach_button" (click)="imgFileInput.click()"><mat-icon>attachment</mat-icon></button> -->
+                <input type="text" class="upload_input form-control col-md-8" placeholder="{{field.key | translate}}" multiple>
                 <img src="../../assets/img/home/add_box.png" class="attach_button" (click)="imgFileInput.click()">
-                <input hidden type="file" #imgFileInput (change)="previewImage($event)" />
+                <input hidden type='file' #imgFileInput (change)="onSelectFile($event,field.key)" multiple>
+                <!-- <div class="uploaded_input"> -->
+                  <div *ngFor="let upload of uploadFiles; let i = index" class="col-sm" class="uploaded_input" >
+                    <p *ngIf="upload.proof===field.key">{{upload.fileName}}
+                      <i class="material-icons cur_pointer" (click)="uploadedFile(i)">
+                        close
+                      </i>
+                    </p>
+                  </div>
+                <!-- </div> -->
               </div>
             </div>
 
+          </div>
+
+          <div *ngIf="input.title=='Personal Details'" style="display: inline-block;">
+            Send OTP
+            <button>Mobile</button>
+            <button>Email</button>
           </div>
 
           <!-- this is for driver details  -->
@@ -131,18 +160,18 @@
 
           <div>
             <button mat-button matStepperPrevious mat-raised-button *ngIf="i" class="float-left buttoncolor_css">
-              << {{inputData[i-1].title}} </button> <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button
-                matStepperNext class="float-right buttoncolor_css">{{inputData[i+1].title}} >>
-            </button>
-            <button mat-button *ngIf="i===inputData.length-1" mat-raised-button (click)="showDetails(formgroup)" class="float-right buttoncolor_css">Done</button>
-            <!-- <button mat-button *ngIf="i===inputData.length-1" mat-raised-button type="submit" (click)="stepper.reset();quoteSelected=true;" >Done</button> -->
+              << {{inputData[i-1].title}} </button>
+                <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button matStepperNext class="float-right buttoncolor_css">{{inputData[i+1].title}} >>
+                </button>
+                <button mat-button *ngIf="i===inputData.length-1" mat-raised-button (click)="showDetails(formgroup)" class="float-right buttoncolor_css">Done</button>
+                <!-- <button mat-button *ngIf="i===inputData.length-1" mat-raised-button type="submit" (click)="stepper.reset();quoteSelected=true;" >Done</button> -->
           </div>
         </form>
 
       </mat-step>
     </mat-horizontal-stepper>
 
-    <app-quotes-detail [hidden]="!quoteSelected" (notifySelection)="handleNotify($event)" [summary]="summary"></app-quotes-detail>
+    <app-mypolicyviewdetail [hidden]="!quoteSelected" (notifySelection)="handleNotify($event)"></app-mypolicyviewdetail>
   </div>
   <div class="col-sm img_aligncss">
     <app-img-holder></app-img-holder>

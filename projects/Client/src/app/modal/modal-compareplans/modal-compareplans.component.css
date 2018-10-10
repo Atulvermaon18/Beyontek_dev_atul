@@ -1,0 +1,45 @@
+
+.align-left {
+  text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.bold-font {
+  color: #0B0B0B;
+  font-style: Nunitosansbold;
+  font-weight: bold;
+  font-size: 15px;
+}
+.policy-num {
+  color: #256C4A;
+  font-style: Nunitosansbold;
+  font-weight: bold;
+  font-size: 15px;
+}
+.plan-border {
+  border-left: 1px solid #707070;
+  border-right: 1px solid #707070;
+  margin-left: 10px;
+}
+.plan-type {
+  border: 1px solid #707070;
+}
+.plan-compare {
+  background-color: #FAFAFA;
+}
+.policy-check {
+  color: #38BF33;
+}
+.policy-pad-5 {
+  padding: 5px;
+}
+.top-margin {
+  margin-top: 10px;
+}
+.policy-plans-passive{
+  background-color: #FAFAFA;
+}
+.policy-plans-active{
+  background-color: #154979;
+}
