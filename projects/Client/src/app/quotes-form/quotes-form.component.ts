@@ -105,7 +105,6 @@ export class QuotesFormComponent implements OnInit {
 
 
   onSubmit(data) {
-
     // tslint:disable-next-line:prefer-const
     for (let key in data.value) {
       if (data.value.hasOwnProperty(key)) {
@@ -147,13 +146,13 @@ export class QuotesFormComponent implements OnInit {
     this.planLabel = plan;
   }
 
-  comparePlans(plandata) {
+  comparePlans(plandata, planTitles) {
     console.log('i am in quotes form');
     console.log(plandata);
     const dialogRef = this.dialog.open(ModalPopupComponent, {
-      width: '900px',
+      width: '750px',
       height: '550px',
-      data: { head: 'compareplans', planData: plandata }
+      data: { head: 'compareplans', planData: plandata, planTitles: planTitles }
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);

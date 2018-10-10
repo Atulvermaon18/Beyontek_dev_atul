@@ -291,8 +291,20 @@
           }
         }
       ],
-      "plan_comparison": [
+      "plan_titles": [{
+          "title": "classic",
+          "label": "Classic"
+        },
         {
+          "title": "premier",
+          "label": "Premier"
+        },
+        {
+          "title": "executive",
+          "label": "Executive"
+        }
+      ],
+      "plan_comparison": [{
           "label": "Coverage",
           "classic": "AED 2,520",
           "premier": "AED 2,070",
@@ -338,6 +350,7 @@
           "label": "Off Road Cover",
           "classic": "",
           "premier": "optional",
+          "isCheckedPremier": false,
           "premier_context": "offroadcoverpremier",
           "executive": "included"
         },
@@ -356,10 +369,13 @@
         {
           "label": "Hire Car",
           "classic": "optional",
+          "isCheckedClassic": false,
           "classic_context": "hirecarclassic",
           "premier": "optional",
+          "isCheckedPremier": false,
           "premier_context": "hirecarpremier",
-          "executive": "included"
+          "executive": "included",
+          "isCheckedExecutive": false
         },
         {
           "label": "Persoanl Accident Cover for Driver",
@@ -370,6 +386,7 @@
         {
           "label": "Persoanl Accident Cover for Passengers",
           "classic": "optional",
+          "isCheckedClassic": false,
           "classic_context": "personalaccidentcoverpassengers",
           "premier": "included",
           "executive": "included"
@@ -389,28 +406,37 @@
         {
           "label": "Breakdown Recovery - Silver",
           "classic": "optional",
+          "isCheckedClassic": false,
           "classic_context": "breakdownrecoveryclassicsilver",
           "premier": "optional",
+          "isCheckedPremier": false,
           "premier_context": "breakdownrecoverypremiersilver",
           "executive": "optional",
+          "isCheckedExecutive": false,
           "executive_context": "breakdownrecoveryexecutivesilver"
         },
         {
           "label": "Breakdown Recovery - Gold",
           "classic": "optional",
+          "isCheckedClassic": false,
           "classic_context": "breakdownrecoveryclassicgold",
           "premier": "optional",
+          "isCheckedPremier": false,
           "premier_context": "breakdownrecoverypremiergold",
           "executive": "optional",
+          "isCheckedExecutive": false,
           "executive_context": "breakdownrecoveryexecutivegold"
         },
         {
           "label": "Breakdown Recovery - Platinum",
           "classic": "optional",
+          "isCheckedClassic": false,
           "classic_context": "breakdownrecoveryclassicplatinum",
           "premier": "optional",
+          "isCheckedPremier": false,
           "premier_context": "breakdownrecoverypremierplatinum",
           "executive": "optional",
+          "isCheckedExecutive": false,
           "executive_context": "breakdownrecoveryexecutiveplatinum"
         }
       ]

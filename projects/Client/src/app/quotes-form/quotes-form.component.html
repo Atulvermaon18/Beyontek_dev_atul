@@ -38,7 +38,7 @@
                 <hr class="horizontal-line">
                 <div class="plan-buy-compare plan-body row">
                   <div class="compare-plan">
-                    <a (click)="comparePlans(input.plan_comparison)">COMPARE</a>
+                    <a (click)="comparePlans(input.plan_comparison, input.plan_titles)">COMPARE</a>
                   </div>
                   <div class="buy-plan">
                     <a (click)="buyPlans()">BUY PLAN</a>
@@ -135,8 +135,6 @@
 
           <!-- this is for driver details  -->
           <br>
-
-
 
           <div>
             <button mat-button matStepperPrevious mat-raised-button *ngIf="i" class="float-left buttoncolor_css">

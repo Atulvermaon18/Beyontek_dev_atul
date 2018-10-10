@@ -1,4 +1,7 @@
 <div class="plan-compare col-md-12">
+  <!-- <div class="col-md-12 align-right">
+    <button class="btn"><i class="fa fa-close"></i></button>
+  </div> -->
   <div class="col-md-12 plan-compare-header top-margin row">
     <div class="col-md-6 align-left bold-font">
       <label for="plan-comparison">Plan Comparison</label>
@@ -10,55 +13,66 @@
 
   <div class="plan-compare-body col-md-12 row">
     <div class="col-md-5"> </div>
-    <div class="col-md-2 plan-border plan-type" [ngClass]="{'policy-plans-passive': true,'policy-plans-active': isPolicySelected}">
+    <!-- <div class="col-md-2 plan-border plan-type" [ngClass]="{'policy-plans-active':  isPolicySelected==='classic'}">
       <mat-radio-button class="top-margin" (click)="selectedPolicy('classic')" value="classic">Classic</mat-radio-button>
     </div>
-    <div class="col-md-2 plan-border plan-type">
+    <div class="col-md-2 plan-border plan-type" [ngClass]="{'policy-plans-active': isPolicySelected==='premier'}">
       <mat-radio-button class="top-margin" (click)="selectedPolicy('premier')" value="premier">Premier</mat-radio-button>
     </div>
-    <div class="col-md-2 plan-border plan-type">
+    <div class="col-md-2 plan-border plan-type" [ngClass]="{'policy-plans-active': isPolicySelected==='executive'}">
       <mat-radio-button class="top-margin" (click)="selectedPolicy('executive')" value="executive">Executive</mat-radio-button>
+    </div> -->
+    <div class="col-md-2 plan-border plan-type" [ngClass]="{'policy-plans-active':  isPolicySelected===plan.title}"
+      *ngFor="let plan of data.planTitles; let i = index">
+      <mat-radio-button class="top-margin" (click)="selectedPolicy(plan.title)" value="classic">{{plan.label}}</mat-radio-button>
     </div>
   </div>
 
+  <br>
+
   <div class="coverage-plans">
-    <div class="plan-structures col-md-12 row" *ngFor="let plan of data.planData; let i = index">
-      <div class="col-md-5 align-left policy-pad-5">
-        <span> {{plan.label}}</span>
+    <form [formGroup]="formgroup">
+      <div class="plan-structures col-md-12 row" *ngFor="let plan of data.planData; let i = index">
+        <div class="col-md-5 align-left policy-pad-5">
+          <span> {{plan.label}}</span>
+        </div>
+        <div class="col-md-2 plan-border policy-pad-5 plan-bckgrnd">
+          <span *ngIf="plan.classic=='included'">
+            <i class="fa fa-check policy-check" aria-hidden="true"></i>
+          </span>
+          <span *ngIf="plan.classic=='optional'">
+            <mat-checkbox [(ngModel)]="plan.isCheckedClassic" [formControlName]="plan.classic_context">
+            </mat-checkbox>
+          </span>
+          <span *ngIf="plan.classic!='optional' && plan.classic!='included'">
+            {{plan.classic}}
+          </span>
+        </div>
+        <div class="col-md-2 plan-border policy-pad-5 plan-bckgrnd">
+          <span *ngIf="plan.premier=='included'">
+            <i class="fa fa-check policy-check" aria-hidden="true"></i>
+          </span>
+          <span *ngIf="plan.premier=='optional'">
+            <mat-checkbox [(ngModel)]="plan.isCheckedPremier" [formControlName]="plan.premier_context">
+            </mat-checkbox>
+          </span>
+          <span *ngIf="plan.premier!='optional' && plan.premier!='included'">
+            {{plan.classic}}
+          </span>
+        </div>
+        <div class="col-md-2 plan-border policy-pad-5 plan-bckgrnd">
+          <span *ngIf="plan.executive=='included'">
+            <i class="fa fa-check policy-check" aria-hidden="true"></i>
+          </span>
+          <span *ngIf="plan.executive=='optional'">
+            <mat-checkbox [(ngModel)]="plan.isCheckedExecutive" [formControlName]="plan.executive_context">
+            </mat-checkbox>
+          </span>
+          <span *ngIf="plan.executive!='optional' && plan.executive!='included'">
+            {{plan.classic}}
+          </span>
+        </div>
       </div>
-      <div class="col-md-2 plan-border policy-pad-5">
-        <span *ngIf="plan.classic=='included'">
-          <i class="fa fa-check policy-check" aria-hidden="true"></i>
-        </span>
-        <span *ngIf="plan.classic=='optional'">
-          <mat-checkbox id="cbxInternal"></mat-checkbox>
-        </span>
-        <span *ngIf="plan.classic!='optional' && plan.classic!='included'">
-          {{plan.classic}}
-        </span>
-      </div>
-      <div class="col-md-2 plan-border policy-pad-5">
-        <span *ngIf="plan.premier=='included'">
-          <i class="fa fa-check policy-check" aria-hidden="true"></i>
-        </span>
-        <span *ngIf="plan.premier=='optional'">
-          <mat-checkbox id="cbxInternal"></mat-checkbox>
-        </span>
-        <span *ngIf="plan.premier!='optional' && plan.premier!='included'">
-          {{plan.classic}}
-        </span>
-      </div>
-      <div class="col-md-2 plan-border policy-pad-5">
-        <span *ngIf="plan.executive=='included'">
-          <i class="fa fa-check policy-check" aria-hidden="true"></i>
-        </span>
-        <span *ngIf="plan.executive=='optional'">
-          <mat-checkbox id="cbxInternal"></mat-checkbox>
-        </span>
-        <span *ngIf="plan.executive!='optional' && plan.executive!='included'">
-          {{plan.classic}}
-        </span>
-      </div>
-    </div>
+    </form>
   </div>
 </div>
