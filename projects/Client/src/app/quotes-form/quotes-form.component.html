@@ -111,14 +111,12 @@
             <div *ngIf="field.type=='file'" class="displayinput_css">
               <div class="row">
                 <input type="text" class="upload_input form-control col-md-8" placeholder="{{field.key | translate}}" multiple>
-                <img src="../../assets/img/home/add_box.png" class="attach_button" (click)="imgFileInput.click()">
+                <img src="../../assets/img/home/add_box.png" class="attach_button cur_pointer" (click)="imgFileInput.click()">
                 <input hidden type='file' #imgFileInput (change)="onSelectFile($event,field.key)" multiple>
                 <!-- <div class="uploaded_input"> -->
                   <div *ngFor="let upload of uploadFiles; let i = index" class="col-sm" class="uploaded_input" >
-                    <p *ngIf="upload.proof===field.key">{{upload.fileName}}
-                      <i class="material-icons cur_pointer" (click)="uploadedFile(i)">
-                        close
-                      </i>
+                    <p *ngIf="upload.proof===field.key" class="para_margin">{{upload.fileName}}
+                      <img src="../../assets/img/home_icon/close_Red.png" (click)="uploadedFile(i)" class="cur_pointer">
                     </p>
                   </div>
                 <!-- </div> -->
