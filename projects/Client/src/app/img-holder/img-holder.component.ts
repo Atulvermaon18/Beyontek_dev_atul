@@ -10,6 +10,8 @@ import { ModalPopupComponent } from 'projects/Client/src/app/modal/modal-popup/m
 })
 export class ImgHolderComponent implements OnInit {
 
+  imgPath:String = '../../assets/img/home_icon/img_2.png';
+
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {

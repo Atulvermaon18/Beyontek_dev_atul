@@ -195,3 +195,7 @@
 a, .cur_pointer {
   cursor: pointer;
 }
+
+.para_margin{
+  margin: 0;
+}

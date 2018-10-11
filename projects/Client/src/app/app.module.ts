@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatMenuModule, MatExpansionModule   } from '@angular/material';
+import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatMenuModule, MatExpansionModule, MatChipsModule } from '@angular/material';
 import { MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material';
 import { MatCheckboxModule} from '@angular/material/checkbox';
@@ -52,6 +52,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { LoaderInterceptorService } from './_services/loader-interceptor.service';
 import { ModalBuynewpolicyComponent } from './modal/modal-buynewpolicy/modal-buynewpolicy.component';
 import { ModalVideoComponent } from './modal/modal-video/modal-video.component';
+import { SummaryWidgetComponent } from './summary-widget/summary-widget.component';
 import { ModalCompareplansComponent } from './modal/modal-compareplans/modal-compareplans.component';
 
 
@@ -91,6 +92,7 @@ export function setupTranslateFactory(
     LoaderComponent,
     ModalBuynewpolicyComponent,
     ModalVideoComponent,
+    SummaryWidgetComponent,
     ModalCompareplansComponent
   ],
   imports: [
@@ -120,7 +122,8 @@ export function setupTranslateFactory(
     MatMenuModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatChipsModule
   ],
   entryComponents: [
     ModalPopupComponent
