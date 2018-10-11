@@ -1,7 +1,7 @@
 <div class="plan-compare col-md-12">
-  <!-- <div class="col-md-12 align-right">
-    <button class="btn"><i class="fa fa-close"></i></button>
-  </div> -->
+  <div class="col-md-12 align-right">
+    <img src="../../../assets/img/home_icon/close_Red.png">
+  </div>
   <div class="col-md-12 plan-compare-header top-margin row">
     <div class="col-md-6 align-left bold-font">
       <label for="plan-comparison">Plan Comparison</label>
@@ -13,15 +13,6 @@
 
   <div class="plan-compare-body col-md-12 row">
     <div class="col-md-5"> </div>
-    <!-- <div class="col-md-2 plan-border plan-type" [ngClass]="{'policy-plans-active':  isPolicySelected==='classic'}">
-      <mat-radio-button class="top-margin" (click)="selectedPolicy('classic')" value="classic">Classic</mat-radio-button>
-    </div>
-    <div class="col-md-2 plan-border plan-type" [ngClass]="{'policy-plans-active': isPolicySelected==='premier'}">
-      <mat-radio-button class="top-margin" (click)="selectedPolicy('premier')" value="premier">Premier</mat-radio-button>
-    </div>
-    <div class="col-md-2 plan-border plan-type" [ngClass]="{'policy-plans-active': isPolicySelected==='executive'}">
-      <mat-radio-button class="top-margin" (click)="selectedPolicy('executive')" value="executive">Executive</mat-radio-button>
-    </div> -->
     <div class="col-md-2 plan-border plan-type" [ngClass]="{'policy-plans-active':  isPolicySelected===plan.title}"
       *ngFor="let plan of data.planTitles; let i = index">
       <mat-radio-button class="top-margin" (click)="selectedPolicy(plan.title)" value="classic">{{plan.label}}</mat-radio-button>
