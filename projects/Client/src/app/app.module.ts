@@ -52,6 +52,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { LoaderInterceptorService } from './_services/loader-interceptor.service';
 import { ModalBuynewpolicyComponent } from './modal/modal-buynewpolicy/modal-buynewpolicy.component';
 import { ModalVideoComponent } from './modal/modal-video/modal-video.component';
+import { SummaryWidgetComponent } from './summary-widget/summary-widget.component';
 import { ModalCompareplansComponent } from './modal/modal-compareplans/modal-compareplans.component';
 
 
@@ -91,6 +92,7 @@ export function setupTranslateFactory(
     LoaderComponent,
     ModalBuynewpolicyComponent,
     ModalVideoComponent,
+    SummaryWidgetComponent,
     ModalCompareplansComponent
   ],
   imports: [

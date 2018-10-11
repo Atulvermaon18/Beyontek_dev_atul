@@ -86,7 +86,7 @@
           </div>
 
 
-          <div *ngFor="let field of input.inputs" style="display: inline-block;" [ngClass]="{'col-md-6':field.type!=='file','col-md-12': field.type==='file'}">
+          <div *ngFor="let field of input.inputs; let j = index;" style="display: inline-block;" [ngClass]="{'col-md-6':field.type!=='file','col-md-12': field.type==='file'}">
 
             <mat-form-field class="displayinput_css" *ngIf="field.type=='text' || field.type=='number'  ">
               <input matInput placeholder="{{field.key | translate}}" [formControlName]="field.label">
@@ -108,6 +108,7 @@
               {{field.key | translate}}
             </mat-checkbox>
 
+
             <div *ngIf="field.type=='file'" class="displayinput_css">
               <div class="row">
                 <input type="text" class="upload_input form-control col-md-8" placeholder="{{field.key | translate}}" multiple>
@@ -123,6 +124,12 @@
               </div>
             </div>
 
+          </div>
+
+          <div *ngIf="input.title=='Personal Details'" style="display: inline-block;">
+            Send OTP
+            <button>Mobile</button>
+            <button>Email</button>
           </div>
 
           <!-- this is for driver details  -->

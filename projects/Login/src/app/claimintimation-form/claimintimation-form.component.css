@@ -2,6 +2,19 @@
     margin-left: 0;
     margin-right: 0;
 }
+.mar_noneall{
+    margin-left: 0;
+    margin-right: 0;
+    padding: 80px;  
+}
+.upload_iconstyle{
+    float: left;
+}
+.pad_uploadtext{
+    padding-left: 25px;
+    color: #ADACAC;
+    font-size: 14px;
+}
 .mar_topcss{
     margin-top: 10px;
 }
