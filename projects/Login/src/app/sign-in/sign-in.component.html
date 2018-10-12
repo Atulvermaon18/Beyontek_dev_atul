@@ -54,15 +54,16 @@
           <form class="bg_loginbodyovercss">
             <div class="">
               <mat-form-field class="text_boxwidth">
-                <input matInput placeholder="User Name" type="text">
+                <input matInput placeholder="User Name" type="text" [(ngModel)]="login.username" #uname="ngModel">
                 <span matPrefix>
                   <img class="user_iconstyle" src="assets/img/login/name.png" />
                 </span>
               </mat-form-field>
+
             </div>
-            <div class="">
+            <div class="form-group">
               <mat-form-field class="text_boxwidth">
-                <input matInput placeholder="Password" type="text">
+                <input matInput placeholder="Password" type="password" [(ngModel)]="login.password" #pwd="ngModel">
                 <span matPrefix>
                   <img class="user_iconstyle" src="assets/img/login/password.png" />
                 </span>

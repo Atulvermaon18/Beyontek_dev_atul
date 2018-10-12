@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router} from '@angular/router';
+// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { PostsService } from '../_services/posts.service';
 
@@ -11,13 +12,20 @@ import { PostsService } from '../_services/posts.service';
 export class SignInComponent implements OnInit {
   
   @Output() onNameChanged = new EventEmitter();
+  // loginForm: FormGroup;
+  login:{};
 
   constructor(private router: Router , public postService: PostsService) { }
 
-  ngOnInit() {    
+  ngOnInit() { 
+  //   this.loginForm = this.formBuilder.group({
+  //     username: ['', Validators.required],
+  //     password: ['', Validators.required]
+  // });   
   }
 
-  loginEvent(){
+  loginEvent(login){
+    debugger;
     localStorage.setItem("logged", "Atul");
 
     let params ={
