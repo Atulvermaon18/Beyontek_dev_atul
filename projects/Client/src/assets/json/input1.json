@@ -168,11 +168,11 @@
       "title": "OTP",
       "label": "otp",
       "context": "One time password has been sent to ********98. Please enter the same here to view your quotes",
-      "input-otp": [{
+      "inputOtp": {
         "label": "otp",
         "type": "text",
         "key": "Enter your OTP"
-      }]
+      }
     },
     {
       "title": "Plan Details",

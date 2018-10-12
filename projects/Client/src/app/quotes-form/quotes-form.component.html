@@ -10,23 +10,24 @@
           <h5 class="title_css">{{input.title}}</h5>
 
           <br>
-          <div *ngIf="input.label=='otp'" class="policy-plans-otp row col-md-12">
-            <div class="col-md-12">
-              <span class="otp-context">{{input.context}}</span>
+
+          <div *ngIf="input.label=='otp'" class="policy-plans-otp">
+            <div class="otp-context">
+              <span class="otp-context-content">{{input.context}}</span>
             </div>
-            <div class="col-md-12">
+            <div class="otp-input">
               <mat-form-field class="displayinput_css">
-                <input matInput placeholder="{{input.input-otp['key'] | translate}}" [formControlName]="input.input-otp['label']">
+                <input matInput placeholder="{{input.inputOtp['key'] | translate}}" [formControlName]="input.inputOtp['label']">
               </mat-form-field>
             </div>
-            <div class="col-md-12">
+            <div class="verify-otp">
               <button mat-flat-button class="btn_margin">VERIFY</button>
             </div>
-            <div class="col-md-12">
-              <span>Resend OTP</span>
+            <div class="resend-otp">
+              <a>Resend OTP</a>
             </div>
-
           </div>
+
           <div *ngIf="input.label=='policy'" class="policy-plans row">
             <div class="col-md-3 layout-box plan-details-section" [ngClass]="{'policy-plans-active': plan.label==selectedPolicyHighLight}"
               tabindex="{{i}}" *ngFor="let plan of input.plans; let i = index" (click)="selectedPolicy(plan.label)">
@@ -147,8 +148,17 @@
 
           <div *ngIf="input.title=='Personal Details'" class="col-md-6" style="display: inline-block;">
             <label for="send-otp"> Send OTP </label>
-            <span class="phone-icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
-            <span class="mail-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+            <!-- <button class="phone-icon1"><i class="fa fa-phone" aria-hidden="true"></i></button>
+            <button class="mail-icon1"><i class="fa fa-envelope" aria-hidden="true"></i></button> -->
+            <mat-button-toggle-group #group="matButtonToggleGroup" class="otp-source">
+              <mat-button-toggle value="mobile">
+                <span class="phone-icon1"><i class="fa fa-phone" aria-hidden="true"></i></span>
+              </mat-button-toggle>
+              <mat-button-toggle value="mail">
+                <span class="mail-icon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+              </mat-button-toggle>
+            </mat-button-toggle-group>
+
           </div>
 
           <!-- this is for driver details  -->
