@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http'
 
 import { NgModule } from '@angular/core';
 import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatFormFieldModule, MatRadioModule, MatMenuModule, MatDialogModule, MatSelectModule,MatCheckboxModule, MatExpansionModule } from '@angular/material';
@@ -34,8 +35,11 @@ import { NewclaimComponent } from './newclaim/newclaim.component';
 import { ClaimintimationFormComponent } from './claimintimation-form/claimintimation-form.component';
 import { ModalBuynewpolicyComponent } from './modal/modal-buynewpolicy/modal-buynewpolicy.component';
 import { ModalVideoComponent } from './modal/modal-video/modal-video.component';
+import { LoaderComponent } from './loader/loader.component';
 
 import { ServiceService } from './service.service';
+import { LoaderInterceptorService } from './_services/loader-interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -65,11 +69,13 @@ import { ServiceService } from './service.service';
     MypolicymakepaymentComponent,
     NewclaimComponent,
     ClaimintimationFormComponent,
+    LoaderComponent
   
   ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
@@ -96,7 +102,8 @@ import { ServiceService } from './service.service';
   ],
   providers: [
     MatDatepickerModule,
-    ServiceService
+    ServiceService,
+    LoaderInterceptorService
   ],
   bootstrap: [AppComponent]
 })
