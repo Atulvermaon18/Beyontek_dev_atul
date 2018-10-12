@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router} from '@angular/router';
+// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ServiceService } from '../service.service';
 
@@ -11,25 +12,31 @@ import { ServiceService } from '../service.service';
 export class SignInComponent implements OnInit {
   
   @Output() onNameChanged = new EventEmitter();
+  // loginForm: FormGroup;
+  login:{};
 
   constructor(private router: Router , public service: ServiceService) { }
 
-  ngOnInit() {    
+  ngOnInit() { 
+  //   this.loginForm = this.formBuilder.group({
+  //     username: ['', Validators.required],
+  //     password: ['', Validators.required]
+  // });   
   }
 
-  loginEvent(){
+  loginEvent(login){
+    debugger;
     localStorage.setItem("logged", "Atul");
-    // this.service.subject.next('policy');
-    // this.router.navigate(['/policy']);
-    if(localStorage.getItem('logged') !== null){
-      this.service.isLogged = true;
-      this.router.navigate(['/policy']);
-      console.log('Test');      
-    }else{
-      // alert("Please login!");
-      this.service.isLogged = false;
-      this.router.navigate(['/login']);
-    }      
+
+    // if(localStorage.getItem('logged') !== null){
+    //   this.service.isLogged = true;
+    //   this.router.navigate(['/policy']);
+    //   console.log('Test');      
+    // }else{
+    
+    //   this.service.isLogged = false;
+    //   this.router.navigate(['/login']);
+    // }      
   }
 
 }
