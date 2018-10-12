@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
-import * as Rx from "rxjs";
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class ServiceService { 
-
-  // subject = new Rx.BehaviorSubject<any>("");
+export class ServiceService {
 
   isLogged: boolean = false;
-  constructor() {
+  loginURL: 'http://10.91.16.60:9090/login';
+
+  constructor(private http: HttpClient) {
     
   }
 
-  // getValues(q){
-  //   this.subject.next(q);
-  // }
+  getLogin() {
+    return this.http.get(this.loginURL);
+  }
 }

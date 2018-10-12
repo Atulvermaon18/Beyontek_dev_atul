@@ -1,13 +1,57 @@
 <!-- <mat-card style="margin-top:50px;" class=""> -->
 <div class="row">
   <div class="col-md-4 offset-md-6">
-    <div class="bg_loginlogo_css">
-      <div class="text-center">
+    <div>
+      <div class="text-center bg_loginlogo_css">
         <img class="logo_center" src="assets/img/login/logo.png" />
       </div>
       <mat-tab-group>
         <mat-tab label="Login">
-          <form class="bg_loginbodycss">
+          <div class="bg_loginbodycss">
+            <form class="bg_loginbodytextcss">
+              <div class="login_field">
+                <mat-form-field class="text_boxwidth">
+                  <input matInput placeholder="User Name" type="text">
+                  <span matPrefix>
+                    <img class="user_iconstyle" src="assets/img/login/name.png" />
+                  </span>
+                </mat-form-field>
+              </div>
+              <div class="">
+                <mat-form-field class="text_boxwidth">
+                  <input matInput placeholder="Password" type="text">
+                  <span matPrefix>
+                    <img class="user_iconstyle" src="assets/img/login/password.png" />
+                  </span>
+                </mat-form-field>
+              </div>
+              <div>
+                <button type="button" class="btn btn-primary login_btncss">LOGIN</button>
+              </div>
+              <div>
+                <div class="col-sm-8 offset-sm-2 pad_none remember_textcss">
+                  <mat-checkbox>
+                    <span class="rememberfont_css">Remember Me</span>
+                  </mat-checkbox>
+                </div>
+                <div class="col-sm-8 offset-sm-2 pad_none forgot_textcss">
+                  <label>Forgot Password</label>
+                </div>
+
+                <mat-form-field class="text_boxwidth">
+                  <input matInput placeholder="Enter your email address" type="text">
+                  <span matPrefix>
+                    <img class="user_iconstyle" src="assets/img/login/email.png" align="middle" />
+                  </span>
+                </mat-form-field>
+                <div>
+                  <button type="button" class="btn btn-primary login_btncss">RESET</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+          <form class="bg_loginbodyovercss">
             <div class="">
               <mat-form-field class="text_boxwidth">
                 <input matInput placeholder="User Name" type="text">
@@ -29,7 +73,9 @@
             </div>
             <div>
               <div class="col-sm-8 offset-sm-2 pad_none remember_textcss">
-                  <mat-checkbox ><span class="rememberfont_css">Remember Me</span> </mat-checkbox>
+                <mat-checkbox>
+                  <span class="rememberfont_css">Remember Me</span>
+                </mat-checkbox>
               </div>
               <div class="col-sm-8 offset-sm-2 pad_none forgot_textcss">
                 <label>Forgot Password</label>
@@ -49,7 +95,67 @@
           </form>
         </mat-tab>
         <mat-tab label="Sign up">
-          <form class="bg_loginbodycss">
+          <div class="bg_loginbodycss">
+            <form class="bg_loginbodytextcss">
+              <div>
+                <mat-form-field class="text_boxwidth">
+                  <input matInput placeholder="First Name" type="text">
+                  <span matPrefix>
+                    <img class="user_iconstyle" src="assets/img/login/name.png" align="middle" />
+                  </span>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field class="text_boxwidth">
+                  <input matInput placeholder="Last Name" type="text">
+                  <span matPrefix>
+                    <img class="user_iconstyle" src="assets/img/login/name.png" align="middle" />
+                  </span>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field class="text_boxwidth">
+                  <input matInput placeholder="Mobile No" type="text">
+                  <span matPrefix>
+                    <img class="user_iconstyle" src="assets/img/login/mobile_no.png" align="middle" />
+                  </span>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field class="text_boxwidth">
+                  <input matInput placeholder="Email ID" type="text">
+                  <span matPrefix>
+                    <img class="user_iconstyle" src="assets/img/login/email.png" align="middle" />
+                  </span>
+                </mat-form-field>
+              </div>
+              <div class="radio_btncss">
+                <mat-radio-group>
+                  <mat-radio-button class="mar_spacecss" value="mobile">Mobile</mat-radio-button>
+                  <mat-radio-button class="mar_spacecss" value="email">Email</mat-radio-button>
+
+                </mat-radio-group>
+                <button type="button" class="btn btn-primary otp_btncss">SEND OTP</button>
+              </div>
+              <div>
+                <mat-form-field class="text_boxwidth">
+                  <input matInput placeholder="OTP" type="text">
+                  <span matPrefix>
+                    <img class="user_iconstyle" src="assets/img/login/email.png" align="middle" />
+                  </span>
+                </mat-form-field>
+              </div>
+              <div>
+                <img class="social_iconcss" src="assets/img/login/facebook.png" />
+                <img class="social_iconcss" src="assets/img/login/google-plus.png" />
+                <img class="social_iconcss" src="assets/img/login/twitter.png" />
+                <button type="button" class="btn btn-primary signup_btncss">SIGNUP</button>
+              </div>
+
+
+            </form>
+          </div>
+          <form class="bg_loginbodyovercss">
             <div>
               <mat-form-field class="text_boxwidth">
                 <input matInput placeholder="First Name" type="text">

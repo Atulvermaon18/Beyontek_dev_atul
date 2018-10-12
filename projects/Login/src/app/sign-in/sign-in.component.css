@@ -5,10 +5,30 @@
     margin-top: 85px;
     background-color: #fff;
 }
+::ng-deep .mat-tab-header{
+    background-color: #fff;
+    margin-top: 0 !important;
+}
 .bg_loginbodycss{
     padding-top: 10px;
     text-align: center;
     background-color: #45A175;
+    position: relative;
+    filter: alpha(opacity=30);
+    filter: progid: DXImageTransform.Microsoft.Alpha(opacity=30);
+    -moz-opacity: 0.30;
+    opacity: 0.5;
+}
+.bg_loginbodytextcss{
+    visibility: hidden;
+}
+.bg_loginbodyovercss{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 10px;
+    text-align: center;
 }
 .login_btncss{
     background-color: #154979;
