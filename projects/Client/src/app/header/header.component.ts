@@ -49,6 +49,11 @@ export class HeaderComponent implements OnInit {
     if(data.viewValue == 'Profile'){
       this.router.navigate(['/profile']);
     }
+    else if(data.viewValue == 'reset'){
+      // localStorage.clear();
+      this.postService.isLogged = false;
+      this.router.navigate(['/reset']);
+    }
     else if(data.viewValue == 'Logout'){
       // localStorage.clear();
       this.postService.isLogged = false;
