@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { BusniessTypeComponent } from './busniess-type/busniess-type.component';
 import { ModalPopupComponent } from './modal/modal-popup/modal-popup.component';
@@ -77,6 +77,7 @@ import { LoaderInterceptorService } from './_services/loader-interceptor.service
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     MatToolbarModule,
     MatButtonModule,
