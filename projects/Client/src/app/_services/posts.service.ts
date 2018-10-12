@@ -10,6 +10,7 @@ export class PostsService {
  
   data: any = {};
   APIEndpoint: String = '';
+  isLogged: boolean = true;
 
   constructor(private http: HttpClient) {
     this.APIEndpoint = environment.APIEndpoint;

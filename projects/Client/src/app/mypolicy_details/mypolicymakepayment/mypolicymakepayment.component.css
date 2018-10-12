@@ -11,6 +11,9 @@
     color: #B96708;
     font-size: 15px;
 }
+.status_csspay{
+    color: #154979;
+}
 .tablehead_sizecss{
     font-family: 'Nunitosanssemibold';
     font-size: 17px;
@@ -28,3 +31,16 @@ tablebody_sizecss{
     margin: 20px;
     /* font-size: 14px; */
 }
+::ng-deep .checkbox_size .mat-checkbox-inner-container{
+    width: 15px;
+    height: 15px;
+}
+.buttoncolor_css{
+    background-color: #45A175;
+    color: #fff;
+    margin-top: 30px;
+  }
+  ::ng-deep .buttoncolor_css.mat-button:hover{
+    background-color: #45A175;
+    color: #fff;
+  }
