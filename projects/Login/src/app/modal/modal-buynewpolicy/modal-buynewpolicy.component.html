@@ -1,3 +1,10 @@
-<p>
-  modal-buynewpolicy works!
-</p>
+<div>    
+  <div class="row">
+    <p class="buy_policy mar_none">Buy New Policy
+      <img src="../../../assets/img/home_icon/close_Red.png" class="img_move" (click)="closePolicyPopup()">
+    </p>
+  </div>
+  <div class="row" *ngFor="let policy of buypolicy">
+    <a class="cur_pointer"><img src="{{policy.icon}}" class="img_mar">{{policy.policyName}}</a>
+  </div>
+</div>

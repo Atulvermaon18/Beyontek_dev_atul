@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mypolicyviewdetail.component.css']
 })
 export class MypolicyviewdetailComponent implements OnInit {
+
   isChecked: boolean;
 
   vehicleDetailPreview: any = [
@@ -102,9 +104,11 @@ export class MypolicyviewdetailComponent implements OnInit {
       "isChecked": "true",
     }
   ];
+
   constructor() { }
 
   ngOnInit() {
   }
 
 }
+

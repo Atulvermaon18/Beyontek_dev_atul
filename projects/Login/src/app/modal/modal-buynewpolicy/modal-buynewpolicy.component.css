@@ -1,0 +1,32 @@
+.buy_policy{
+    color: #154979;
+    font-size: 16px;
+    font-family: 'Nunitosans';
+    text-align: left;
+}
+
+.tooltip{
+    display: none;
+}
+
+.cur_pointer{
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Nunitosanssemibold';
+    color: #3C3C3C;
+    padding: 10px;
+}
+
+.mar_none{
+    margin: 0;
+}
+
+.img_move{
+    margin-left: 120px;
+    cursor: pointer;
+    position: relative;
+}
+
+.img_mar{
+    margin-right: 5px;
+}
