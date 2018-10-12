@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-generated-quotes-users',
@@ -7,8 +7,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class GeneratedQuotesUsersComponent implements OnInit {
 
-   @Input() hideGeneratedQuotes: boolean;
-   
   constructor() { }
 
   ngOnInit() {

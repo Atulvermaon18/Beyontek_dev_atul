@@ -1,3 +1,14 @@
+.pad_none{
+    /* padding-left: 0; */
+    padding-right: 0;
+  }
+  .mar_none{
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .rightside_padnone{
+    padding-right: 0;
+  }
 .policy_textcss{
     font-size: 20px;
     font-family: 'Nunitosansbold';
@@ -8,10 +19,13 @@
     margin-top: 25px;
     margin-bottom: 30px;
 }
-.pad_none{
+.textalign_css{
+  text-align: left;
+}
+/* .pad_none{
     padding-left: 0;
     padding-right: 0;
-}
+} */
 .pad_topcss{
     padding-top: 17px;
 }
@@ -40,6 +54,17 @@
     color: #5A5A5A;
     border-bottom: 1px solid #E7E7E7;
     padding-bottom: 10px;
+}
+
+.buttonclaim_css{
+  background-color: #154979;
+  color: #fff;
+  margin-top: 30px;
+  padding: 5px;
+}
+::ng-deep .buttonclaim_css.mat-button:hover{
+  background-color: #154979;
+  color: #fff;
 }
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -110,7 +135,7 @@ pre, textarea {
     font-size: inherit;
     line-height: inherit;
     margin: 0;
-    padding: 0;
+    /* padding: 0; */
   }
   
   ::after, ::before {
@@ -365,7 +390,7 @@ pre, textarea {
     position: relative;
     display: inline-block;
     font-weight: 600;
-    color: #5050FF;
+    color: #5050FF !important;
   }
   
   .link:after {
@@ -718,7 +743,7 @@ pre, textarea {
   .slider__holder {
     position: relative;
     width: 100%;
-    max-width: 300px;
+    max-width: 260px;
     margin: 0 auto;
     /* margin-top: 80px; */
     text-align: left;
@@ -746,7 +771,7 @@ pre, textarea {
   }
   
   .slider__item-content {
-    padding: 10px 6px;
+    padding: 10px 15px;
     text-align: center;
   }
   

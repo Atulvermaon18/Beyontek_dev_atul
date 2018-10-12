@@ -1,0 +1,58 @@
+.mar_none{
+    margin-left: 0;
+    margin-right: 0;
+}
+.mar_noneall{
+    margin-left: 0;
+    margin-right: 0;
+    padding: 80px;  
+}
+.upload_iconstyle{
+    float: left;
+}
+.pad_uploadtext{
+    padding-left: 25px;
+    color: #ADACAC;
+    font-size: 14px;
+}
+.mar_topcss{
+    margin-top: 10px;
+}
+.text_boxwidth{
+    display: inline;
+}
+.textcss{
+    color: #ADACAC;
+    font-size: 14px;
+}
+.textname_css{
+    color: #535353;
+    font-size: 16px; 
+}
+.buttoncolor_css{
+    background-color: #45A175;
+    color: #fff;
+    margin-top: 30px;
+  }
+  .mar_spacecss{
+      margin-left: 15px;
+  }
+  .btn_center{
+      text-align: center;
+      padding-bottom: 15px;
+  }
+  ::ng-deep .buttoncolor_css.mat-button:hover{
+    background-color: #45A175;
+    color: #fff;
+  }
+  .buttonclaim_css{
+    background-color: #154979;
+    color: #fff;
+    margin-top: 30px;
+    border-radius: 25px;
+    padding: 2px 35px 2px 35px;
+  }
+  ::ng-deep .buttonclaim_css.mat-button:hover{
+    background-color: #154979;
+    color: #fff;
+  }
