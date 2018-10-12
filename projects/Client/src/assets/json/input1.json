@@ -165,9 +165,10 @@
       ]
     },
     {
-      "title": "Verify OTP",
+      "title": "OTP",
+      "label": "otp",
       "context": "One time password has been sent to ********98. Please enter the same here to view your quotes",
-      "inputs": [{
+      "input-otp": [{
         "label": "otp",
         "type": "text",
         "key": "Enter your OTP"

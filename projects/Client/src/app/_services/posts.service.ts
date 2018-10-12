@@ -17,7 +17,7 @@ export class PostsService {
 
 
  getInuts() {
-    return this.http.get(this.APIEndpoint + "/5bbdc6243100003400711139");
+    return this.http.get(this.APIEndpoint + "/5bbf41ef3400004e006fcea4");
   }
 
 }

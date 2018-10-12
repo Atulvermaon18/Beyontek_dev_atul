@@ -199,3 +199,15 @@ a, .cur_pointer {
 .para_margin{
   margin: 0;
 }
+
+ .mail-icon {
+  float: right;
+}
+.phone-icon {
+  padding-left: 140px;
+}
+.btn_margin {
+  margin-top: 20px;
+  padding: 10px;
+  box-shadow: 0px 3px 6px #114677;
+}

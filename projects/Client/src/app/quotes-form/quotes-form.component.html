@@ -8,8 +8,25 @@
       <mat-step *ngFor="let input of inputData; let i = index">
         <form [formGroup]="formgroup" (submit)="onSubmit(formgroup)">
           <h5 class="title_css">{{input.title}}</h5>
-          <span>{{input.context}}</span>
+
           <br>
+          <div *ngIf="input.label=='otp'" class="policy-plans-otp row col-md-12">
+            <div class="col-md-12">
+              <span class="otp-context">{{input.context}}</span>
+            </div>
+            <div class="col-md-12">
+              <mat-form-field class="displayinput_css">
+                <input matInput placeholder="{{input.input-otp['key'] | translate}}" [formControlName]="input.input-otp['label']">
+              </mat-form-field>
+            </div>
+            <div class="col-md-12">
+              <button mat-flat-button class="btn_margin">VERIFY</button>
+            </div>
+            <div class="col-md-12">
+              <span>Resend OTP</span>
+            </div>
+
+          </div>
           <div *ngIf="input.label=='policy'" class="policy-plans row">
             <div class="col-md-3 layout-box plan-details-section" [ngClass]="{'policy-plans-active': plan.label==selectedPolicyHighLight}"
               tabindex="{{i}}" *ngFor="let plan of input.plans; let i = index" (click)="selectedPolicy(plan.label)">
@@ -58,7 +75,8 @@
                   </div>
                   <div class="col-md-12">
                     <mat-list role="list">
-                      <mat-list-item class="coverage-plans-list" *ngFor="let coverage of plan['plan_summary']['coverages']; let i = index" role="listitem">* {{coverage}}
+                      <mat-list-item class="coverage-plans-list" *ngFor="let coverage of plan['plan_summary']['coverages']; let i = index"
+                        role="listitem">* {{coverage}}
                       </mat-list-item>
                     </mat-list>
                   </div>
@@ -111,25 +129,26 @@
 
             <div *ngIf="field.type=='file'" class="displayinput_css">
               <div class="row">
-                <input type="text" class="upload_input form-control col-md-8" placeholder="{{field.key | translate}}" multiple>
+                <input type="text" class="upload_input form-control col-md-8" placeholder="{{field.key | translate}}"
+                  multiple>
                 <img src="../../assets/img/home/add_box.png" class="attach_button cur_pointer" (click)="imgFileInput.click()">
                 <input hidden type='file' #imgFileInput (change)="onSelectFile($event,field.key)" multiple>
                 <!-- <div class="uploaded_input"> -->
-                  <div *ngFor="let upload of uploadFiles; let i = index" class="col-sm" class="uploaded_input" >
-                    <p *ngIf="upload.proof===field.key" class="para_margin">{{upload.fileName}}
-                      <img src="../../assets/img/home_icon/close_Red.png" (click)="uploadedFile(i)" class="cur_pointer">
-                    </p>
-                  </div>
+                <div *ngFor="let upload of uploadFiles; let i = index" class="col-sm" class="uploaded_input">
+                  <p *ngIf="upload.proof===field.key" class="para_margin">{{upload.fileName}}
+                    <img src="../../assets/img/home_icon/close_Red.png" (click)="uploadedFile(i)" class="cur_pointer">
+                  </p>
+                </div>
                 <!-- </div> -->
               </div>
             </div>
 
           </div>
 
-          <div *ngIf="input.title=='Personal Details'" style="display: inline-block;">
-            Send OTP
-            <button>Mobile</button>
-            <button>Email</button>
+          <div *ngIf="input.title=='Personal Details'" class="col-md-6" style="display: inline-block;">
+            <label for="send-otp"> Send OTP </label>
+            <span class="phone-icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+            <span class="mail-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
           </div>
 
           <!-- this is for driver details  -->
@@ -156,11 +175,11 @@
 
           <div>
             <button mat-button matStepperPrevious mat-raised-button *ngIf="i" class="float-left buttoncolor_css">
-              << {{inputData[i-1].title}} </button>
-                <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button matStepperNext class="float-right buttoncolor_css">{{inputData[i+1].title}} >>
-                </button>
-                <button mat-button *ngIf="i===inputData.length-1" mat-raised-button (click)="showDetails(formgroup)" class="float-right buttoncolor_css">Done</button>
-                <!-- <button mat-button *ngIf="i===inputData.length-1" mat-raised-button type="submit" (click)="stepper.reset();quoteSelected=true;" >Done</button> -->
+              << {{inputData[i-1].title}} </button> <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button
+                matStepperNext class="float-right buttoncolor_css">{{inputData[i+1].title}} >>
+            </button>
+            <button mat-button *ngIf="i===inputData.length-1" mat-raised-button (click)="showDetails(formgroup)" class="float-right buttoncolor_css">Done</button>
+            <!-- <button mat-button *ngIf="i===inputData.length-1" mat-raised-button type="submit" (click)="stepper.reset();quoteSelected=true;" >Done</button> -->
           </div>
         </form>
 
