@@ -13,6 +13,7 @@ import { MypolicypremiumComponent } from './mypolicy_details/mypolicypremium/myp
 import { MypolicyrenewComponent } from './mypolicy_details/mypolicyrenew/mypolicyrenew.component';
 import { NewclaimComponent } from './newclaim/newclaim.component';
 import { MypolicyviewdetailComponent } from './mypolicy_details/mypolicyviewdetail/mypolicyviewdetail.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'mypolicypremium', component: MypolicypremiumComponent },
   { path: 'mypolicyrenew', component: MypolicyrenewComponent },
   { path: 'profile', component: MyProfileComponent },
+  { path: 'resetpassword', component: ChangepasswordComponent },
   { path: 'policy', component: MyPolicyComponent },
   { path: 'claim-intimation', component: ClaimIntimationComponent },
   { path: 'mypolicypayment', component: MypolicypremiumComponent },
