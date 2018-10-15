@@ -54,6 +54,9 @@ import { ModalBuynewpolicyComponent } from './modal/modal-buynewpolicy/modal-buy
 import { ModalVideoComponent } from './modal/modal-video/modal-video.component';
 import { SummaryWidgetComponent } from './summary-widget/summary-widget.component';
 import { ModalCompareplansComponent } from './modal/modal-compareplans/modal-compareplans.component';
+import { SnackBarComponent } from './snack-bar/snack-bar.component';
+import {MatSnackBarModule} from '@angular/material';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 
 export function setupTranslateFactory(
@@ -93,7 +96,8 @@ export function setupTranslateFactory(
     ModalBuynewpolicyComponent,
     ModalVideoComponent,
     SummaryWidgetComponent,
-    ModalCompareplansComponent
+    ModalCompareplansComponent,
+    SnackBarComponent
   ],
   imports: [
     BrowserModule,
@@ -122,7 +126,9 @@ export function setupTranslateFactory(
     MatMenuModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSnackBarModule,
+    SweetAlert2Module.forRoot()
   ],
   entryComponents: [
     ModalPopupComponent

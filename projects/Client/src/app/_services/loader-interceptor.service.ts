@@ -3,13 +3,15 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse } fr
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { LoaderService } from './loader.service';
+import { SnackBarService } from './snack-bar.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoaderInterceptorService implements HttpInterceptor {
 
-  constructor(private loaderService: LoaderService) { }
+  constructor(private loaderService: LoaderService, private snackbar: SnackBarService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
@@ -19,6 +21,9 @@ export class LoaderInterceptorService implements HttpInterceptor {
 
     return next.handle(req).pipe(tap((event: HttpEvent<any>) => {
       if (event instanceof HttpResponse) {
+        if (event.status == 200) {
+          this.showsnackBar();
+        }
         this.onEnd();
       }
     },
@@ -41,6 +46,11 @@ export class LoaderInterceptorService implements HttpInterceptor {
   private hideLoader(): void {
     this.loaderService.hide();
     console.log("Hide Loader..........")
+  }
+
+  private showsnackBar(): void {
+    this.snackbar.show();
+    console.log("show snackbar ..........")
   }
 
 }
