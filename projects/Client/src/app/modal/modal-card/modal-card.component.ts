@@ -17,9 +17,9 @@ export class ModalCardComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dialogRef: MatDialogRef<ModalCardComponent>) { }
 
   ngOnInit() {
-    this.popTitle = this.cardDetails.title;
+    this.popTitle = this.cardDetails.title;    
     this.splitPopImage = this.cardDetails.img.split('.');
-    this.splitPopImage = '../..' + this.splitPopImage[4] + 2 + '.png';
+    this.splitPopImage = this.splitPopImage[0] + 2 + '.png';
     this.popImage = this.splitPopImage;
   }
 

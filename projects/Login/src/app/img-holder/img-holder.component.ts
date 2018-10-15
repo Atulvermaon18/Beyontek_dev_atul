@@ -9,7 +9,7 @@ import { ModalPopupComponent } from 'projects/Login/src/app/modal/modal-popup/mo
 })
 export class ImgHolderComponent implements OnInit {
 
-  imgPath:String = '../../assets/img/rightside_icon.png';
+  imgPath:String = 'assets/img/rightside_icon.png';
 
   constructor(public dialog: MatDialog) { }
 

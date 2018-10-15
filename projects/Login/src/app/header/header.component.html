@@ -74,7 +74,7 @@
  || postService.isLogged && router.url === '/mypolicyviewdetails' || postService.isLogged && router.url === '/mypolicypayment'">
   <mat-toolbar class="bg_header">
     <a routerLink="/policy">
-      <img class="logo_allign" src="../../assets/img/logo.png">
+      <img class="logo_allign" src="assets/img/logo.png">
     </a>
     <span class="header-menu-right"></span>
     <a routerLink="/policy" class="btn_home">My Policy</a>
@@ -90,13 +90,13 @@
     </mat-menu>
     <button class="lang_dropdown" color="primary" mat-button [matMenuTriggerFor]="usermenu">
       <span class="header-label">
-        <img src="../../assets/img/login/contact.png">Mr.Bismillah</span>
+        <img src="assets/img/login/contact.png">Mr.Bismillah</span>
       <mat-icon class="icon_align1">arrow_drop_down</mat-icon>
     </button>
     <mat-menu #usermenu="matMenu" class="lang_dropdown">
       <button mat-menu-item class="add-new-menu-item" *ngFor="let lst of details" (click)="bindData(lst);">
         <img src="{{lst.img}}" class="btn_profiles">{{lst.viewValue}}</button>
     </mat-menu>
-    <img src="../../assets/img/login/contact.png" class="btn_img" routerLink="/">
+    <img src="assets/img/login/contact.png" class="btn_img" routerLink="/">
   </mat-toolbar>
 </nav>

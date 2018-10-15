@@ -28,6 +28,7 @@ export class SignInComponent implements OnInit {
       lastname: ['', Validators.required],
       mobileno: ['', Validators.required],
       email: ['', Validators.required],
+      otpMedium: ['', Validators.required],
       otp: ['', Validators.required],
     });
   }
@@ -60,6 +61,10 @@ export class SignInComponent implements OnInit {
     //   this.postService.isLogged = false;
     //   this.router.navigate(['/login']);
     // }      
+  }
+
+  sendOTP(otpValue) {
+    alert(JSON.stringify(otpValue));
   }
 
   onSignup() {
