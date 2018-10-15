@@ -61,6 +61,7 @@ import { ModalBuynewpolicyComponent } from './modal/modal-buynewpolicy/modal-buy
 import { ModalVideoComponent } from './modal/modal-video/modal-video.component';
 import { SummaryWidgetComponent } from './summary-widget/summary-widget.component';
 import { ModalCompareplansComponent } from './modal/modal-compareplans/modal-compareplans.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 
 
 export function setupTranslateFactory(
@@ -104,7 +105,8 @@ export function setupTranslateFactory(
     UserCardComponent,
     ClaimIntimationComponent,
     NewclaimComponent,
-    ClaimintimationFormComponent
+    ClaimintimationFormComponent,
+    ChangepasswordComponent
   ],
   imports: [
     BrowserModule,

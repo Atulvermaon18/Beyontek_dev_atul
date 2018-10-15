@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import { ModalPopupComponent } from '../modal/modal-popup/modal-popup.component';
 import { QuotesFormComponent } from '../quotes-form/quotes-form.component';
-
+import {PostsService} from '../_services/posts.service';
 
 @Component({
   selector: 'app-client-home',
@@ -45,6 +45,8 @@ export class ClientHomeComponent implements OnInit {
       head: 'card'
     }
   ];
+
+  // menu : any = {};
   items = [
     { title: 'Slide 1' },
     { title: 'Slide 2' },
@@ -55,8 +57,10 @@ export class ClientHomeComponent implements OnInit {
     quotes: false
   };
   msg = 'Hi There';
-  constructor(public dialog: MatDialog, public router: Router) {
-
+  constructor(public dialog: MatDialog, public router: Router, public service: PostsService) {
+    //  this.service.getLineOfBusiness().subscribe(result =>{
+    //   console.log(result)
+    // })
   }
 
   onNotify(message: string): void {
