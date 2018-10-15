@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ServiceService } from '../service.service';
+import { PostsService } from '../_services/posts.service';
 
 @Component({
   selector: 'app-header',
@@ -47,7 +47,7 @@ export class HeaderComponent implements OnInit {
       map(result => result.matches)
     );
     
-  constructor(private breakpointObserver: BreakpointObserver, public router: Router, public service: ServiceService) {}
+  constructor(private breakpointObserver: BreakpointObserver, public router: Router, public postService: PostsService) {}
   
   bindFlagData(data) {
     this.languageBind = data.viewValue;
@@ -65,7 +65,7 @@ export class HeaderComponent implements OnInit {
     }
     else if(data.viewValue == 'Logout'){
       localStorage.clear();
-      this.service.isLogged = false;
+      this.postService.isLogged = false;
       this.router.navigate(['/login']);
     }
   }
@@ -76,12 +76,12 @@ export class HeaderComponent implements OnInit {
     this.userBind = 'Atul';
     this.imageBind = '../../assets/img/flag/usa.png';
     if(localStorage.getItem('logged') !== null){
-      this.service.isLogged = true;
+      this.postService.isLogged = true;
       this.router.navigate(['/policy']);
       console.log('Test');      
     }else{
       // alert("Please login!");
-      this.service.isLogged = false;
+      this.postService.isLogged = false;
       this.router.navigate(['/login']);
     }
   }

@@ -117,16 +117,16 @@ export class QuotesFormComponent implements OnInit {
   }
 
   showDetails(data) {
-    const dialogRef = this.dialog.open(ModalPopupComponent, {
-      width: '1034px',
-      height: '448px',
-      data: { head: 'buyplan', value: data }
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed', result);
-      this.quoteSelected = true;
-      this.summary = data.value;
-    });
+    // const dialogRef = this.dialog.open(ModalPopupComponent, {
+    //   width: '1034px',
+    //   height: '448px',
+    //   data: { head: 'buyplan', value: data }
+    // });
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log('The dialog was closed', result);
+    //   this.quoteSelected = true;
+    //   this.summary = data.value;
+    // });
   }
 
   handleEvnt() {

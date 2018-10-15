@@ -7,14 +7,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatMenuModule, MatExpansionModule   } from '@angular/material';
+import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatMenuModule, MatExpansionModule, MatChipsModule } from '@angular/material';
 import { MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ClientHomeComponent } from './client-home/client-home.component';
-import { ClientClaimIntimationComponent } from './client-claim-intimation/client-claim-intimation.component';
 import { ClientContactusComponent } from './client-contactus/client-contactus.component';
 import { ClientCustomerServiceComponent } from './client-customer-service/client-customer-service.component';
 import { QuotesFormComponent } from './quotes-form/quotes-form.component';
@@ -33,7 +32,6 @@ import { TranslatePipe } from './translate.pipe';
 import { ImgHolderComponent } from './img-holder/img-holder.component';
 import { ClientGetQuotesComponent } from './client-get-quotes/client-get-quotes.component';
 import { ModalPopupComponent } from './modal/modal-popup/modal-popup.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserPersonalDetailComponent } from './user-personal-detail/user-personal-detail.component';
 import { UserPolicyComponent } from './user-policy/user-policy.component';
 import { GeneratedQuotesUsersComponent } from './generated-quotes-users/generated-quotes-users.component';
@@ -48,6 +46,15 @@ import { UserDetailPreviewComponent } from './user-detail-preview/user-detail-pr
 import { ModalCardComponent } from './modal/modal-card/modal-card.component';
 import { ModalBuyplanComponent } from './modal/modal-buyplan/modal-buyplan.component';
 
+
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { MyPolicyComponent } from './my-policy/my-policy.component';
+import { UserCardComponent } from './user-card/user-card.component';
+import { ClaimIntimationComponent } from './claim-intimation/claim-intimation.component';
+import { NewclaimComponent } from './newclaim/newclaim.component';
+import { ClaimintimationFormComponent } from './claimintimation-form/claimintimation-form.component';
+
+
 import { LoaderComponent } from './loader/loader.component';
 import { LoaderInterceptorService } from './_services/loader-interceptor.service';
 import { ModalBuynewpolicyComponent } from './modal/modal-buynewpolicy/modal-buynewpolicy.component';
@@ -57,6 +64,7 @@ import { ModalCompareplansComponent } from './modal/modal-compareplans/modal-com
 import { SnackBarComponent } from './snack-bar/snack-bar.component';
 import {MatSnackBarModule} from '@angular/material';
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 
 
 export function setupTranslateFactory(
@@ -69,7 +77,6 @@ export function setupTranslateFactory(
     AppComponent,
     HeaderComponent,
     ClientHomeComponent,
-    ClientClaimIntimationComponent,
     ClientContactusComponent,
     ClientCustomerServiceComponent,
     QuotesFormComponent,
@@ -78,7 +85,6 @@ export function setupTranslateFactory(
     ImgHolderComponent,
     ClientGetQuotesComponent,
     ModalPopupComponent,
-    UserProfileComponent,
     UserPersonalDetailComponent,
     UserPolicyComponent,
     GeneratedQuotesUsersComponent,
@@ -97,7 +103,14 @@ export function setupTranslateFactory(
     ModalVideoComponent,
     SummaryWidgetComponent,
     ModalCompareplansComponent,
-    SnackBarComponent
+    SnackBarComponent,
+    MyProfileComponent,
+    MyPolicyComponent,
+    UserCardComponent,
+    ClaimIntimationComponent,
+    NewclaimComponent,
+    ClaimintimationFormComponent,
+    ChangepasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -128,7 +141,8 @@ export function setupTranslateFactory(
     MatRadioModule,
     MatExpansionModule,
     MatSnackBarModule,
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    MatChipsModule
   ],
   entryComponents: [
     ModalPopupComponent

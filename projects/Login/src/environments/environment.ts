@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  APIEndpoint: "http://www.mocky.io/v2",
+  DevEndpoint: "http://10.91.16.60:9090/"
 };
 
 /*

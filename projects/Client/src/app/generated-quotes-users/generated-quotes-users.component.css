@@ -43,7 +43,8 @@
 }
 .slide_topcss{
     margin-top: 25px;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; this css will change set height paroblem */
+    margin-bottom: 160px;
 }
 .pad_none{
     padding-left: 0;
