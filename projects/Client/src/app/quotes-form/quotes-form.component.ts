@@ -36,6 +36,7 @@ export class QuotesFormComponent implements OnInit {
   };
   fileInput: FormGroup;
   uploadFiles = [];
+  isOTPToggle = false;
 
   constructor(public router: Router, private postsService: PostsService, public dialog: MatDialog,
     private _formBuilder: FormBuilder) {
@@ -152,27 +153,27 @@ export class QuotesFormComponent implements OnInit {
     console.log('i am in quotes form');
     console.log(plandata);
     const dialogRef = this.dialog.open(ModalPopupComponent, {
-      width: '750px',
-      height: '550px',
+      width: '600px',
+      height: '500px',
       data: { head: 'compareplans', planData: plandata, planTitles: planTitles }
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);
     });
   }
-  
+
   onSelectFile(event, proof) {
     var leng = event.target.files.length;
-    for(var i=0;i<leng;i++){
+    for (var i = 0; i < leng; i++) {
       this.uploadFiles.push({
-        fileName : event.target.files[i].name,
-        proof:proof
+        fileName: event.target.files[i].name,
+        proof: proof
       });
     }
   }
 
-  uploadedFile(i) {    
-    this.uploadFiles.splice(i,1);
+  uploadedFile(i) {
+    this.uploadFiles.splice(i, 1);
   }
 
   selectedPolicy(select) {
@@ -188,5 +189,9 @@ export class QuotesFormComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);
     });
+  }
+
+  toggleOTPSource(source) {
+    this.isOTPToggle = !this.isOTPToggle;
   }
 }

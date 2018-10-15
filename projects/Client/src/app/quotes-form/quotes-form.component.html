@@ -150,12 +150,13 @@
             <label for="send-otp"> Send OTP </label>
             <!-- <button class="phone-icon1"><i class="fa fa-phone" aria-hidden="true"></i></button>
             <button class="mail-icon1"><i class="fa fa-envelope" aria-hidden="true"></i></button> -->
-            <mat-button-toggle-group #group="matButtonToggleGroup" class="otp-source">
-              <mat-button-toggle value="mobile">
-                <span class="phone-icon1"><i class="fa fa-phone" aria-hidden="true"></i></span>
+            <mat-button-toggle-group #group="matButtonToggleGroup" class="otp-source" 
+            [ngClass]="{'otp-toggle-true': isOTPToggle , 'otp-toggle-false': !isOTPToggle }">
+              <mat-button-toggle class="src-phone-btn" value="mobile" (click)="toggleOTPSource('mobile')">
+                <span class="phone-icon1"><i class="fa fa-phone src-phone" aria-hidden="true"></i></span>
               </mat-button-toggle>
-              <mat-button-toggle value="mail">
-                <span class="mail-icon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+              <mat-button-toggle class="src-mail-btn" value="mail" (click)="toggleOTPSource('mail')">
+                <span class="mail-icon1"><i class="fa fa-envelope src-mail" aria-hidden="true"></i></span>
               </mat-button-toggle>
             </mat-button-toggle-group>
 

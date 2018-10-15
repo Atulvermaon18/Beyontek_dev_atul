@@ -258,3 +258,19 @@ a,
 .otp-source {
   float: right;
 }
+
+.otp-toggle-true .src-phone {
+  color: #FFFFFF;
+}
+
+.otp-toggle-false .src-mail {
+  color: #3C3C3C;
+}
+
+.otp-toggle-true .src-phone-btn {
+  background-color: #3C3C3C;
+}
+
+.otp-toggle-false .src-mail-btn {
+  background-color: #FFFFFF;
+}
