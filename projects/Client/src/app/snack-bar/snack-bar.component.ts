@@ -8,6 +8,8 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material';
+import { SnackBarState } from '../_services/snackbar.model';
+
 
 @Component({
   selector: 'app-snack-bar',
@@ -15,39 +17,44 @@ import {
   styleUrls: ['./snack-bar.component.css']
 })
 export class SnackBarComponent implements OnInit {
-  message: string = 'Saved Successfully';
+  /* message: string = 'Saved Successfully';
   actionButtonLabel: string = 'Ok';
   action: boolean = true;
   setAutoHide: boolean = true;
   autoHide: number = 2000;
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
-  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom'; */
   private subscription: Subscription;
-  @ViewChild('confirmFileDeletionSwal') private confirmFileDeletionSwal: SwalComponent;
+  @ViewChild('SwalPopup') private SwalPopup: SwalComponent;
   
   addExtraClass: boolean = false;
   showMessage: boolean = false;
+  title:string ='';
+  status:string ='';
   constructor(public snackBar: MatSnackBar,private snackBarService: SnackBarService) { }
 
-  open() {
+  /* open() {
     let config = new MatSnackBarConfig();
     config.verticalPosition = this.verticalPosition;
     config.horizontalPosition = this.horizontalPosition;
     config.duration = this.setAutoHide ? this.autoHide : 0;
     config.panelClass = this.addExtraClass ? ['test'] : undefined;
     this.snackBar.open(this.message, this.action ? this.actionButtonLabel : undefined, config);
-  }
+  } */
   
   ngOnInit() {
     this.subscription = this.snackBarService.snackBarState
-      .subscribe(() => {
-        this.open();
-        this.showMessage = true;
-        this.confirmFileDeletionSwal.show()
+      .subscribe((data: SnackBarState) => {
+        //this.open();
+        //this.showMessage = true;
+        this.title =data.title;
+        this.status =data.status;
+        
         setTimeout(() => {
           console.log('hide');
-          this.showMessage = false;
-        }, 5000);
+          this.SwalPopup.show()
+          //this.showMessage = false;
+        }, 500);
       });
   }
 

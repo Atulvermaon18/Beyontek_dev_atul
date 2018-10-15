@@ -14,8 +14,8 @@ export class SnackBarService {
 
   constructor() { }
 
-  show() {
-    this.snackBarSubject.next(<SnackBarState>{ show: true });
+  show(msg, status) {
+    this.snackBarSubject.next(<SnackBarState>{ title: msg, status:status });
   }
 
 }

@@ -4,7 +4,7 @@
             (confirm)="confirmDeleteFile()"
             (cancel)="fileNotDeletedSwal.show()"></swal> -->
 
-            <swal #confirmFileDeletionSwal 
-            position= "center" title="Signed Up Successfully" type="success" showConfirmButton="false"
+            <swal #SwalPopup 
+            position= "center" title= "{{title}}" type= "{{status}}" showConfirmButton="false"
             [options]="{ showConfirmButton: false }" timer="3000"
             ></swal>

@@ -21,16 +21,40 @@ export class LoaderInterceptorService implements HttpInterceptor {
 
     return next.handle(req).pipe(tap((event: HttpEvent<any>) => {
       if (event instanceof HttpResponse) {
-        if (event.status == 200) {
+        /* if (event.status === 200) {
           this.showsnackBar();
-        }
+        } */
+        this.checkStatus(event.status)
+
         this.onEnd();
       }
     },
       (err: any) => {
+        this.checkStatus(err.status)
         this.onEnd();
       }));
 
+  }
+
+
+  private checkStatus(status){
+    
+    switch (status)
+    {
+       case 200:  
+          this.showsnackBar('Successfully Done','success');
+       break;
+       
+       case 500:
+           this.showsnackBar('Internal Error','error');
+       break;
+
+       case 404:
+            this.showsnackBar('Page not found','error');
+       break;
+    }
+
+    
   }
 
   private onEnd(): void {
@@ -48,9 +72,9 @@ export class LoaderInterceptorService implements HttpInterceptor {
     console.log("Hide Loader..........")
   }
 
-  private showsnackBar(): void {
-    this.snackbar.show();
-    console.log("show snackbar ..........")
+  private showsnackBar(msg,status): void {
+    this.snackbar.show(msg, status);
+    console.log("show alert ..........")
   }
 
 }

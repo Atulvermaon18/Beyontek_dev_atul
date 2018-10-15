@@ -1,3 +1,4 @@
 export interface SnackBarState {
-    show: boolean;
+    title: string,
+    status:string
 }
