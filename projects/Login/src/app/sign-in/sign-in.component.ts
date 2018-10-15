@@ -14,7 +14,9 @@ export class SignInComponent implements OnInit {
   @Output() onNameChanged = new EventEmitter();
   loginForm: FormGroup;
   signupForm: FormGroup;
-  login: {};
+  sendotpboolean:boolean=true;
+  favoritemailorno: string;
+  seasons: string[] = ['Mobile', 'Email'];
 
   constructor(private router: Router, public postService: PostsService, private formBuilder: FormBuilder) { }
 
@@ -30,6 +32,7 @@ export class SignInComponent implements OnInit {
       email: ['', Validators.required],
       otpMedium: ['', Validators.required],
       otp: ['', Validators.required],
+      radiobtn: ['', Validators.required],
     });
   }
 
@@ -37,7 +40,7 @@ export class SignInComponent implements OnInit {
     debugger;
     localStorage.setItem("logged", "Atul");
 
-    
+
     if (this.loginForm.invalid) {
       return;
     }
@@ -47,6 +50,8 @@ export class SignInComponent implements OnInit {
     }
     this.postService.postInputs('login', params).subscribe(result => {
       console.log(result);
+    },err => {
+      alert("Network Error");
     });
 
 
@@ -63,8 +68,20 @@ export class SignInComponent implements OnInit {
     // }      
   }
 
-  sendOTP(otpValue) {
-    alert(JSON.stringify(otpValue));
+  sendOTP() {
+    debugger;
+    if (this.signupForm.value.radiobtn=="") {
+      return;
+    }
+    this.sendotpboolean=false;
+    let params = {
+      "email": this.signupForm.value.radiobtn  
+    }
+    this.postService.postInputs('signup/sendEmailOTP', params).subscribe(result => {
+      console.log(result);
+    },err => {
+      alert("Network Error");
+    });
   }
 
   onSignup() {
@@ -82,6 +99,8 @@ export class SignInComponent implements OnInit {
     }
     this.postService.postInputs('signup/registerUser', params).subscribe(result => {
       console.log(result);
+    },err => {
+      alert("Network Error");
     });
   }
 

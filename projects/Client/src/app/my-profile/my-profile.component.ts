@@ -20,6 +20,9 @@ export class MyProfileComponent implements OnInit {
   ngOnInit() {
   }
 
-  saveClose() {}
+  saveClose(){
+    console.log('Saved callled!')
+  }
+
 
 }

@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class MypolicyviewdetailComponent implements OnInit {
 
   isChecked: boolean;
-  panelOpenState: boolean;
+  panelOpenState:boolean;
 
   vehicleDetailPreview: any = [
     {
@@ -111,5 +111,6 @@ export class MypolicyviewdetailComponent implements OnInit {
   ngOnInit() {
   }
 
+ 
 }
 
