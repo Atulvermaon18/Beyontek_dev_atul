@@ -3,7 +3,7 @@
     padding-right: 0;
 }
 .bg_img {
-    background-image: url("../../../../Login/src/assets/img/login/login_bg.png");
+    background-image: url("/assets/img/login/login_bg.png");
     width: 100%;
     height: 100%;
     background-size: cover;
