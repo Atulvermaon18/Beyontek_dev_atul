@@ -191,12 +191,18 @@
               </mat-form-field>
             </div>
             <div class="radio_btncss">
-              <mat-radio-group>
-                <mat-radio-button class="mar_spacecss" value="mobile">Mobile</mat-radio-button>
+              <!-- <mat-radio-group>
+                <mat-radio-button class="mar_spacecss" value="mobile" >Mobile</mat-radio-button>
                 <mat-radio-button class="mar_spacecss" value="email">Email</mat-radio-button>
 
+              </mat-radio-group> -->
+              <mat-radio-group class="example-radio-group" formControlName="radiobtn">
+                <mat-radio-button class="example-radio-button mar_spacecss" *ngFor="let season of seasons" [value]="season" >
+                  {{season}}
+                </mat-radio-button>
               </mat-radio-group>
-              <button type="button" class="btn btn-primary otp_btncss" (click)="sendOTP()">SEND OTP</button>
+              <button *ngIf="sendotpboolean" type="button" class="btn btn-primary otp_btncss" (click)="sendOTP()">SEND OTP</button>
+              <button *ngIf="!sendotpboolean" type="button" class="btn btn-primary otp_btncss" (click)="sendOTP()">RESEND</button>
             </div>
             <div>
               <mat-form-field class="text_boxwidth">

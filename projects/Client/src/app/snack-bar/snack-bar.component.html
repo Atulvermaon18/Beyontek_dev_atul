@@ -1,0 +1,10 @@
+<!-- <swal #confirmFileDeletionSwal 
+            title="Are you sure want to delete it?" text="Delete record" type="warning"
+            [options]="{ showCancelButton: true,  confirmButtonText: 'Yes, deleted!',  confirmButtonColor: '#DD6B55' }"
+            (confirm)="confirmDeleteFile()"
+            (cancel)="fileNotDeletedSwal.show()"></swal> -->
+
+            <swal #SwalPopup 
+            position= "center" title= "{{title}}" type= "{{status}}" showConfirmButton="false"
+            [options]="{ showConfirmButton: false }" timer="3000"
+            ></swal>

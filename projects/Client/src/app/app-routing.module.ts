@@ -14,6 +14,7 @@ import { MypolicyrenewComponent } from './mypolicy_details/mypolicyrenew/mypolic
 import { NewclaimComponent } from './newclaim/newclaim.component';
 import { MypolicyviewdetailComponent } from './mypolicy_details/mypolicyviewdetail/mypolicyviewdetail.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { CustomersupportComponent } from './customersupport/customersupport.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'mypolicypayment', component: MypolicypremiumComponent },
   { path: 'mypolicyrenew', component: MypolicyrenewComponent },
   { path: 'newclaim', component: NewclaimComponent },
-  { path: 'mypolicyviewdetails', component: MypolicyviewdetailComponent }
+  { path: 'mypolicyviewdetails', component: MypolicyviewdetailComponent },
+  { path: 'customersupport', component: CustomersupportComponent }
 ];
 
 @NgModule({

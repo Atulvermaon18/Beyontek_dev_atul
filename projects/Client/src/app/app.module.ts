@@ -22,7 +22,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFileUploadModule } from 'angular-material-fileupload';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatRadioModule} from '@angular/material/radio';
 
@@ -61,7 +60,11 @@ import { ModalBuynewpolicyComponent } from './modal/modal-buynewpolicy/modal-buy
 import { ModalVideoComponent } from './modal/modal-video/modal-video.component';
 import { SummaryWidgetComponent } from './summary-widget/summary-widget.component';
 import { ModalCompareplansComponent } from './modal/modal-compareplans/modal-compareplans.component';
+import { SnackBarComponent } from './snack-bar/snack-bar.component';
+import {MatSnackBarModule} from '@angular/material';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { CustomersupportComponent } from './customersupport/customersupport.component';
 
 
 export function setupTranslateFactory(
@@ -100,17 +103,18 @@ export function setupTranslateFactory(
     ModalVideoComponent,
     SummaryWidgetComponent,
     ModalCompareplansComponent,
+    SnackBarComponent,
     MyProfileComponent,
     MyPolicyComponent,
     UserCardComponent,
     ClaimIntimationComponent,
     NewclaimComponent,
     ClaimintimationFormComponent,
-    ChangepasswordComponent
+    ChangepasswordComponent,
+    CustomersupportComponent
   ],
   imports: [
     BrowserModule,
-    MatFileUploadModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
@@ -137,7 +141,9 @@ export function setupTranslateFactory(
     MatRadioModule,
     MatExpansionModule,
     MatChipsModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatSnackBarModule,
+    SweetAlert2Module.forRoot()
   ],
   entryComponents: [
     ModalPopupComponent

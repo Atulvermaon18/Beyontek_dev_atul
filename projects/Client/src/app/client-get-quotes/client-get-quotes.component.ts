@@ -14,7 +14,7 @@ export class ClientGetQuotesComponent implements OnInit {
   ngOnInit() {
   }
 
-  notifyEvnt() {
+  notifyEvnt(event) {
     console.log('Sending Event');
     this.notifySelection.emit(true);
   }

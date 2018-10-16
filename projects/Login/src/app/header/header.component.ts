@@ -22,24 +22,24 @@ export class HeaderComponent implements OnInit {
   isLogged:boolean = false;
 
   // user = [
-  //   { value: 'profile', viewValue: 'Profile', img: '../../assets/img/flag/usa.png', default: true },
-  //   { value: 'changepassword', viewValue: 'Change Password', img: '../../assets/img/flag/mexico.png', default: false  },
-  //   { value: 'document', viewValue: 'Document', img: '../../assets/img/flag/spain.png', default: false },
-  //   { value: 'logout', viewValue: 'Logout', img: '../../assets/img/flag/uae.png', default: false }
+  //   { value: 'profile', viewValue: 'Profile', img: 'assets/img/flag/usa.png', default: true },
+  //   { value: 'changepassword', viewValue: 'Change Password', img: 'assets/img/flag/mexico.png', default: false  },
+  //   { value: 'document', viewValue: 'Document', img: 'assets/img/flag/spain.png', default: false },
+  //   { value: 'logout', viewValue: 'Logout', img: 'assets/img/flag/uae.png', default: false }
   // ];
 
   languages = [
-    { value: 'english', viewValue: 'English', img: '../../assets/img/flag/usa.png', default: true },
-    { value: 'mexico', viewValue: 'Mexico', img: '../../assets/img/flag/mexico.png', default: false  },
-    { value: 'spanish', viewValue: 'Spanish', img: '../../assets/img/flag/spain.png', default: false },
-    { value: 'arabic', viewValue: 'Arabic', img: '../../assets/img/flag/uae.png', default: false }
+    { value: 'english', viewValue: 'English', img: 'assets/img/flag/usa.png', default: true },
+    { value: 'mexico', viewValue: 'Mexico', img: 'assets/img/flag/mexico.png', default: false  },
+    { value: 'spanish', viewValue: 'Spanish', img: 'assets/img/flag/spain.png', default: false },
+    { value: 'arabic', viewValue: 'Arabic', img: 'assets/img/flag/uae.png', default: false }
   ];
 
   details = [
-    { value: 'profile', viewValue: 'Profile', img: '../../assets/img/home_icon/Profile1.png'},
-    { value: 'change password', viewValue: 'Change Password', img: '../../assets/img/home_icon/Change_Password1.png'},
-    { value: 'document', viewValue: 'Document', img: '../../assets/img/home_icon/Document1.png'},
-    { value: 'logout', viewValue: 'Logout', img: '../../assets/img/home_icon/Logout1.png'}
+    { value: 'profile', viewValue: 'Profile', img: 'assets/img/home_icon/Profile1.png'},
+    { value: 'change password', viewValue: 'Change Password', img: 'assets/img/home_icon/Change_Password1.png'},
+    { value: 'document', viewValue: 'Document', img: 'assets/img/home_icon/Document1.png'},
+    { value: 'logout', viewValue: 'Logout', img: 'assets/img/home_icon/Logout1.png'}
   ];
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -74,7 +74,7 @@ export class HeaderComponent implements OnInit {
     // var ch = this.service.subject.getValue();
     this.languageBind = 'English';
     this.userBind = 'Atul';
-    this.imageBind = '../../assets/img/flag/usa.png';
+    this.imageBind = 'assets/img/flag/usa.png';
     if(localStorage.getItem('logged') !== null){
       this.postService.isLogged = true;
       this.router.navigate(['/policy']);
