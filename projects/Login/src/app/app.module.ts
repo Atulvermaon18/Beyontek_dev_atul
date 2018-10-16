@@ -39,6 +39,8 @@ import { LoaderComponent } from './loader/loader.component';
 
 import { ServiceService } from './service.service';
 import { LoaderInterceptorService } from './_services/loader-interceptor.service';
+import { SnackBarComponent } from './snack-bar/snack-bar.component';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 
 @NgModule({
@@ -69,7 +71,8 @@ import { LoaderInterceptorService } from './_services/loader-interceptor.service
     MypolicymakepaymentComponent,
     NewclaimComponent,
     ClaimintimationFormComponent,
-    LoaderComponent
+    LoaderComponent,
+    SnackBarComponent
   
   ],
   imports: [
@@ -95,7 +98,8 @@ import { LoaderInterceptorService } from './_services/loader-interceptor.service
     MatDialogModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatExpansionModule
+    MatExpansionModule,
+    SweetAlert2Module.forRoot()
   ],
   entryComponents: [
     ModalPopupComponent

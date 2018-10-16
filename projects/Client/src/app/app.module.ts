@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatMenuModule, MatExpansionModule, MatChipsModule } from '@angular/material';
+import { MatToolbarModule, MatNativeDateModule, MatInputModule, MatCardModule, MatMenuModule, MatExpansionModule, MatChipsModule, MatButtonToggleModule } from '@angular/material';
 import { MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material';
 import { MatCheckboxModule} from '@angular/material/checkbox';
@@ -60,6 +60,9 @@ import { ModalBuynewpolicyComponent } from './modal/modal-buynewpolicy/modal-buy
 import { ModalVideoComponent } from './modal/modal-video/modal-video.component';
 import { SummaryWidgetComponent } from './summary-widget/summary-widget.component';
 import { ModalCompareplansComponent } from './modal/modal-compareplans/modal-compareplans.component';
+import { SnackBarComponent } from './snack-bar/snack-bar.component';
+import {MatSnackBarModule} from '@angular/material';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { CustomersupportComponent } from './customersupport/customersupport.component';
 
@@ -100,6 +103,7 @@ export function setupTranslateFactory(
     ModalVideoComponent,
     SummaryWidgetComponent,
     ModalCompareplansComponent,
+    SnackBarComponent,
     MyProfileComponent,
     MyPolicyComponent,
     UserCardComponent,
@@ -136,7 +140,10 @@ export function setupTranslateFactory(
     MatCheckboxModule,
     MatRadioModule,
     MatExpansionModule,
-    MatChipsModule
+    MatChipsModule,
+    MatButtonToggleModule,
+    MatSnackBarModule,
+    SweetAlert2Module.forRoot()
   ],
   entryComponents: [
     ModalPopupComponent

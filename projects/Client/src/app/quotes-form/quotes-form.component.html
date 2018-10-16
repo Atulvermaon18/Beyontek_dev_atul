@@ -8,8 +8,26 @@
       <mat-step *ngFor="let input of inputData; let i = index">
         <form [formGroup]="formgroup" (submit)="onSubmit(formgroup)">
           <h5 class="title_css">{{input.title}}</h5>
-          <span>{{input.context}}</span>
+
           <br>
+
+          <div *ngIf="input.label=='otp'" class="policy-plans-otp">
+            <div class="otp-context">
+              <span class="otp-context-content">{{input.context}}</span>
+            </div>
+            <div class="otp-input">
+              <mat-form-field class="displayinput_css">
+                <input matInput placeholder="{{input.inputOtp['key'] | translate}}" [formControlName]="input.inputOtp['label']">
+              </mat-form-field>
+            </div>
+            <div class="verify-otp">
+              <button mat-flat-button class="btn_margin">VERIFY</button>
+            </div>
+            <div class="resend-otp">
+              <a>Resend OTP</a>
+            </div>
+          </div>
+
           <div *ngIf="input.label=='policy'" class="policy-plans row">
             <div class="col-md-3 layout-box plan-details-section" [ngClass]="{'policy-plans-active': plan.label==selectedPolicyHighLight}"
               tabindex="{{i}}" *ngFor="let plan of input.plans; let i = index" (click)="selectedPolicy(plan.label)">
@@ -39,7 +57,7 @@
                 <hr class="horizontal-line">
                 <div class="plan-buy-compare plan-body row">
                   <div class="compare-plan">
-                    <a (click)="comparePlans(input.plan_comparison)">COMPARE</a>
+                    <a (click)="comparePlans(input.plan_comparison, input.plan_titles)">COMPARE</a>
                   </div>
                   <div class="buy-plan">
                     <a (click)="buyPlans()">BUY PLAN</a>
@@ -48,37 +66,54 @@
               </div>
             </div>
 
-            <div class="row col-md-12" *ngFor="let plan of input.plans; let i = index">
-              <div *ngIf="plan['plan_summary']['label']==planLabel" class="row">
-                <div class="col-md-6">
-                  <div class="col-md-12">
-                    <b>
-                      <label for="summary-plan-label">{{plan['plan_summary']['label']}}</label>
-                    </b>
+            <div class="plan-summary-section col-md-12">
+              <div class="row col-md-12 plan-summary" *ngFor="let plan of input.plans; let i = index">
+                <div *ngIf="plan['plan_summary']['label']==planLabel" class="row">
+                  <div class="col-md-6">
+                    <div class="col-md-12">
+                      <b>
+                        <label class="plan-summary-label" for="summary-plan-label">{{plan['plan_summary']['label']}}</label>
+                      </b>
+                    </div>
+                    <div class="col-md-12">
+                      <mat-list role="list">
+                        <mat-list-item class="coverage-plans-list" *ngFor="let coverage of plan['plan_summary']['coverages']; let i = index"
+                          role="listitem">* {{coverage}}
+                        </mat-list-item>
+                      </mat-list>
+                    </div>
                   </div>
-                  <div class="col-md-12">
-                    <mat-list role="list">
-                      <mat-list-item class="coverage-plans-list" *ngFor="let coverage of plan['plan_summary']['coverages']; let i = index" role="listitem">* {{coverage}}
-                      </mat-list-item>
-                    </mat-list>
+                  <div class="col-md-6 summary-desc">
+                    <div class="col-md-12">
+                      <b>
+                        <label class="plan-summary-label" for="summary-plan-label">{{plan['plan_summary']['optional_coverages']['label']}}</label>
+                      </b>
+                    </div>
+                    <div class="col-md-12 row" *ngFor="let opt of plan['plan_summary']['optional_coverages']['coverages']; let i = index">
+                      <div class="col-md-2">
+                        <mat-checkbox [(ngModel)]="opt.isChecked" [formControlName]="opt.name">
+                        </mat-checkbox>
+                      </div>
+                      <div class="col-md-10">
+                        <label for="additional-coverage" class="opt-coverage-plans-list">{{opt.label}}</label>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-6 summary-desc">
-                  <div class="col-md-12">
-                    <u>
-                      <b>
-                        <label for="summary-plan-label">{{plan['plan_summary']['optional_coverages']['label']}}</label>
-                      </b>
-                    </u>
+              </div>
+              <div class="row download-print-section col-md-12">
+                <div class="col-md-6">
+
+                </div>
+                <div class="row action-icons col-md-6">
+                  <div class="col-md-2">
+                    <button class="icon-general" (click)="doAction(value)" value="download"><i class="fas fa-download download-icon"></i></button>
                   </div>
-                  <div class="col-md-12 row" *ngFor="let opt of plan['plan_summary']['optional_coverages']['coverages']; let i = index">
-                    <div class="col-md-2">
-                      <mat-checkbox [(ngModel)]="opt.isChecked" [formControlName]="opt.name">
-                      </mat-checkbox>
-                    </div>
-                    <div class="col-md-10">
-                      <label for="additional-coverage" class="opt-coverage-plans-list">{{opt.label}}</label>
-                    </div>
+                  <div class="col-md-2">
+                    <button class="icon-general" (click)="doAction(value)" value="print"><i class="fas fa-print print-icon"></i></button>
+                  </div>
+                  <div class="col-md-2">
+                    <button class="icon-general" (click)="doAction(value)" value="mail"><i class="fas fa-envelope env-icon"></i></button>
                   </div>
                 </div>
               </div>
@@ -126,10 +161,19 @@
 
           </div>
 
-          <div *ngIf="input.title=='Personal Details'" style="display: inline-block;">
-            Send OTP
-            <button>Mobile</button>
-            <button>Email</button>
+          <div *ngIf="input.title=='Personal Details'" class="col-md-6" style="display: inline-block;">
+            <label for="send-otp"> Send OTP </label>
+            <!-- <button class="phone-icon1"><i class="fa fa-phone" aria-hidden="true"></i></button>
+            <button class="mail-icon1"><i class="fa fa-envelope" aria-hidden="true"></i></button> -->
+            <mat-button-toggle-group #group="matButtonToggleGroup" class="otp-source" [ngClass]="{'otp-toggle-true': isOTPToggle , 'otp-toggle-false': !isOTPToggle }">
+              <mat-button-toggle class="src-phone-btn" value="mobile" (click)="toggleOTPSource('mobile')">
+                <span class="phone-icon1"><i class="fa fa-phone src-phone" aria-hidden="true"></i></span>
+              </mat-button-toggle>
+              <mat-button-toggle class="src-mail-btn" value="mail" (click)="toggleOTPSource('mail')">
+                <span class="mail-icon1"><i class="fa fa-envelope src-mail" aria-hidden="true"></i></span>
+              </mat-button-toggle>
+            </mat-button-toggle-group>
+
           </div>
 
           <!-- this is for driver details  -->
@@ -154,15 +198,13 @@
           <!-- this is for driver details  -->
           <br>
 
-
-
           <div>
             <button mat-button matStepperPrevious mat-raised-button *ngIf="i" class="float-left buttoncolor_css">
-              << {{inputData[i-1].title}} </button>
-                <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button matStepperNext class="float-right buttoncolor_css">{{inputData[i+1].title}} >>
-                </button>
-                <button mat-button *ngIf="i===inputData.length-1" mat-raised-button (click)="showDetails(formgroup)" class="float-right buttoncolor_css">Done</button>
-                <!-- <button mat-button *ngIf="i===inputData.length-1" mat-raised-button type="submit" (click)="stepper.reset();quoteSelected=true;" >Done</button> -->
+              << {{inputData[i-1].title}} </button> <button mat-button *ngIf="i!==inputData.length-1" mat-raised-button
+                matStepperNext class="float-right buttoncolor_css">{{inputData[i+1].title}} >>
+            </button>
+            <button mat-button *ngIf="i===inputData.length-1" mat-raised-button (click)="showDetails(formgroup)" class="float-right buttoncolor_css">Done</button>
+            <!-- <button mat-button *ngIf="i===inputData.length-1" mat-raised-button type="submit" (click)="stepper.reset();quoteSelected=true;" >Done</button> -->
           </div>
         </form>
 

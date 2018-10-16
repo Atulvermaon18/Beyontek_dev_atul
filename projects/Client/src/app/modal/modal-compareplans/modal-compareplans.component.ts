@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-modal-compareplans',
@@ -10,25 +11,39 @@ export class ModalCompareplansComponent implements OnInit {
 
   @Input() comparepolicyDetails: any;
   isPolicySelected = false;
+  formgroup: FormGroup;
   comparePlans = [
     { value: 'classic', isSelected: false },
     { value: 'premier', isSelected: false },
     { value: 'executive', isSelected: false }
   ];
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dialogRef: MatDialogRef<ModalCompareplansComponent>) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any,
+  private dialogRef: MatDialogRef<ModalCompareplansComponent>, private _formBuilder: FormBuilder) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.formgroup = this._formBuilder.group({
+      offroadcoverpremier: ['', Validators.required],
+      hirecarclassic: ['', Validators.required],
+      hirecarpremier: ['', Validators.required],
+      personalaccidentcoverpassengers: ['', Validators.required],
+      breakdownrecoveryclassicsilver: ['', Validators.required],
+      breakdownrecoverypremiersilver: ['', Validators.required],
+      breakdownrecoveryexecutivesilver: ['', Validators.required],
+      breakdownrecoveryclassicgold: ['', Validators.required],
+      breakdownrecoverypremiergold: ['', Validators.required],
+      breakdownrecoveryexecutivegold: ['', Validators.required],
+      breakdownrecoveryclassicplatinum: ['', Validators.required],
+      breakdownrecoverypremierplatinum: ['', Validators.required],
+      breakdownrecoveryexecutiveplatinum: ['', Validators.required]
+    });
+  }
 
   selectedPolicy(plan) {
-    console.log('i am in modal componenet');
-    console.log(plan);
-    // for (let key of this.comparePlans) {
-    //   if (key['value'] === plan) {
-    //     this.comparePlans[plan].isSelected = true;
-    //     console.log(this.comparePlans);
-    //   }
-    // }
-    this.isPolicySelected = true;
+    this.isPolicySelected = plan;
+  }
+
+  closeComparePlans() {
+    this.dialogRef.close();
   }
 }
