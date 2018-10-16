@@ -15,7 +15,7 @@
     </span>
   </div>
 </nav>
-<nav class="shadow displayupcss" *ngIf="!postService.isLogged && this.router.url==='/home'">
+<nav class="shadow displayupcss" *ngIf="!postService.isLogged && this.router.url==='/home' || !postService.isLogged && router.url === '/mypolicypayment'">
   <mat-toolbar class="bg_header">
     <a routerLink="/home">
       <img class="logo_allign" src="../../assets/img/logo.png">
