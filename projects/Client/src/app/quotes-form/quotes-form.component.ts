@@ -155,6 +155,7 @@ export class QuotesFormComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalPopupComponent, {
       width: '600px',
       height: '500px',
+      disableClose: true,
       data: { head: 'compareplans', planData: plandata, planTitles: planTitles }
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -193,5 +194,9 @@ export class QuotesFormComponent implements OnInit {
 
   toggleOTPSource(source) {
     this.isOTPToggle = !this.isOTPToggle;
+  }
+
+  doAction(action) {
+    console.log(action);
   }
 }

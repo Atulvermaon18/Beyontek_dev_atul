@@ -42,4 +42,8 @@ export class ModalCompareplansComponent implements OnInit {
   selectedPolicy(plan) {
     this.isPolicySelected = plan;
   }
+
+  closeComparePlans() {
+    this.dialogRef.close();
+  }
 }

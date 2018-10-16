@@ -66,38 +66,54 @@
               </div>
             </div>
 
-            <div class="row col-md-12" *ngFor="let plan of input.plans; let i = index">
-              <div *ngIf="plan['plan_summary']['label']==planLabel" class="row">
-                <div class="col-md-6">
-                  <div class="col-md-12">
-                    <b>
-                      <label for="summary-plan-label">{{plan['plan_summary']['label']}}</label>
-                    </b>
+            <div class="plan-summary-section col-md-12">
+              <div class="row col-md-12 plan-summary" *ngFor="let plan of input.plans; let i = index">
+                <div *ngIf="plan['plan_summary']['label']==planLabel" class="row">
+                  <div class="col-md-6">
+                    <div class="col-md-12">
+                      <b>
+                        <label class="plan-summary-label" for="summary-plan-label">{{plan['plan_summary']['label']}}</label>
+                      </b>
+                    </div>
+                    <div class="col-md-12">
+                      <mat-list role="list">
+                        <mat-list-item class="coverage-plans-list" *ngFor="let coverage of plan['plan_summary']['coverages']; let i = index"
+                          role="listitem">* {{coverage}}
+                        </mat-list-item>
+                      </mat-list>
+                    </div>
                   </div>
-                  <div class="col-md-12">
-                    <mat-list role="list">
-                      <mat-list-item class="coverage-plans-list" *ngFor="let coverage of plan['plan_summary']['coverages']; let i = index"
-                        role="listitem">* {{coverage}}
-                      </mat-list-item>
-                    </mat-list>
+                  <div class="col-md-6 summary-desc">
+                    <div class="col-md-12">
+                      <b>
+                        <label class="plan-summary-label" for="summary-plan-label">{{plan['plan_summary']['optional_coverages']['label']}}</label>
+                      </b>
+                    </div>
+                    <div class="col-md-12 row" *ngFor="let opt of plan['plan_summary']['optional_coverages']['coverages']; let i = index">
+                      <div class="col-md-2">
+                        <mat-checkbox [(ngModel)]="opt.isChecked" [formControlName]="opt.name">
+                        </mat-checkbox>
+                      </div>
+                      <div class="col-md-10">
+                        <label for="additional-coverage" class="opt-coverage-plans-list">{{opt.label}}</label>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-6 summary-desc">
-                  <div class="col-md-12">
-                    <u>
-                      <b>
-                        <label for="summary-plan-label">{{plan['plan_summary']['optional_coverages']['label']}}</label>
-                      </b>
-                    </u>
+              </div>
+              <div class="row download-print-section col-md-12">
+                <div class="col-md-6">
+
+                </div>
+                <div class="row action-icons col-md-6">
+                  <div class="col-md-2">
+                    <button class="icon-general" (click)="doAction(value)" value="download"><i class="fas fa-download download-icon"></i></button>
                   </div>
-                  <div class="col-md-12 row" *ngFor="let opt of plan['plan_summary']['optional_coverages']['coverages']; let i = index">
-                    <div class="col-md-2">
-                      <mat-checkbox [(ngModel)]="opt.isChecked" [formControlName]="opt.name">
-                      </mat-checkbox>
-                    </div>
-                    <div class="col-md-10">
-                      <label for="additional-coverage" class="opt-coverage-plans-list">{{opt.label}}</label>
-                    </div>
+                  <div class="col-md-2">
+                    <button class="icon-general" (click)="doAction(value)" value="print"><i class="fas fa-print print-icon"></i></button>
+                  </div>
+                  <div class="col-md-2">
+                    <button class="icon-general" (click)="doAction(value)" value="mail"><i class="fas fa-envelope env-icon"></i></button>
                   </div>
                 </div>
               </div>
@@ -150,8 +166,7 @@
             <label for="send-otp"> Send OTP </label>
             <!-- <button class="phone-icon1"><i class="fa fa-phone" aria-hidden="true"></i></button>
             <button class="mail-icon1"><i class="fa fa-envelope" aria-hidden="true"></i></button> -->
-            <mat-button-toggle-group #group="matButtonToggleGroup" class="otp-source" 
-            [ngClass]="{'otp-toggle-true': isOTPToggle , 'otp-toggle-false': !isOTPToggle }">
+            <mat-button-toggle-group #group="matButtonToggleGroup" class="otp-source" [ngClass]="{'otp-toggle-true': isOTPToggle , 'otp-toggle-false': !isOTPToggle }">
               <mat-button-toggle class="src-phone-btn" value="mobile" (click)="toggleOTPSource('mobile')">
                 <span class="phone-icon1"><i class="fa fa-phone src-phone" aria-hidden="true"></i></span>
               </mat-button-toggle>

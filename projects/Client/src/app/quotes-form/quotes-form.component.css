@@ -274,3 +274,32 @@ a,
 .otp-toggle-false .src-mail-btn {
   background-color: #FFFFFF;
 }
+
+.plan-summary-label {
+  text-decoration: underline;
+}
+
+.plan-summary {
+  margin: 0;
+  padding-top: 0;
+}
+
+.plan-summary-section {
+  margin-top: 35px;
+}
+
+.action-icons {
+  justify-content: center;
+}
+
+.icon-general {
+  background-color: #EFEFEF;
+  border: 0px;
+  cursor: pointer;
+}
+
+.download-icon,
+.print-icon,
+.env-icon {
+  color: #154979;  
+}
