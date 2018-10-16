@@ -27,8 +27,8 @@ export class SnackBarComponent implements OnInit {
   private subscription: Subscription;
   @ViewChild('SwalPopup') private SwalPopup: SwalComponent;
   
-  addExtraClass: boolean = false;
-  showMessage: boolean = false;
+  /* addExtraClass: boolean = false;
+  showMessage: boolean = false; */
   title:string ='';
   status:string ='';
   constructor(public snackBar: MatSnackBar,private snackBarService: SnackBarService) { }
